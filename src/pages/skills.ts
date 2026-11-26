@@ -33,13 +33,14 @@ export function renderList(params: URLSearchParams): Page {
       <div class="result-count"><span id="sCount">${list.length} skill set${list.length === 1 ? '' : 's'}</span><span>Sorted by number of monsters</span></div>
       <div class="table-wrap">
         <table class="data">
-          <thead><tr><th>Skill set</th><th class="num">Monsters</th><th>Typical holders</th></tr></thead>
+          <thead><tr><th>Skill set</th><th class="num">Monsters</th><th class="num">Entries</th><th>Typical holders</th></tr></thead>
           <tbody id="sBody">${list
             .map(
               (s) => `<tr>
                 <td><a href="${hashFor(`skill/${encodeURIComponent(s.name)}`)}"><strong>${esc(s.name)}</strong></a>
                   <div class="jp">${esc(s.jp)}</div></td>
                 <td class="num">${s.count}</td>
+                <td class="num">${s.sp.length}</td>
                 <td class="small muted">${s.monsters
                   .slice(0, 4)
                   .map((m) => esc(m.name))
@@ -66,6 +67,7 @@ export function renderList(params: URLSearchParams): Page {
                 <td><a href="${hashFor(`skill/${encodeURIComponent(s.name)}`)}"><strong>${esc(s.name)}</strong></a>
                   <div class="jp">${esc(s.jp)}</div></td>
                 <td class="num">${s.count}</td>
+                <td class="num">${s.sp.length}</td>
                 <td class="small muted">${s.monsters
                   .slice(0, 4)
                   .map((m) => esc(m.name))
@@ -112,6 +114,24 @@ export function renderDetail(name: string): Page {
           share the same progression of spells, abilities and traits.
         </p>
       </div>
+
+      <section class="card">
+        <div class="card-head"><h2>Progression</h2><span class="muted small">${skill.sp.length} entries · 必要SP</span></div>
+        ${
+          skill.sp.length
+            ? `<div class="table-wrap"><table class="data">
+                <thead><tr><th class="num">SP</th><th>Learns</th></tr></thead>
+                <tbody>${skill.sp
+                  .map((r) => `<tr><td class="num">${r.sp}</td><td lang="ja">${esc(r.name)}</td></tr>`)
+                  .join('')}</tbody>
+              </table></div>
+              <p class="small muted" style="margin:10px 0 0">
+                Thresholds and ability names are the skill-point table recorded on every monster that learns this
+                set; all of them share the same table.
+              </p>`
+            : `<p class="muted small" style="margin:0">No skill-point table recorded for this set.</p>`
+        }
+      </section>
       ${byRank
         .map(
           (g) => `<section class="card">

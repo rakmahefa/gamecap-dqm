@@ -4,6 +4,7 @@
  */
 import rawMonsters from './data/monsters.json';
 import rawSkills from './data/skills.json';
+import rawTraitDesc from './data/traits.json';
 
 export type Rank = 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
 export type StatKey = 'hp' | 'mp' | 'atk' | 'def' | 'agi' | 'wis';
@@ -15,6 +16,22 @@ export interface Obtain {
   master?: string;
   alchemy?: 'normal' | 'boss' | 'reward';
   other?: string;
+}
+
+export interface TraitRef {
+  tier: string;
+  name: string;
+}
+
+export interface SizeTraitRef {
+  size: string;
+  name: string;
+}
+
+export interface MonsterTraits {
+  base: string[];
+  plus: TraitRef[];
+  size: SizeTraitRef[];
 }
 
 export interface Monster {
@@ -30,17 +47,111 @@ export interface Monster {
   total: number | null;
   stats: Partial<Record<StatKey, number>>;
   obtain: Obtain;
+  traits: MonsterTraits;
+  /** 30 slots in RESIST_KEYS order; index into RESIST_LEVELS, or null when unknown. */
+  resist: (number | null)[];
+  /** Only where the source kept the 3DS weapon line. */
+  weapons?: string[];
+}
+
+export interface SkillEntry {
+  sp: number;
+  name: string;
 }
 
 export interface SkillSet {
   name: string;
   jp: string;
   count: number;
+  sp: SkillEntry[];
   monsters: { id: string; name: string; rank: Rank }[];
 }
 
 export const MONSTERS = rawMonsters as unknown as Monster[];
 export const SKILLS = rawSkills as unknown as SkillSet[];
+export const TRAIT_DESC = rawTraitDesc as unknown as Record<string, string[]>;
+
+/** 30 resistance slots, in the order the source page lists them. */
+export const RESIST_KEYS = [
+  'メラ', 'ギラ', 'イオ', 'バギ', 'ヒャド', 'ジバリア', 'デイン', 'ドルマ', 'ベタン', 'ザキ',
+  '炎', '吹雪', 'こんらん', 'マヒ', 'ねむり', 'マヌーサ', 'マホトラ', 'ハック',
+  '呪文封じ', '斬撃封じ', '体技封じ', '息封じ', '踊り封じ', 'ダウン', 'どく', 'ルカニ',
+  '呪い', 'ボミエ', 'マインド', 'フール',
+];
+
+/** Unofficial English renderings of the resistance slots. */
+export const RESIST_LABELS: Record<string, string> = {
+  'メラ': 'Frizz',
+  'ギラ': 'Sizz',
+  'イオ': 'Bang',
+  'バギ': 'Woosh',
+  'ヒャド': 'Crack',
+  'ジバリア': 'Jibaria',
+  'デイン': 'Zap',
+  'ドルマ': 'Zam',
+  'ベタン': 'Betan',
+  'ザキ': 'Thwack',
+  '炎': 'Fire breath',
+  '吹雪': 'Ice breath',
+  'こんらん': 'Confusion',
+  'マヒ': 'Paralysis',
+  'ねむり': 'Sleep',
+  'マヌーサ': 'Dazzle',
+  'マホトラ': 'Drain',
+  'ハック': 'Hack',
+  '呪文封じ': 'Spell seal',
+  '斬撃封じ': 'Slash seal',
+  '体技封じ': 'Skill seal',
+  '息封じ': 'Breath seal',
+  '踊り封じ': 'Dance seal',
+  'ダウン': 'Down',
+  'どく': 'Poison',
+  'ルカニ': 'Sap',
+  '呪い': 'Curse',
+  'ボミエ': 'Decelerate',
+  'マインド': 'Mind',
+  'フール': 'Fool',
+};
+
+export const RESIST_LEVELS = ['Normal', 'Weak', 'Half', 'Reduced', 'Null', 'Absorb', 'Reflect', 'Null+'];
+
+export const WEAPON_TYPES = ['Sword', 'Lance', 'Axe', 'Hammer', 'Whip', 'Claw', 'Staff'];
+
+/** English renderings already used for the most common traits. */
+export const TRAIT_EN: Record<string, string> = {
+  'スタンダードボディ': 'Standard Body',
+  'スモールボディ': 'Small Body',
+  'メガボディ': 'Mega Body',
+  'ギガボディ': 'Gigabody',
+  '超ギガボディ': 'Super Gigabody',
+  'ライトメタルボディ': 'Light Metal Body',
+  'ハードメタルボディ': 'Hard Metal Body',
+  'ギャンブルボディ': 'Gamble Body',
+  'AI1〜2回行動': 'AI 1–2 actions',
+  'AI2回行動': 'AI 2 actions',
+  'AI1〜3回行動': 'AI 1–3 actions',
+  'AI2〜3回行動': 'AI 2–3 actions',
+  'AI3回行動': 'AI 3 actions',
+  'こうどうはやい': 'Early Bird',
+  'こうどうおそい': 'Slow Starter',
+  'みかわしアップ': 'Dodge Up',
+  '会心出やすい': 'Critical Up',
+  'ひん死で会心': 'Comeback Kid',
+  'カウンター': 'Counterattack',
+  'ロケットスタート': 'Rocket Start',
+  'れんぞく': 'Continuous Attacks',
+  'どく攻撃': 'Poison Attack',
+  'ねむり攻撃': 'Sleep Attack',
+  'マヒ攻撃': 'Paralysis Attack',
+  'ラブリー': 'Lovely',
+  '自動ＭＰ回復': 'Auto MP Recovery',
+  'スカウト％アップ': 'Scout Chance Up',
+  'いきなりテンション': 'Sudden Tension',
+  '封じブレイク': 'Seal Break',
+  '一族のほこり': 'Family Pride',
+  'ときどきピオラ': 'Occasional Accelerate',
+  '強ガードブレイク': 'Strong Guard Break',
+};
 
 export const RANKS: Rank[] = ['F', 'E', 'D', 'C', 'B', 'A', 'S', 'SS'];
 export const FAMILIES = ['Slime', 'Dragon', 'Nature', 'Beast', 'Material', 'Demon', 'Zombie', '???'];

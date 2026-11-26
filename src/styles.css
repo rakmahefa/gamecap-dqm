@@ -1339,3 +1339,91 @@ select.field:focus {
     height: 28px;
   }
 }
+
+/* ---------------- per-monster traits & resistances ---------------- */
+
+.trait-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+  font-size: 13.5px;
+}
+
+.trait-list li {
+  border-left: 3px solid var(--gold-soft);
+  padding: 2px 0 2px 9px;
+}
+
+.resist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
+  gap: 6px;
+}
+
+.resist-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12.5px;
+  background: var(--card-2);
+}
+
+.resist-cell .v {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lvl-0,
+.lvl-x {
+  color: var(--muted);
+}
+
+.lvl-1 {
+  background: #fdeae6;
+  border-color: #efc3ba;
+  color: var(--red);
+}
+
+.lvl-2 {
+  background: var(--teal-soft);
+  border-color: #b9d9d5;
+  color: var(--teal);
+}
+
+.lvl-3 {
+  background: #e7f2e8;
+  border-color: #c6dfc9;
+  color: #3c7a4a;
+}
+
+.lvl-4 {
+  background: #fbf0d8;
+  border-color: var(--gold-soft);
+  color: #8a5c12;
+}
+
+.lvl-5 {
+  background: #efe6f8;
+  border-color: #d8c8ee;
+  color: #6b45a0;
+}
+
+.lvl-6 {
+  background: #e5eefb;
+  border-color: #c3d6f2;
+  color: #2f5fa8;
+}
+
+.lvl-7 {
+  background: #f7eadb;
+  border-color: #e2c9a6;
+  color: #8a5c12;
+}

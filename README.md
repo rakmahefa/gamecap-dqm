@@ -16,9 +16,9 @@ working with the network switched off.
 | --- | --- |
 | **Monster dex** | 908 monsters with dex number, rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, egg pool and special acquisition routes |
 | **Filters** | Rank (F→SS), family (8), size (S/M/G/Super G), A–Z index, free-text search, sort by any stat, pagination |
-| **Monster pages** | Portrait, badges, scaled stat bars, obtain details, shared-family shortcuts, previous/next by dex number, favourites |
+| **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapons where recorded, skill-point progression, obtain details, shared-family shortcuts, previous/next by dex number, favourites |
 | **Synthesis** | Family-combination table for rank synthesis (位階配合) plus a “what will I get?” family-pair lookup |
-| **Skill sets** | 261 sets, each listing every monster that learns it, grouped by rank |
+| **Skill sets** | 261 sets, each listing every monster that learns it, grouped by rank, with the full skill-point → ability progression |
 | **Spells & abilities** | Reference of the established English spell names (Frizz, Sizz, Woosh, Crack, Zap, Zam…) |
 | **Traits** | Body, combat, resistance, support, drawback and plus-value traits |
 | **Weapons** | Seven weapon types, shop stock, forging notes |
@@ -73,8 +73,9 @@ src/
   lib.ts                   types, data access, badges, filters, sorting, favourites
   styles.css               design system (manual-style surfaces, wiki tables, rank/family colours)
   data/
-    monsters.json          908 records (generated)
-    skills.json            261 skill sets (generated)
+    monsters.json          908 records incl. traits, resistances and weapons (generated)
+    skills.json            261 skill sets with their SP progression (generated)
+    traits.json            192 trait names with their description text (generated)
     extras.ts              ranks, families, abilities, traits, items, weapons, chapters, eggs, arena
   pages/
     home.ts monsters.ts skills.ts breeding.ts reference.ts chart.ts tools.ts about.ts
@@ -121,8 +122,12 @@ Ranks: F → E → D → C → B → A → S → SS.
 ### Coverage & limitations
 
 - Monster records (stats, rank, family, size, skill set, obtain data) are complete for all 908 entries.
-- Traits, abilities, items and weapons are **curated reference lists**, not the full in-game catalogues.
-- Per-monster trait lists and skill-point tables are not included.
+- Per-monster traits (with their +25/+50/+★ and M/G/超G tiers), the 30-slot resistance table and the skill-point
+  progression of all 261 sets are extracted from the source pages by `data-source/build_data.py`.
+- The **Traits**, **Spells & abilities**, **Items** and **Weapons** pages are still curated reference lists, not the
+  full in-game catalogues.
+- Equippable-weapon flags could not be recovered for most records: the source marks the usable types with styling the
+  scrape did not keep, so 20 records (those whose page carries a plain-text weapon line) show them.
 - Synthesis covers the family-combination table and candidate lookup; exact special recipes and the precise
   rank-value formula are not modelled.
 - Habitat text is present for 190 records (the rest are boss, egg, event or synthesis exclusives).

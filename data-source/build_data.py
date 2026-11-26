@@ -99,7 +99,148 @@ def parse_obtain(o):
           '転生モンスター':'Rebirth monster','ちいさなメダル景品':'Mini Medal prize',
           'DQMテリーのワンダーランド3Dから引き継ぎ':'Transfer from DQM Terry\'s Wonderland 3D','オンライン：通信お見合い':'Online matchmaking'}.get(oth)
     return out
-mons=[]; skills=collections.defaultdict(lambda:{'jp':'','ids':[]})
+# ------------------------------------------------------------------ traits
+# The trait text of each record is a flat '|' dump:  base traits, then
+# 'プラス値特性' (+25/+50/+★), then '[M・G・超G]特性' (M/G/超G).  The split between a
+# trait name and its description lines is not marked, so the name vocabulary is
+# learned from the whole corpus: a description text is identical wherever its
+# trait appears, which makes the common prefix of the tails after a name exactly
+# that description.  Nothing is guessed per record.
+PLUS_MARK=('+25','+50','+★')
+SIZE_MARK=('M','G','超G')
+WEAPON_JP={'剣':'Sword','ヤリ':'Lance','オノ':'Axe','ハンマー':'Hammer','ムチ':'Whip','ツメ':'Claw','杖':'Staff'}
+RESIST_KEYS=['メラ','ギラ','イオ','バギ','ヒャド','ジバリア','デイン','ドルマ','ベタン','ザキ',
+            '炎','吹雪','こんらん','マヒ','ねむり','マヌーサ','マホトラ','ハック',
+            '呪文封じ','斬撃封じ','体技封じ','息封じ','踊り封じ','ダウン','どく','ルカニ',
+            '呪い','ボミエ','マインド','フール']
+RESIST_LEVELS=['普通','弱点','半減','軽減','無効','回復','反射','無効＋']
+
+def _tokens(s):
+    return [x.strip() for x in (s or '').split('|') if x.strip()]
+
+def trait_parts(traits):
+    """-> (base tokens, plus tokens, size tokens) for one record."""
+    sp=traits.find('特技・特性|')
+    i=traits.find('|特性|',sp)
+    j=traits.find('プラス値特性',i) if i>=0 else -1
+    if i<0: return [],[],[]
+    base=[x for x in _tokens(traits[i+4:j if j>=0 else len(traits)]) if not x.startswith('3DS版')]
+    rest=traits[j+len('プラス値特性'):] if j>=0 else ''
+    k=rest.find('[M・G・超G]特性')
+    plus=_tokens(rest if k<0 else rest[:k])
+    size=_tokens('' if k<0 else rest[k+len('[M・G・超G]特性'):])
+    return base,plus,size
+
+def marked_pairs(tokens,marks):
+    """name | MARK | desc... -> [(name, mark, [desc lines])]"""
+    idx=[n for n,t in enumerate(tokens) if t in marks and n>0]
+    out=[]
+    for a,n in enumerate(idx):
+        name=tokens[n-1]
+        end=idx[a+1]-1 if a+1<len(idx) else len(tokens)
+        out.append((name,tokens[n],tokens[n+1:end]))
+    return out
+
+def learn_traits(sections):
+    """Learn the trait-name vocabulary and each name's fixed description text."""
+    names=set(s[0] for s in sections if s)
+    desc={}
+    for _ in range(20):
+        progress=False
+        tails=collections.defaultdict(list)
+        for s in sections:
+            pos=0
+            while pos<len(s):
+                name=s[pos]
+                if name not in names: names.add(name); progress=True
+                if name in desc:
+                    pos+=1+len(desc[name]); continue
+                k=pos+1
+                while k<len(s) and s[k] not in names: k+=1
+                tails[name].append((tuple(s[pos+1:k]),k==len(s)))
+                pos=k
+        for name,ts in tails.items():
+            if name in desc or len(ts)<2: continue
+            pref=list(ts[0][0])
+            for x,_ in ts[1:]:
+                n=0
+                while n<min(len(pref),len(x)) and pref[n]==x[n]: n+=1
+                pref=pref[:n]
+            cut=len(pref)
+            for i0,tok in enumerate(pref):
+                if tok in names: cut=i0; break
+            pref=tuple(pref[:cut])
+            if pref: desc[name]=pref; progress=True
+        if not progress: break
+    # names whose only occurrence ends the section: the remainder is their description
+    for s in sections:
+        pos=0
+        while pos<len(s):
+            name=s[pos]
+            if name in desc:
+                pos+=1+len(desc[name]); continue
+            k=pos+1
+            while k<len(s) and s[k] not in names: k+=1
+            if k==len(s) and k>pos+1: desc[name]=tuple(s[pos+1:k])
+            pos=k
+    return names,desc
+
+def segment_traits(tokens,names,desc):
+    out=[]; pos=0
+    while pos<len(tokens):
+        name=tokens[pos]
+        out.append(name)
+        if name in desc:
+            pos+=1+len(desc[name])
+        else:
+            k=pos+1
+            while k<len(tokens) and tokens[k] not in names: k+=1
+            pos=k
+    return out
+
+def parse_sp(traits):
+    """必要SP table of a record -> [{sp, name}] (one entry per learned ability)."""
+    sp=traits.find('特技・特性|'); end=traits.find('|特性|',sp)
+    if sp<0 or end<0: return []
+    tok=_tokens(traits[sp+len('特技・特性|'):end])
+    out=[]
+    for n,t in enumerate(tok):
+        if t.isdigit() and n+1<len(tok):
+            out.append({'sp':int(t),'name':tok[n+1]})
+    return out
+
+def parse_resist(resist):
+    """30 resistance slots in RESIST_KEYS order, each a RESIST_LEVELS index or None."""
+    tok=_tokens(resist[:resist.find('モンスター入手')] if 'モンスター入手' in resist else resist)
+    found={}
+    for n,t in enumerate(tok):
+        if t in RESIST_KEYS and t not in found:
+            val=tok[n+1] if n+1<len(tok) else ''
+            found[t]=RESIST_LEVELS.index(val) if val in RESIST_LEVELS else None
+    return [found.get(k) for k in RESIST_KEYS]
+
+def parse_weapons(resist):
+    """Equippable weapon types, only where the source kept the 3DS weapon line."""
+    a=resist.find('装備できる武器'); b=resist.find('モンスター入手',a)
+    if a<0: return None
+    m=re.search(r'3DS版：([^|]*)',resist[a:b if b>a else len(resist)])
+    if not m: return None
+    out=[WEAPON_JP[t] for t in m.group(1).split() if t in WEAPON_JP]
+    return out or None
+
+# learn the vocabulary once, over every record
+_sections=[trait_parts(v['traits'])[0] for v in det.values() if v.get('traits')]
+TNAMES,TDESC=learn_traits(_sections)
+for v in det.values():
+    if not v.get('traits'): continue
+    _,plus,size=trait_parts(v['traits'])
+    for name,_,d in marked_pairs(plus,PLUS_MARK)+marked_pairs(size,SIZE_MARK):
+        if d: TDESC.setdefault(name,d)
+print('traits: names',len(TNAMES),'described',len(TDESC))
+print('traits: description lines that contain another trait name',
+      sum(1 for d in TDESC.values() if any(t in TNAMES for t in d)))
+
+mons=[]; skills=collections.defaultdict(lambda:{'jp':'','ids':[],'sp':[]})
 for key,v in roster.items():
     d=det.get(key,{})
     mid=re.sub(r'^monst_|\.html$','',key)
@@ -108,21 +249,41 @@ for key,v in roster.items():
     sen=SKILL_EN.get(sid) or names.get(sid) or sid
     skills[sen]['jp']=sid; skills[sen]['ids'].append(mid)
     ob=parse_obtain(d.get('obtain',''))
+    tr=d.get('traits','')
+    base,plus,size=trait_parts(tr)
+    sp=parse_sp(tr)
+    if sp and not skills[sen]['sp']: skills[sen]['sp']=sp
     m={'id':mid,'no':d.get('no'),'name':en,'jp':jp,'rank':v['rank'],
        'family':FAM.get(v['family_jp'],v['family_jp']),'size':SIZE.get(v['size'],v['size']),
        'icon':v['icon'],'skill':sen,'total':int(v['total']) if str(v['total']).isdigit() else None,
        'stats':{k:d[k] for k in ('hp','mp','atk','def','agi','wis') if k in d},
-       'obtain':ob}
+       'obtain':ob,
+       'traits':{'base':segment_traits(base,TNAMES,TDESC),
+                 'plus':[{'tier':mk,'name':nm} for nm,mk,_ in marked_pairs(plus,PLUS_MARK)],
+                 'size':[{'size':mk,'name':nm} for nm,mk,_ in marked_pairs(size,SIZE_MARK)]},
+       'resist':parse_resist(d.get('resist',''))}
+    wp=parse_weapons(d.get('resist',''))
+    if wp: m['weapons']=wp
     mons.append(m)
 mons.sort(key=lambda m:(m['no'] or 9999, m['name']))
 no_map={m['id']:m for m in mons}
 sk_out=[]
 for name,info in skills.items():
     ms=[m for m in (no_map[i] for i in info['ids'])]
-    sk_out.append({'name':name,'jp':info['jp'],'count':len(ms),'monsters':[{'id':m['id'],'name':m['name'],'rank':m['rank']} for m in ms]})
+    sk_out.append({'name':name,'jp':info['jp'],'count':len(ms),'sp':info['sp'],
+                   'monsters':[{'id':m['id'],'name':m['name'],'rank':m['rank']} for m in ms]})
 sk_out.sort(key=lambda s:s['name'])
+catalogue={k:list(v) for k,v in sorted(TDESC.items())}
 json.dump(mons, open('../src/data/monsters.json','w'), ensure_ascii=False, separators=(',',':'))
 json.dump(sk_out, open('../src/data/skills.json','w'), ensure_ascii=False, separators=(',',':'))
+json.dump(catalogue, open('../src/data/traits.json','w'), ensure_ascii=False, separators=(',',':'))
+print('skills with SP table',sum(1 for s in sk_out if s['sp']),'/',len(sk_out))
+print('monsters with traits',sum(1 for m in mons if m['traits']['base']),
+      'with resist',sum(1 for m in mons if any(x is not None for x in m['resist'])),
+      'with weapons',sum(1 for m in mons if 'weapons' in m))
+print('base trait counts',collections.Counter(len(m['traits']['base']) for m in mons))
+print('plus tiers',collections.Counter(p['tier'] for m in mons for p in m['traits']['plus']))
+print('size traits',collections.Counter(p['size'] for m in mons for p in m['traits']['size']))
 print('monsters',len(mons),'with stats',sum(1 for m in mons if m['stats']),'with where',sum(1 for m in mons if 'where' in m['obtain']),'skills',len(sk_out))
 print('ranks',collections.Counter(m['rank'] for m in mons))
 print('families',collections.Counter(m['family'] for m in mons))

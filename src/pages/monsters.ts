@@ -4,10 +4,16 @@ import {
   FAMILY_COLOR,
   MONSTERS,
   RANKS,
+  RESIST_KEYS,
+  RESIST_LABELS,
+  RESIST_LEVELS,
   SIZES,
   SKILL_BY_NAME,
   STAT_LABELS,
   STAT_MAX,
+  TRAIT_DESC,
+  TRAIT_EN,
+  WEAPON_TYPES,
   esc,
   famBadge,
   fmt,
@@ -258,6 +264,128 @@ function statGrid(m: Monster): string {
   }).join('');
 }
 
+/* ------------------------------------------------------- traits / resist / skill points */
+
+function traitLabel(jp: string): string {
+  const en = TRAIT_EN[jp];
+  return en
+    ? `<strong>${esc(en)}</strong> <span class="jp">${esc(jp)}</span>`
+    : `<strong lang="ja">${esc(jp)}</strong>`;
+}
+
+function traitDesc(jp: string): string {
+  const lines = TRAIT_DESC[jp];
+  return lines ? `<div class="small muted" lang="ja">${lines.map((l) => esc(l)).join(' ')}</div>` : '';
+}
+
+function traitsBlock(m: Monster): string {
+  const base = m.traits.base
+    .map((t) => `<li>${traitLabel(t)}${traitDesc(t)}</li>`)
+    .join('');
+  const plus = m.traits.plus
+    .map(
+      (t) => `<tr>
+        <td><span class="badge tag-gold">${esc(t.tier)}</span></td>
+        <td>${traitLabel(t.name)}${traitDesc(t.name)}</td>
+      </tr>`,
+    )
+    .join('');
+  const size = m.traits.size
+    .map(
+      (t) => `<tr>
+        <td><span class="badge size">${esc(t.size)}</span></td>
+        <td>${traitLabel(t.name)}${traitDesc(t.name)}</td>
+      </tr>`,
+    )
+    .join('');
+
+  return `<section class="card">
+    <div class="card-head"><h2>Traits</h2><span class="muted small">特性</span></div>
+    <div class="grid cols-2">
+      <div>
+        <h3 class="small muted" style="margin:0 0 8px">Body &amp; innate</h3>
+        <ul class="trait-list">${base || '<li class="muted">Not recorded.</li>'}</ul>
+      </div>
+      <div>
+        <h3 class="small muted" style="margin:0 0 8px">Unlocked by plus value and body size</h3>
+        <div class="table-wrap"><table class="data" style="font-size:13px">
+          <thead><tr><th>Tier</th><th>Trait</th></tr></thead>
+          <tbody>${plus}${size}</tbody>
+        </table></div>
+      </div>
+    </div>
+    <p class="small muted" style="margin:10px 0 0">
+      Trait names and descriptions are the Japanese labels from the source page; the English renderings shown
+      alongside are unofficial and only given for the most common traits. +25 / +50 / +★ are the plus-value
+      thresholds, M / G / Super G the body sizes that unlock the last three traits.
+    </p>
+  </section>`;
+}
+
+function resistBlock(m: Monster): string {
+  const cells = RESIST_KEYS.map((key, i) => {
+    const code = m.resist[i];
+    const level = code === null || code === undefined ? 'Unknown' : RESIST_LEVELS[code];
+    return `<div class="resist-cell lvl-${code ?? 'x'}" title="${esc(key)}">
+      <span class="k">${esc(RESIST_LABELS[key] ?? key)}</span>
+      <span class="v">${esc(level)}</span>
+    </div>`;
+  }).join('');
+  const known = m.resist.filter((v) => v !== null && v !== undefined).length;
+
+  return `<section class="card">
+    <div class="card-head"><h2>Resistances</h2><span class="muted small">耐性 · ${known}/30 recorded</span></div>
+    <div class="resist-grid">${cells}</div>
+    <p class="small muted" style="margin:10px 0 0">
+      Weak · Half · Reduced · Null · Absorb · Reflect are the resistance steps used by the source, strongest last.
+      Hover a slot for its Japanese label.
+    </p>
+  </section>`;
+}
+
+function weaponsBlock(m: Monster): string {
+  const owned = m.weapons ?? [];
+  const chips = WEAPON_TYPES.map(
+    (w) =>
+      `<span class="badge ${owned.includes(w) ? 'tag' : ''}" style="${
+        owned.includes(w) ? '' : 'opacity:.4'
+      }"${owned.includes(w) ? '' : ' aria-disabled="true"'}>${esc(w)}</span>`,
+  ).join(' ');
+
+  return `<section class="card">
+    <div class="card-head"><h2>Equippable weapons</h2><span class="muted small">装備できる武器</span></div>
+    ${
+      owned.length
+        ? `<div class="badge-list">${chips}</div>`
+        : `<p class="small muted" style="margin:0">The source page lists the seven weapon types but marks the
+           ones a monster can use with styling that this scrape did not capture, so the flags are unknown for this
+           record. They are only shown for the 20 records whose source page keeps a plain-text weapon line.</p>`
+    }
+  </section>`;
+}
+
+function skillPointBlock(m: Monster): string {
+  const skill = SKILL_BY_NAME.get(m.skill);
+  const rows = skill?.sp ?? [];
+  return `<section class="card">
+    <div class="card-head">
+      <h2>Skill set progression</h2>
+      <a class="small" href="${hashFor(`skill/${encodeURIComponent(m.skill)}`)}">${esc(m.skill)}</a>
+    </div>
+    ${
+      rows.length
+        ? `<div class="table-wrap"><table class="data" style="font-size:13px">
+            <thead><tr><th class="num">SP</th><th>Learns</th></tr></thead>
+            <tbody>${rows
+              .map((r) => `<tr><td class="num">${r.sp}</td><td lang="ja">${esc(r.name)}</td></tr>`)
+              .join('')}</tbody>
+          </table></div>
+          <p class="small muted" style="margin:10px 0 0">Skill points needed, in the order the set unlocks them.</p>`
+        : `<p class="small muted" style="margin:0">No skill-point table recorded for this set.</p>`
+    }
+  </section>`;
+}
+
 function obtainBlock(m: Monster): string {
   const o = m.obtain;
   const rows: string[] = [];
@@ -291,6 +419,10 @@ export function renderDetail(id: string): Page {
   const next = MONSTERS[index + 1];
   const relatives = MONSTERS.filter((x) => x.family === m.family && x.id !== m.id).slice(0, 12);
   const fav = isFavourite(m.id);
+  const skillsSection = skillPointBlock(m);
+  const traitsSection = traitsBlock(m);
+  const resistSection = resistBlock(m);
+  const weaponsSection = weaponsBlock(m);
 
   return {
     title: m.name,
@@ -341,6 +473,14 @@ export function renderDetail(id: string): Page {
           </div>
         </section>
       </div>
+
+      ${skillsSection}
+
+      ${traitsSection}
+
+      ${resistSection}
+
+      ${weaponsSection}
 
       <section class="card">
         <div class="card-head"><h2>More ${esc(m.family)} monsters</h2><a class="small" href="#/monsters?family=${encodeURIComponent(m.family)}">See all</a></div>
