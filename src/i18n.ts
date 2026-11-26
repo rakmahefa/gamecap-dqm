@@ -183,9 +183,16 @@ const STAT_EN: Record<string, string> = {
   ＭＰ: 'MP',
 };
 
+/** Full-width digits and plus sign used by the source (`＋２`, `＋4０`). */
+function normaliseNumbers(value: string): string {
+  return value
+    .replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
+    .replace(/＋/g, '+');
+}
+
 /** `攻撃力＋４` → `Attack +4` (the per-point stat bonuses of skill trees). */
 export function statBonusEn(value: string): string | undefined {
-  const hit = /^(.+?)＋(\d+)$/.exec(value.trim());
+  const hit = /^(.+?)\+(\d+)$/.exec(normaliseNumbers(value).trim());
   if (!hit) return undefined;
   const base = STAT_EN[hit[1]];
   return base ? `${base} +${hit[2]}` : undefined;
@@ -197,6 +204,11 @@ export function traitEn(jp: string): string | undefined {
 
 export function abilityEn(jp: string): string | undefined {
   return ABILITY_EN[jp] ?? TRAIT_EN[jp] ?? statBonusEn(jp);
+}
+
+/** Numbers of a 3DS-version note (`３DS版：９５pt`), normalised for display. */
+export function noteNumber(value: string): string {
+  return normaliseNumbers(value);
 }
 
 export function itemEn(jp: string): string {

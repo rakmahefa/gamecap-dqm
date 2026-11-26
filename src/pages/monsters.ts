@@ -12,7 +12,9 @@ import {
   STAT_LABELS,
   STAT_MAX,
   TRAIT_DESC,
+  TRAIT_DETAIL_BY_JP,
   WEAPON_TYPES,
+  effectKey,
   esc,
   famBadge,
   fmt,
@@ -26,11 +28,14 @@ import {
   replaceHash,
   sizeBadge,
   sortMonsters,
-  toggleFavourite,
   toast,
+  toggleFavourite,
+  traitDesc as traitDescEn,
+  traitHref,
 } from '../lib';
 import type { Monster } from '../lib';
-import { abilityEn, traitEn } from '../i18n';
+import { traitEn } from '../i18n';
+import { skillEntryHtml } from './reference';
 
 const PAGE_SIZE = 100;
 
@@ -268,16 +273,25 @@ function statGrid(m: Monster): string {
 
 /* ------------------------------------------------------- traits / resist / skill points */
 
+/** Trait name, linked to its own page when the reference has one. */
 function traitLabel(jp: string): string {
   const en = traitEn(jp);
-  return en
+  const text = en
     ? `<strong>${esc(en)}</strong> <span class="jp">${esc(jp)}</span>`
     : `<strong lang="ja">${esc(jp)}</strong>`;
+  return TRAIT_DETAIL_BY_JP.has(jp) ? `<a href="${traitHref(jp)}">${text}</a>` : text;
 }
 
+/** English effect first, with the reference's own wording underneath. */
 function traitDesc(jp: string): string {
-  const lines = TRAIT_DESC[jp];
-  return lines ? `<div class="small muted" lang="ja">${lines.map((l) => esc(l)).join(' ')}</div>` : '';
+  const detail = TRAIT_DETAIL_BY_JP.get(jp);
+  if (!detail) {
+    const lines = TRAIT_DESC[jp];
+    return lines ? `<div class="small muted" lang="ja">${lines.map((l) => esc(l)).join(' ')}</div>` : '';
+  }
+  const en = traitDescEn(detail.effect);
+  const source = `<div class="small muted" lang="ja">${esc(effectKey(detail.effect))}</div>`;
+  return en ? `<div class="small muted">${esc(en)}</div>${source}` : source;
 }
 
 function traitsBlock(m: Monster): string {
@@ -317,9 +331,10 @@ function traitsBlock(m: Monster): string {
       </div>
     </div>
     <p class="small muted" style="margin:10px 0 0">
-      Trait names and descriptions are the Japanese labels from the source page; the English renderings shown
-      alongside are unofficial and only given for the most common traits. +25 / +50 / +★ are the plus-value
-      thresholds, M / G / Super G the body sizes that unlock the last three traits.
+      Each trait opens its own page, with the English effect first and the reference's Japanese wording underneath.
+      Traits the reference keeps off its own index (the AI-action variants and the small HP-growth bonus) have no
+      page to open. +25 / +50 / +★ are the plus-value thresholds, M / G / Super G the body sizes that unlock the
+      last three traits.
     </p>
   </section>`;
 }
@@ -377,15 +392,12 @@ function skillPointBlock(m: Monster): string {
                     ? `<div class="table-wrap"><table class="data" style="font-size:13px">
             <thead><tr><th class="num">SP</th><th>Learns</th></tr></thead>
             <tbody>${rows
-              .map((r) => {
-                const en = abilityEn(r.name);
-                return `<tr><td class="num">${r.sp}</td><td>${
-                  en ? `<strong>${esc(en)}</strong> <span class="jp">${esc(r.name)}</span>` : `<span lang="ja">${esc(r.name)}</span>`
-                }</td></tr>`;
-              })
+              .map((r) => `<tr><td class="num">${r.sp}</td><td>${skillEntryHtml(r)}</td></tr>`)
               .join('')}</tbody>
           </table></div>
-          <p class="small muted" style="margin:10px 0 0">Skill points needed, in the order the set unlocks them.</p>`
+          <p class="small muted" style="margin:10px 0 0">
+            Skill points needed, in the order the set unlocks them. Each entry opens its ability or trait page.
+          </p>`
         : `<p class="small muted" style="margin:0">No skill-point table recorded for this set.</p>`
     }
   </section>`;

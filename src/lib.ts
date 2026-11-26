@@ -98,6 +98,10 @@ export interface Monster {
 export interface SkillEntry {
   sp: number;
   name: string;
+  /** Page the reference links the entry to, where it links one. */
+  kind?: 'ability' | 'trait';
+  /** Slug of that ability / trait detail page. */
+  slug?: string;
 }
 
 export interface SkillSet {
@@ -274,6 +278,8 @@ export const TRAIT_SP_DESC_EN = rawTraitSpDesc as unknown as Record<string, stri
 
 export const ABILITY_DETAIL_BY_JP = new Map(ABILITY_DETAIL.map((a) => [a.jp, a]));
 export const TRAIT_DETAIL_BY_JP = new Map(TRAIT_DETAIL.map((t) => [t.jp, t]));
+export const ABILITY_DETAIL_BY_SLUG = new Map(ABILITY_DETAIL.map((a) => [a.slug, a]));
+export const TRAIT_DETAIL_BY_SLUG = new Map(TRAIT_DETAIL.map((t) => [t.slug, t]));
 
 /** Effect texts are stored with line breaks; lookups use the single-line form. */
 export function effectKey(text: string): string {
@@ -533,6 +539,14 @@ export function monsterCell(m: Monster): string {
 
 export function sumStats(m: Monster): number {
   return (Object.values(m.stats) as number[]).reduce((a, b) => a + b, 0);
+}
+
+export function abilityHref(jp: string): string {
+  return hashFor(`ability/${encodeURIComponent(jp)}`);
+}
+
+export function traitHref(jp: string): string {
+  return hashFor(`trait/${encodeURIComponent(jp)}`);
 }
 
 export function hashFor(path: string, params?: Record<string, string | undefined>): string {

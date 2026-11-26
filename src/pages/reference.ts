@@ -2,6 +2,7 @@ import type { Page } from '../app';
 import {
   ABILITY_DETAIL,
   ABILITY_DETAIL_BY_JP,
+  ABILITY_DETAIL_BY_SLUG,
   ABILITY_LIST,
   ABILITY_SETS,
   ITEMS,
@@ -13,17 +14,20 @@ import {
   SKILL_BY_JP,
   TRAIT_DETAIL,
   TRAIT_DETAIL_BY_JP,
+  TRAIT_DETAIL_BY_SLUG,
   TRAIT_LIST,
   WEAPONS,
   abilityDesc,
+  abilityHref,
   esc,
   fmt,
   hashFor,
   miniMon,
   traitDesc,
+  traitHref,
   traitSpDesc,
 } from '../lib';
-import type { AbilityEntry, ItemEntry, KeyName, TraitEntry, WeaponEntry } from '../lib';
+import type { AbilityDetail, AbilityEntry, ItemEntry, KeyName, SkillEntry, TraitEntry, WeaponEntry } from '../lib';
 import {
   ITEM_CATEGORY_EN,
   QUEST_EN,
@@ -37,6 +41,7 @@ import {
   familyEn,
   itemEn,
   keyNameEn,
+  noteNumber,
   traitEn,
   weaponEn,
 } from '../i18n';
@@ -73,12 +78,37 @@ function bilingual(en: string, jp: string): string {
   return `<strong>${esc(en)}</strong><div class="jp">${esc(jp)}</div>`;
 }
 
-function abilityHref(jp: string): string {
-  return hashFor(`ability/${encodeURIComponent(jp)}`);
+/** `ジバリア 3DS版：20pt メガンテ` — the entry plus the note about the 3DS table. */
+const VERSION_NOTE = /^(.*?)\s*3DS版：\s*(\S+?)\s*pt\s*(.+)$/;
+
+/** One skill-tree entry, linked to the page the reference points it at. */
+function linkedEntry(name: string, kind?: 'ability' | 'trait', slug?: string): string {
+  let target: { jp: string; href: string } | undefined;
+  if (kind && slug) {
+    const hit = kind === 'trait' ? TRAIT_DETAIL_BY_SLUG.get(slug) : ABILITY_DETAIL_BY_SLUG.get(slug);
+    if (hit) target = { jp: hit.jp, href: kind === 'trait' ? traitHref(hit.jp) : abilityHref(hit.jp) };
+  }
+  if (!target) {
+    const ability = ABILITY_DETAIL_BY_JP.get(name);
+    const trait = TRAIT_DETAIL_BY_JP.get(name);
+    if (ability) target = { jp: ability.jp, href: abilityHref(ability.jp) };
+    else if (trait) target = { jp: trait.jp, href: traitHref(trait.jp) };
+  }
+  const en = abilityEn(name) ?? (target ? traitEn(target.jp) : undefined);
+  const text = en
+    ? `<strong>${esc(en)}</strong> <span class="jp">${esc(name)}</span>`
+    : `<span lang="ja">${esc(name)}</span>`;
+  return target ? `<a href="${target.href}">${text}</a>` : text;
 }
 
-function traitHref(jp: string): string {
-  return hashFor(`trait/${encodeURIComponent(jp)}`);
+/** A skill-point row: English name, Japanese source, link and any 3DS note. */
+export function skillEntryHtml(entry: SkillEntry): string {
+  const note = VERSION_NOTE.exec(entry.name);
+  const head = note ? note[1].trim() : entry.name;
+  const main = linkedEntry(head, entry.kind, entry.slug);
+  if (!note) return main;
+  const alt = linkedEntry(note[3].trim());
+  return `${main}<div class="small muted">3DS version: at ${esc(noteNumber(note[2]))} SP → ${alt}</div>`;
 }
 
 /** Monster from a detail page, linked to its dex record where the name matches. */
@@ -94,6 +124,11 @@ function detailSetLink(s: { jp: string; maxSp?: number }): string {
   return rec
     ? `<a href="${hashFor(`skill/${encodeURIComponent(rec.name)}`)}">${esc(rec.name)}</a> <span class="jp">${esc(s.jp)}</span>${sp}`
     : `<span lang="ja">${esc(s.jp)}</span>${sp}`;
+}
+
+/** `メラ･炎` → `['メラ', '炎']`, the unit the element filter works on. */
+function elementTokens(value: string): string[] {
+  return value.split(/[･・\s]+/).filter(Boolean);
 }
 
 /** `メラ属性` → `Frizz` for the badge on the ability pages. */
@@ -189,6 +224,15 @@ export function renderAbilities(params: URLSearchParams): Page {
     .slice()
     .sort((a, b) => (abilityEn(a.jp) ?? a.jp).localeCompare(abilityEn(b.jp) ?? b.jp));
 
+  // The source writes combined elements as `メラ･炎`; the filter works per token so
+  // “Fire” also finds every Fire spell.
+  const elements = [
+    ...new Set(ABILITY_LIST.flatMap((a) => elementTokens(a.element))),
+  ].sort((a, b) => elementEn(a).localeCompare(elementEn(b)));
+  const ranges = [...new Set(ABILITY_DETAIL.map((d) => d.range).filter(Boolean))].sort((a, b) =>
+    abilityRangeEn(a).localeCompare(abilityRangeEn(b)),
+  );
+
   return {
     title: 'Spells & abilities',
     html: `
@@ -204,18 +248,52 @@ export function renderAbilities(params: URLSearchParams): Page {
           <span class="badge tag-gold">${ABILITY_LIST.filter((a) => a.sp).length} added in SP</span>
         </div>
       </div>
-      <section class="filters">${categoryChips('abilities', [...ABILITY_TYPES], cat)}</section>
+      <section class="filters">
+        ${categoryChips('abilities', [...ABILITY_TYPES], cat)}
+        <div class="filter-row">
+          <span class="label">Search</span>
+          <input id="aSearch" class="field" type="search" placeholder="Name or effect, English or Japanese…" style="flex:1;min-width:240px" />
+          <select id="aSort" class="field">
+            <option value="name">Name (A–Z)</option>
+            <option value="mp">MP cost (low → high)</option>
+            <option value="cap">Damage cap (high → low)</option>
+          </select>
+        </div>
+        <div class="filter-row">
+          <span class="label">Element</span>
+          <select id="aElement" class="field">
+            <option value="">All elements</option>
+            ${elements
+              .map((e) => `<option value="${esc(e)}">${esc(e ? elementEn(e) : 'No element')}</option>`)
+              .join('')}
+          </select>
+          <span class="label">Range</span>
+          <select id="aRange" class="field">
+            <option value="">Any range</option>
+            ${ranges
+              .map((r) => `<option value="${esc(r)}">${esc(abilityRangeEn(r))}</option>`)
+              .join('')}
+          </select>
+          <span class="label">Max MP</span>
+          <input id="aMp" class="field" type="number" min="0" max="180" placeholder="any" style="width:100px" />
+        </div>
+        <div class="filter-row">
+          <label class="small"><input type="checkbox" id="aSp" /> SP only</label>
+          <label class="small"><input type="checkbox" id="aTree" /> In a skill tree</label>
+          <a class="btn ghost" href="#/abilities">Reset</a>
+        </div>
+      </section>
       <div class="result-count">
-        <span>${list.length} abilit${list.length === 1 ? 'y' : 'ies'}</span>
+        <span id="aCount">${list.length} abilit${list.length === 1 ? 'y' : 'ies'}</span>
         <span>Every row opens its own page: MP cost, range, effect, element peers and holders</span>
       </div>
       <div class="table-wrap">
         <table class="data">
           <thead>
-            <tr><th>Ability</th><th>Type</th><th>Checked against</th><th class="num">Cap</th><th>Taught by</th></tr>
+            <tr><th>Ability</th><th>Type</th><th class="num">MP</th><th>Checked against</th><th class="num">Cap</th><th>Taught by</th></tr>
           </thead>
-          <tbody>
-            ${list.map((a) => abilityRow(a)).join('')}
+          <tbody id="aBody">
+            ${list.map((a) => abilityRow(a, ABILITY_DETAIL_BY_JP.get(a.jp))).join('')}
           </tbody>
         </table>
       </div>
@@ -223,26 +301,94 @@ export function renderAbilities(params: URLSearchParams): Page {
         <p>
           <strong>Cap</strong> is the damage ceiling the reference prints for the ability (999 for most physical
           skills, a lower number for spells). “Taught by” counts the skill sets whose skill-point table contains the
-          ability; open one to see the exact SP cost.
+          ability; open one to see the exact SP cost. The search box and the element, range, MP and SP filters work
+          on the list already narrowed by the type chips above.
         </p>
       </div>
     `,
+    mount: () => {
+      const body = document.getElementById('aBody');
+      const count = document.getElementById('aCount');
+      const search = document.getElementById('aSearch') as HTMLInputElement | null;
+      const element = document.getElementById('aElement') as HTMLSelectElement | null;
+      const range = document.getElementById('aRange') as HTMLSelectElement | null;
+      const mp = document.getElementById('aMp') as HTMLInputElement | null;
+      const spOnly = document.getElementById('aSp') as HTMLInputElement | null;
+      const treeOnly = document.getElementById('aTree') as HTMLInputElement | null;
+      const sort = document.getElementById('aSort') as HTMLSelectElement | null;
+      if (!body || !count) return;
+      const rows = Array.from(body.querySelectorAll<HTMLTableRowElement>('[data-ab-row]'));
+
+      const mpOf = (r: HTMLTableRowElement): number =>
+        r.dataset.mp ? Number(r.dataset.mp) : Number.MAX_SAFE_INTEGER;
+      const capOf = (r: HTMLTableRowElement): number =>
+        r.dataset.cap ? Number(r.dataset.cap) : -1;
+      const nameOf = (r: HTMLTableRowElement): string => r.dataset.sortName ?? '';
+
+      const apply = (): void => {
+        const q = (search?.value ?? '').trim().toLowerCase();
+        const maxMp = mp?.value.trim() ? Number(mp.value) : null;
+        const wanted = element?.value ?? '';
+        const wantedRange = range?.value ?? '';
+        const key = sort?.value ?? 'name';
+
+        const ordered = [...rows].sort((a, b) => {
+          if (key === 'mp') return mpOf(a) - mpOf(b) || nameOf(a).localeCompare(nameOf(b));
+          if (key === 'cap') return capOf(b) - capOf(a) || nameOf(a).localeCompare(nameOf(b));
+          return nameOf(a).localeCompare(nameOf(b));
+        });
+        for (const r of ordered) body.appendChild(r);
+
+        let shown = 0;
+        for (const r of rows) {
+          let ok = true;
+          if (q && !(r.dataset.search ?? '').includes(q)) ok = false;
+          if (ok && wanted && !elementTokens(r.dataset.element ?? '').includes(wanted)) ok = false;
+          if (ok && wantedRange && r.dataset.range !== wantedRange) ok = false;
+          if (ok && maxMp !== null && (!r.dataset.mp || Number(r.dataset.mp) > maxMp)) ok = false;
+          if (ok && spOnly?.checked && r.dataset.sp !== '1') ok = false;
+          if (ok && treeOnly?.checked && Number(r.dataset.sets ?? 0) === 0) ok = false;
+          r.hidden = !ok;
+          if (ok) shown += 1;
+        }
+        count.textContent = `${shown} abilit${shown === 1 ? 'y' : 'ies'}`;
+      };
+
+      search?.addEventListener('input', apply);
+      element?.addEventListener('change', apply);
+      range?.addEventListener('change', apply);
+      mp?.addEventListener('input', apply);
+      spOnly?.addEventListener('change', apply);
+      treeOnly?.addEventListener('change', apply);
+      sort?.addEventListener('change', apply);
+    },
   };
 }
 
-function abilityRow(a: AbilityEntry): string {
+function abilityRow(a: AbilityEntry, detail?: AbilityDetail): string {
   const uses = ABILITY_SETS.get(a.jp) ?? [];
-  const detail = ABILITY_DETAIL_BY_JP.get(a.jp);
   const desc = detail ? abilityDesc(detail.effect) : undefined;
   const sets = uses
     .slice(0, 2)
     .map((u) => `<a href="${hashFor(`skill/${encodeURIComponent(u.skill)}`)}">${esc(u.skill)}</a>`)
     .join(', ');
-  return `<tr>
+  const search = [abilityEn(a.jp) ?? '', a.jp, desc ?? '', detail?.effect ?? '']
+    .join(' ')
+    .toLowerCase();
+  return `<tr data-ab-row
+    data-search="${esc(search)}"
+    data-sort-name="${esc((abilityEn(a.jp) ?? a.jp).toLowerCase())}"
+    data-element="${esc(elementTokens(a.element).join(' '))}"
+    data-range="${esc(detail?.range ?? '')}"
+    data-mp="${detail?.mp ?? ''}"
+    data-cap="${a.cap ?? ''}"
+    data-sp="${a.sp ? 1 : 0}"
+    data-sets="${uses.length}">
     <td><a href="${abilityHref(a.jp)}">${bilingual(abilityEn(a.jp) ?? a.jp, a.jp)}</a>${spBadge(a.sp)}${
       desc ? `<div class="small muted">${esc(desc)}</div>` : ''
     }</td>
     <td><span class="badge tag">${esc(a.type)}</span></td>
+    <td class="num">${detail?.mp ?? '—'}</td>
     <td class="small">${a.element ? esc(elementEn(a.element)) : '<span class="muted">—</span>'}</td>
     <td class="num">${a.cap ?? '—'}</td>
     <td class="small muted">${
