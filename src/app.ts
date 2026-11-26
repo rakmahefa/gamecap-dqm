@@ -46,7 +46,7 @@ function buildSidebar(): void {
     sideCard(
       'Synthesis',
       `<ul>
-        <li><a href="#/breeding">Family combinations</a></li>
+        <li><a href="#/breeding">Synthesis calculator</a></li>
         <li><a href="#/monsters?rank=SS">SS-rank recipes</a></li>
         <li><a href="#/monsters?family=%3F%3F%3F">??? family</a></li>
       </ul>`,

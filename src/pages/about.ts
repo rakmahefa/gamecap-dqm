@@ -30,10 +30,11 @@ export function render(): Page {
           <div class="stat"><div class="k">Rank SS</div><div class="v">${ss}</div></div>
         </div>
         <ul style="margin-top:14px">
-          <li><strong>Monster dex</strong> — all ${MONSTERS.length} records with rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, egg pool and special acquisition routes.</li>
+          <li><strong>Monster dex</strong> — all ${MONSTERS.length} records with rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, other-world master’s world, egg pool, rebirth form and special acquisition routes.</li>
           <li><strong>Skill sets</strong> — ${SKILLS.length} sets, each listing every monster that learns it, grouped by rank.</li>
           <li><strong>Reference data</strong> — traits, spells and abilities, items with shop prices, the seven weapon types and forging notes.</li>
           <li><strong>Walkthrough</strong> — seven chapters with key items, towns, dungeons and objectives.</li>
+          <li><strong>Synthesis</strong> — a two-monster rank-value calculator, the ${countBy((m) => (m.breed?.recipes.length ?? 0) > 0)} monsters with a printed special or four-monster recipe, and the rebirth-monster list.</li>
           <li><strong>Egg dex, arena and planning tools</strong> — egg pools by colour, arena cups, a team builder and a stat comparison.</li>
         </ul>
         <p class="small muted" style="margin-bottom:0">${withHabitat} records carry a translated habitat line; the rest are dungeon, boss, egg or synthesis exclusives.</p>

@@ -13,9 +13,35 @@ export interface Obtain {
   where?: string;
   eggs?: ('white' | 'silver' | 'gold' | 'rainbow')[];
   dream?: boolean;
-  master?: string;
+  /** World whose wandering other-world master can be scouted for this monster (他国マスター). */
+  masterWorld?: string;
   alchemy?: 'normal' | 'boss' | 'reward';
   other?: string;
+  /** Rebirth monster (転生モンスター): what it is the rebirth of, and where. */
+  rebirth?: { of: string; where?: string };
+}
+
+export interface BreedIngredient {
+  id?: string;
+  name: string;
+}
+
+export interface BreedRecipe {
+  /** Number of parents the recipe takes: 2 or 4. */
+  size: number;
+  ingredients: BreedIngredient[];
+  /** Set when the page requires any monster of this family as the other parent. */
+  family?: string;
+}
+
+export interface BreedInfo {
+  /** 位階No. — the hidden rank order, identical to the dex order in this data. */
+  rankNo: number;
+  /** True when the monster can be produced by rank synthesis (位階配合). */
+  rankSynth: boolean;
+  /** True when the monster can be produced by a special recipe (特殊配合). */
+  specialSynth: boolean;
+  recipes: BreedRecipe[];
 }
 
 export interface TraitRef {
@@ -52,6 +78,7 @@ export interface Monster {
   resist: (number | null)[];
   /** Only where the source kept the 3DS weapon line. */
   weapons?: string[];
+  breed?: BreedInfo;
 }
 
 export interface SkillEntry {
@@ -227,6 +254,36 @@ export function famBadge(family: string): string {
 
 export function sizeBadge(size: string): string {
   return `<span class="badge size">${esc(size)}</span>`;
+}
+
+export function miniMon(m: Monster): string {
+  return `<a class="mini-mon" href="#/monster/${encodeURIComponent(m.id)}">
+    <img src="${iconSrc(m.icon)}" alt="" width="28" height="28" loading="lazy" />
+    <span>${esc(m.name)}</span>${rankBadge(m.rank)}
+  </a>`;
+}
+
+/** One synthesis recipe as an ingredient list and its result. */
+export function recipeHtml(r: BreedRecipe, result: Monster): string {
+  const counts = new Map<string, { name: string; id?: string; n: number }>();
+  for (const ing of r.ingredients) {
+    const key = ing.id ?? `name:${ing.name}`;
+    const hit = counts.get(key);
+    if (hit) hit.n += 1;
+    else counts.set(key, { name: ing.name, id: ing.id, n: 1 });
+  }
+  const parts = [...counts.values()].map((c) => {
+    const m = c.id ? MONSTER_BY_ID.get(c.id) : undefined;
+    const label = m ? miniMon(m) : `<span class="badge tag">${esc(c.name)}</span>`;
+    return c.n > 1 ? `${label}<span class="muted small">×${c.n}</span>` : label;
+  });
+  if (r.family) parts.push(`<span class="badge fam fam-${r.family === '???' ? 'unknown' : r.family}">any ${esc(r.family)}</span>`);
+  return `<div class="recipe">
+    <div class="recipe-parts">${parts.join('<span class="muted">＋</span>')}</div>
+    <div class="recipe-arrow" aria-hidden="true">↓</div>
+    <div class="recipe-result">${miniMon(result)}</div>
+    <div class="small muted">${r.size === 4 ? 'Four-monster recipe' : 'Two-monster recipe'}</div>
+  </div>`;
 }
 
 export function monsterCell(m: Monster): string {

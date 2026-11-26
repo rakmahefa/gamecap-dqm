@@ -64,17 +64,39 @@ LOC={
 '転生':'rebirth','宝箱':'treasure chest','宝箱がある行き止まりの場所':'dead end with a chest','合体':'fuses','倒して':'defeat and',
 '戻ってくると出現':'return to spawn','戦闘中に召喚':'summons during battle','休み':'rest','いない状態にする':'so it is absent',
 '出た':'leaving','の島':'island','には出現しない':'does not appear in','のみ':'only','階':'F','地下':'B','・':'-','、':', ',
+'あたり':'area','への道':'path to','の東':'east of','の西':'west of','の南':'south of','の北':'north of',
+'村':'Village','南側':'south side','北側':'north side','東側':'east side','西側':'west side','側':'side','中央':'centre',
+'の':'','を':'',
+'入口前':'in front of the entrance','海上':'on the sea','から出た':'off','町':'town','周辺':'area',
+'町の西側':'west side of town','あたりに出現':'appears around','あたりで':'in the area,','に戻ってくると出現':'return to spawn',
+'を倒していると':'after defeating','ていると':'after defeating','に出現':'spawns','の中央':'centre of','広い場所':'open area',
 }
 def tr_loc(s):
     s=html.unescape(s)
     if not s or s=='なし': return None
     s=re.sub(r'[（(]([^）)]*)[）)]', lambda m:' ('+m.group(1)+')', s)
+    s=re.sub(r'(\d+)\s*階', r'\1F', s)
     keys=sorted(LOC, key=len, reverse=True)
     for k in keys: s=s.replace(k, ' '+LOC[k]+' ')
     s=s.replace('：',': ').replace('（','(').replace('）',')').replace('　',' ')
     s=re.sub(r'\s+',' ',s).strip(' :,-')
+    s=re.sub(r'\s*:\s*', ': ', s)
+    s=re.sub(r'\(\s*', '(', s)
+    s=re.sub(r'\s*\)', ')', s)
+    s=re.sub(r'\s*:\s*\)', ')', s)
+    s=re.sub(r'\s+,', ',', s)
+    s=s.strip(' :,-')
     if re.search(r'[\u3040-\u30ff\u4e00-\u9fff]', s): return None
     return s
+
+def en_names(s, within):
+    """Replace monster names inside a location line with their English rendering.
+    Only names that occur in the line are touched; longest first so a name that
+    contains another one is replaced as a whole."""
+    for jp in sorted(within, key=len, reverse=True):
+        if jp in s: s=s.replace(jp, within[jp])
+    return s
+REBIRTH_RE=re.compile(r'【(.+?)の転生】')
 def parse_obtain(o):
     p=[x.strip() for x in (o or '').split('|') if x.strip()]
     d={}
@@ -82,14 +104,29 @@ def parse_obtain(o):
         if t in ('場所','タマゴ','他国マスター','カメハの不思議な冒険隊','錬金カギ出現','その他') and i+1<len(p):
             d[t]=p[i+1]
     out={}
-    w=tr_loc(d.get('場所',''))
-    if w: out['where']=w
+    place=html.unescape(d.get('場所',''))
+    rb=REBIRTH_RE.search(place)
+    if rb:
+        of=names.get(rb.group(1), rb.group(1))
+        out['rebirth']={'of':of}
+        # The 転生 tag sits inside the habitat line (before or after it); drop it
+        # so only the actual place and its condition remain.
+        place=REBIRTH_RE.sub('', place)
+        place=re.sub(r'[（(]\s*[:：]?\s*[）)]', '', place)
+        # The line names the 転生元 monster ("after defeating X"); translate it too.
+        place=en_names(place, {k:v for k,v in names.items() if k in place})
+    w=tr_loc(place)
+    if w:
+        out['where']=w
+        if rb: out['rebirth']['where']=w
     egg=d.get('タマゴ','なし')
     if egg and egg!='なし':
         out['eggs']=[c for c,jp in (('white','白'),('silver','銀'),('gold','金'),('rainbow','虹')) if jp in egg]
         out['dream']='夢見るタマゴ' in egg
+    # 他国マスター holds the world whose wandering master can be scouted for
+    # this monster, not a monster name.
     m=d.get('他国マスター','なし')
-    if m and m!='なし': out['master']=tr_loc(m) or 'Other-world master'
+    if m and m!='なし': out['masterWorld']=tr_loc(m) or m
     a=d.get('錬金カギ出現','なし')
     if a and a!='なし':
         out['alchemy']={'通常出現':'normal','ボス出現':'boss','報酬入手':'reward'}.get(a)
@@ -219,6 +256,50 @@ def parse_resist(resist):
             found[t]=RESIST_LEVELS.index(val) if val in RESIST_LEVELS else None
     return [found.get(k) for k in RESIST_KEYS]
 
+def parse_recipes(resist):
+    """Special synthesis recipes recorded on the page of the monster they create.
+    A recipe is a tree of one, two or four named parents plus an optional
+    family requirement (種族系統配合), e.g. リザードキッズ × any Zombie-family
+    monster → アルゴリザード. Only tokens the page actually prints are kept."""
+    out=[]
+    a=resist.find('このモンスターを作る|')
+    if a<0: return out
+    b=resist.find('|位階配合|位階配合', a)
+    seg=resist[a+len('このモンスターを作る|'):b if b>a else a+4000]
+    for chain in re.split(r'親の配合元系図を見る', seg):
+        chain=chain.strip('| ').strip()
+        if not chain.startswith('特殊配合|') or '↓' not in chain: continue
+        left,right=chain.split('↓',1)
+        tok=[x.strip() for x in left.split('|') if x.strip()][1:]
+        ing=[]; fam=None; i=0
+        while i<len(tok):
+            if i+3<len(tok) and re.fullmatch(r'\[\w+\]',tok[i+1]) and re.fullmatch(r'位階\d+',tok[i+3]):
+                jp=tok[i]
+                ing.append({'id':ID_BY_JP.get(jp),'name':names.get(jp,jp)})
+                i+=4
+            elif tok[i]=='？' and i+2<len(tok) and tok[i+1].endswith('系'):
+                fam=FAM.get(tok[i+1][:-1], tok[i+1][:-1])
+                i+=3
+            else:
+                i+=1
+        if not ing: continue
+        rec={'size':len(ing)+(1 if fam else 0),'ingredients':ing}
+        if fam: rec['family']=fam
+        if rec not in out: out.append(rec)
+    return out
+
+def parse_breeding(resist):
+    """位階No. (which equals dex order), the two 配合 flags and the recipes
+    that produce this monster."""
+    m=re.search(r'位階No\.\s*\|(\d+)',resist)
+    if not m: return None
+    f=re.search(r'配合\s*\|位階\s*\|([^|]*)\|特殊\s*\|([^|]*)',resist)
+    rank_ok, special_ok = (f.group(1).strip(), f.group(2).strip()) if f else ('×','×')
+    return {'rankNo':int(m.group(1)),
+            'rankSynth':rank_ok=='○',
+            'specialSynth':special_ok=='○',
+            'recipes':parse_recipes(resist)}
+
 def parse_weapons(resist):
     """Equippable weapon types, only where the source kept the 3DS weapon line."""
     a=resist.find('装備できる武器'); b=resist.find('モンスター入手',a)
@@ -229,6 +310,9 @@ def parse_weapons(resist):
     return out or None
 
 # learn the vocabulary once, over every record
+ID_BY_JP={}
+for key,v in roster.items():
+    ID_BY_JP.setdefault(v['jp'], re.sub(r'^monst_|\.html$','',key))
 _sections=[trait_parts(v['traits'])[0] for v in det.values() if v.get('traits')]
 TNAMES,TDESC=learn_traits(_sections)
 for v in det.values():
@@ -262,6 +346,8 @@ for key,v in roster.items():
                  'plus':[{'tier':mk,'name':nm} for nm,mk,_ in marked_pairs(plus,PLUS_MARK)],
                  'size':[{'size':mk,'name':nm} for nm,mk,_ in marked_pairs(size,SIZE_MARK)]},
        'resist':parse_resist(d.get('resist',''))}
+    br=parse_breeding(d.get('resist',''))
+    if br: m['breed']=br
     wp=parse_weapons(d.get('resist',''))
     if wp: m['weapons']=wp
     mons.append(m)
@@ -281,6 +367,14 @@ print('skills with SP table',sum(1 for s in sk_out if s['sp']),'/',len(sk_out))
 print('monsters with traits',sum(1 for m in mons if m['traits']['base']),
       'with resist',sum(1 for m in mons if any(x is not None for x in m['resist'])),
       'with weapons',sum(1 for m in mons if 'weapons' in m))
+print('breed: with rank value',sum(1 for m in mons if m.get('breed')),
+      'rank-synth',sum(1 for m in mons if m.get('breed',{}).get('rankSynth')),
+      'special-synth',sum(1 for m in mons if m.get('breed',{}).get('specialSynth')),
+      'with recipes',sum(1 for m in mons if m.get('breed',{}).get('recipes')))
+print('recipes',collections.Counter(r['size'] for m in mons for r in m.get('breed',{}).get('recipes',[])))
+print('rebirth records',sum(1 for m in mons if 'rebirth' in m['obtain']),
+      'with location',sum(1 for m in mons if m['obtain'].get('rebirth',{}).get('where')),
+      'master worlds',sum(1 for m in mons if m['obtain'].get('masterWorld')))
 print('base trait counts',collections.Counter(len(m['traits']['base']) for m in mons))
 print('plus tiers',collections.Counter(p['tier'] for m in mons for p in m['traits']['plus']))
 print('size traits',collections.Counter(p['size'] for m in mons for p in m['traits']['size']))

@@ -16,8 +16,8 @@ working with the network switched off.
 | --- | --- |
 | **Monster dex** | 908 monsters with dex number, rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, egg pool and special acquisition routes |
 | **Filters** | Rank (F→SS), family (8), size (S/M/G/Super G), A–Z index, free-text search, sort by any stat, pagination |
-| **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapons where recorded, skill-point progression, obtain details, shared-family shortcuts, previous/next by dex number, favourites |
-| **Synthesis** | Family-combination table for rank synthesis (位階配合) plus a “what will I get?” family-pair lookup |
+| **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapons where recorded, skill-point progression, rank value (位階No.) and synthesis recipes, obtain details (habitat, other-world master’s world, rebirth form and location), shared-family shortcuts, previous/next by dex number, favourites |
+| **Synthesis** | Two-monster calculator using the rank values (位階配合) with special (特殊配合) and four-monster (4体配合) recipe lookup, the family-combination table, and the rebirth-monster list |
 | **Skill sets** | 261 sets, each listing every monster that learns it, grouped by rank, with the full skill-point → ability progression |
 | **Spells & abilities** | Reference of the established English spell names (Frizz, Sizz, Woosh, Crack, Zap, Zam…) |
 | **Traits** | Body, combat, resistance, support, drawback and plus-value traits |
@@ -27,6 +27,7 @@ working with the network switched off.
 | **Egg dex** | White / silver / gold / rainbow eggs plus the dream eggs, with their hatching pools |
 | **Arena** | Class C/B/A/S cups, kids’ cup and daily events |
 | **Tools** | Three-slot team builder with summed stat caps, and a two-monster stat comparison |
+| **Rebirth monsters** | Every record the source tags as a rebirth monster (転生モンスター), with the monster it is the rebirth of and the recorded location |
 
 ---
 
@@ -105,8 +106,10 @@ python3 build_data.py     # roster.json + detail_0_908.json + name maps → ../s
 - `scrape.py` collects the roster (rank, family, size, stat total, skill set, icon number).
 - `detail2.py` collects per-monster base stats and acquire routes from the individual pages.
 - `name-map-a.json` / `name-map-b.json` hold the Japanese → English name mapping for all 908 monsters.
-- `build_data.py` merges everything, translates habitat strings through a place-name dictionary (≈70 entries) and
-  folds boss skill sets back onto their monster names.
+- `build_data.py` merges everything, translates habitat strings through a place-name dictionary (≈90 entries),
+  substitutes monster names inside location lines, and folds boss skill sets back onto their monster names.
+- The same pass reads the `配合` block of each page: the hidden rank value (位階No.), the 位階配合 / 特殊配合 flags,
+  the special and four-monster recipe trees, and the `他国マスター` world and `転生` tag of the obtain block.
 
 Data is read from the 3DS + SP roster (908 entries). The original Japanese name is kept on every record.
 
@@ -128,9 +131,13 @@ Ranks: F → E → D → C → B → A → S → SS.
   full in-game catalogues.
 - Equippable-weapon flags could not be recovered for most records: the source marks the usable types with styling the
   scrape did not keep, so 20 records (those whose page carries a plain-text weapon line) show them.
-- Synthesis covers the family-combination table and candidate lookup; exact special recipes and the precise
-  rank-value formula are not modelled.
-- Habitat text is present for 190 records (the rest are boss, egg, event or synthesis exclusives).
+- Synthesis is modelled from the scrape: all 908 records carry their rank value (位階No.), 403 are marked as
+  rank-synthesis results and 427 as special-synthesis results. 419 records carry the two- or four-monster recipe the
+  source prints on their page (67 of them four-monster); recipes the page does not print are not inferred.
+- 146 records name the world of an other-world master (他国マスター). 19 records are tagged as rebirth monsters and
+  the source page carries a location line for 15 of them; the four 3DS rebirth monsters without one (Wire Man,
+  Thorn Clubber, Shadow Noble, Queen Moosifer) are shown without a location rather than given a guessed one.
+- Habitat text is present for 257 records (the rest are boss, egg, event or synthesis exclusives).
 
 ---
 

@@ -20,8 +20,10 @@ import {
   hashFor,
   iconSrc,
   isFavourite,
+  miniMon,
   monsterCell,
   rankBadge,
+  recipeHtml,
   replaceHash,
   sizeBadge,
   sortMonsters,
@@ -386,11 +388,44 @@ function skillPointBlock(m: Monster): string {
   </section>`;
 }
 
+function synthesisBlock(m: Monster): string {
+  const b = m.breed;
+  if (!b) return '';
+  const recipes = b.recipes;
+  return `<section class="card">
+    <div class="card-head"><h2>Synthesis</h2><span class="muted small">位階配合 · 特殊配合</span></div>
+    <dl class="dl">
+      <dt>Rank value</dt><dd>${b.rankNo} <span class="muted small">(位階No.)</span></dd>
+      <dt>Rank synthesis</dt><dd>${
+        b.rankSynth
+          ? 'Yes — produceable by the 位階 ladder'
+          : 'No — not a result of the 位階 ladder'
+      }</dd>
+      <dt>Special synthesis</dt><dd>${b.specialSynth ? 'Yes — a recipe produces it' : 'No'}</dd>
+    </dl>
+    ${
+      recipes.length
+        ? `<h3 class="small muted" style="margin:12px 0 8px">Recipes that produce it</h3>
+           ${recipes.map((r) => `<div class="card" style="margin-bottom:10px">${recipeHtml(r, m)}</div>`).join('')}`
+        : `<p class="small muted" style="margin:12px 0 0">The source page records no special recipe for this monster.${
+            b.rankSynth ? ' Use the rank ladder: a same-family pair above its rank value can produce it.' : ''
+          }</p>`
+    }
+    <a class="btn" style="margin-top:12px" href="${hashFor('breeding', { a: m.id })}>Open in the synthesis calculator</a>
+  </section>`;
+}
+
 function obtainBlock(m: Monster): string {
   const o = m.obtain;
   const rows: string[] = [];
+  if (o.rebirth) {
+    const base = MONSTERS.find((x) => x.name === o.rebirth?.of || x.jp === o.rebirth?.of);
+    rows.push(
+      `<dt>Rebirth of</dt><dd>${base ? miniMon(base) : `<strong lang="ja">${esc(o.rebirth.of)}</strong>`}</dd>`,
+    );
+  }
   if (o.where) rows.push(`<dt>Habitat</dt><dd>${esc(o.where)}</dd>`);
-  if (o.master) rows.push(`<dt>Rival master</dt><dd>${esc(o.master)}</dd>`);
+  if (o.masterWorld) rows.push(`<dt>Other-world master</dt><dd>${esc(o.masterWorld)}</dd>`);
   if (o.eggs?.length) {
     const names = o.eggs.map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(', ');
     rows.push(`<dt>Eggs</dt><dd>${o.dream ? 'Dream egg' : 'Egg'} — ${esc(names)}</dd>`);
@@ -467,12 +502,15 @@ export function renderDetail(id: string): Page {
           ${obtainBlock(m)}
           <div class="badge-list" style="margin-top:12px">
             ${m.obtain.eggs?.length ? '<span class="badge tag-gold">Hatchable</span>' : ''}
-            ${m.obtain.master ? '<span class="badge tag">Scout from a rival master</span>' : ''}
+            ${m.obtain.masterWorld ? '<span class="badge tag">Scout from an other-world master</span>' : ''}
+            ${m.obtain.rebirth ? '<span class="badge tag-gold">Rebirth monster</span>' : ''}
             ${m.obtain.alchemy ? '<span class="badge tag">Alchemy key</span>' : ''}
             ${m.family === '???' ? '<span class="badge tag-red">Cannot be scouted</span>' : ''}
           </div>
         </section>
       </div>
+
+      ${synthesisBlock(m)}
 
       ${skillsSection}
 
