@@ -144,11 +144,14 @@ Ranks: F → E → D → C → B → A → S → SS.
 
 **Job `deploy-pages`** (push to `main` only, never on pull requests)
 
-1. downloads the `dqm2-offline-compendium` artifact that `build` just produced (no rebuild),
-2. re-checks the bundle,
-3. adds `.nojekyll` so Pages serves the files untouched,
-4. uploads it as the Pages artifact and deploys it through `actions/deploy-pages`,
-5. publishes the environment URL in the job summary (`github-pages` environment).
+1. queries the repository Pages API first and prints whether a Pages site exists, its URL, build type, source,
+   custom domain and certificate — failing with an explicit message instead of an opaque action error when the
+   repository has no Pages site (or its source is not “GitHub Actions”),
+2. downloads the `dqm2-offline-compendium` artifact that `build` just produced (no rebuild),
+3. re-checks the bundle,
+4. adds `.nojekyll` so Pages serves the files untouched,
+5. uploads it as the Pages artifact and deploys it through `actions/deploy-pages`,
+6. publishes the environment URL in the job summary (`github-pages` environment).
 
 The build uses a relative base (`base: './'`), so the same artifact works at a project-site URL such as
 `https://<user>.github.io/<repo>/` as well as on a custom domain or from `file://`.

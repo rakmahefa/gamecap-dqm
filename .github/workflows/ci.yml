@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
           cache: npm
@@ -52,7 +52,7 @@ jobs:
           echo "bundle size: $(du -sh dist | cut -f1)"
 
       - name: Upload offline build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dqm2-offline-compendium
           path: dist
@@ -75,8 +75,54 @@ jobs:
       group: pages
       cancel-in-progress: false
     steps:
+      - name: Report the GitHub Pages site
+        env:
+          PAGES_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          api="${GITHUB_API_URL:-https://api.github.com}/repos/${GITHUB_REPOSITORY}/pages"
+          body=$(mktemp)
+          status=$(curl -sS -o "$body" -w '%{http_code}' \
+            -H 'Accept: application/vnd.github+json' \
+            -H "Authorization: Bearer ${PAGES_TOKEN}" \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "$api" || echo '000')
+
+          if [ "$status" = "200" ]; then
+            {
+              echo "A GitHub Pages site exists for ${GITHUB_REPOSITORY}:"
+              jq -r '
+                [
+                  "  url:            " + (.html_url // "(none)"),
+                  "  status:         " + (.status // "(unknown)"),
+                  "  build_type:     " + (.build_type // "(unknown)"),
+                  "  source branch:  " + (.source.branch // "(none)"),
+                  "  source path:    " + (.source.path // "(none)"),
+                  "  custom domain:  " + (.cname // "(none)"),
+                  "  https enforced: " + ((.https_enforced // false) | tostring),
+                  "  certificate:    " + (.https_certificate.state // "(none)")
+                ] | .[]
+              ' "$body"
+            } | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "::notice title=Pages site found::${GITHUB_REPOSITORY} has a Pages site; deploying to it."
+            build_type=$(jq -r '.build_type // ""' "$body")
+            if [ "$build_type" != "workflow" ]; then
+              echo "::warning title=Pages source is not GitHub Actions::build_type is '${build_type}', so actions/deploy-pages cannot publish this artifact. Set Settings → Pages → Build and deployment → Source to 'GitHub Actions'."
+            fi
+          elif [ "$status" = "404" ]; then
+            echo "::error title=No GitHub Pages site::GET ${api} returned 404 — ${GITHUB_REPOSITORY} has no Pages site, so actions/configure-pages and actions/deploy-pages have nothing to deploy to. Enable it in Settings → Pages → Build and deployment → Source: 'GitHub Actions' (private repositories also need a plan that includes Pages)."
+            echo "No GitHub Pages site exists for ${GITHUB_REPOSITORY} (API returned 404)." >> "$GITHUB_STEP_SUMMARY"
+            cat "$body"
+            exit 1
+          else
+            echo "::error title=Pages API error::GET ${api} returned HTTP ${status}; the Pages state could not be read."
+            echo "The Pages API returned HTTP ${status} for ${GITHUB_REPOSITORY}." >> "$GITHUB_STEP_SUMMARY"
+            cat "$body"
+            exit 1
+          fi
+
       - name: Download the offline build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: dqm2-offline-compendium
           path: site
@@ -89,17 +135,18 @@ jobs:
           test -f site/offline-assets.json
           echo "publishing $(du -sh site | cut -f1) with $(find site/img/monster -name '*.webp' | wc -l | tr -d ' ') icons"
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
       - name: Disable Jekyll processing
         run: touch site/.nojekyll
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
+          include-hidden-files: true
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
