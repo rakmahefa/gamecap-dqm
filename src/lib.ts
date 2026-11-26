@@ -19,6 +19,8 @@ import rawTraitDetail from './data/trait-detail.json';
 import rawAbilityDesc from './data/i18n-ability-desc.json';
 import rawTraitDescEn from './data/i18n-trait-desc.json';
 import rawTraitSpDesc from './data/i18n-trait-sp-desc.json';
+import rawItemDesc from './data/i18n-item-desc.json';
+import rawWeaponDesc from './data/i18n-weapon-desc.json';
 
 export type Rank = 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
 export type StatKey = 'hp' | 'mp' | 'atk' | 'def' | 'agi' | 'wis';
@@ -275,6 +277,8 @@ export const TRAIT_DETAIL = rawTraitDetail as unknown as TraitDetail[];
 export const ABILITY_DESC_EN = rawAbilityDesc as unknown as Record<string, string>;
 export const TRAIT_DESC_EN = rawTraitDescEn as unknown as Record<string, string>;
 export const TRAIT_SP_DESC_EN = rawTraitSpDesc as unknown as Record<string, string>;
+export const ITEM_DESC_EN = rawItemDesc as unknown as Record<string, string>;
+export const WEAPON_DESC_EN = rawWeaponDesc as unknown as Record<string, string>;
 
 export const ABILITY_DETAIL_BY_JP = new Map(ABILITY_DETAIL.map((a) => [a.jp, a]));
 export const TRAIT_DETAIL_BY_JP = new Map(TRAIT_DETAIL.map((t) => [t.jp, t]));
@@ -296,6 +300,14 @@ export function traitDesc(effect: string): string | undefined {
 
 export function traitSpDesc(effect: string): string | undefined {
   return TRAIT_SP_DESC_EN[effectKey(effect)];
+}
+
+export function itemDesc(effect: string): string | undefined {
+  return ITEM_DESC_EN[effectKey(effect)];
+}
+
+export function weaponDesc(effect: string): string | undefined {
+  return WEAPON_DESC_EN[effectKey(effect)];
 }
 
 /* The monster pages carry the equippable weapon types as CSS state, which the

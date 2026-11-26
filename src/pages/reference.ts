@@ -22,10 +22,12 @@ import {
   esc,
   fmt,
   hashFor,
+  itemDesc,
   miniMon,
   traitDesc,
   traitHref,
   traitSpDesc,
+  weaponDesc,
 } from '../lib';
 import type { AbilityDetail, AbilityEntry, ItemEntry, KeyName, SkillEntry, TraitEntry, WeaponEntry } from '../lib';
 import {
@@ -668,7 +670,7 @@ export function renderItems(params: URLSearchParams): Page {
       <div class="result-count"><span>${list.length} entr${list.length === 1 ? 'y' : 'ies'}</span><span>Prices where the reference records them</span></div>
       <div class="table-wrap">
         <table class="data">
-          <thead><tr><th>Item</th><th>Section</th><th>Effect (source text)</th><th>Where</th><th class="num">Buy</th><th class="num">Sell</th></tr></thead>
+          <thead><tr><th>Item</th><th>Section</th><th>Effect</th><th>Where</th><th class="num">Buy</th><th class="num">Sell</th></tr></thead>
           <tbody>${list.map((i) => itemRow(i)).join('')}</tbody>
         </table>
       </div>
@@ -680,10 +682,15 @@ function itemRow(i: ItemEntry): string {
   const where = i.tags.length
     ? i.tags.map((t) => `<span class="badge size">${esc(TAG_EN[t] ?? t)}</span>`).join(' ')
     : '<span class="muted">—</span>';
+  const desc = itemDesc(i.effect);
   return `<tr>
     <td>${bilingual(itemEn(i.jp), i.jp)}${i.kind === 'material' ? ' <span class="badge tag-gold">Material</span>' : ''}</td>
     <td class="small">${esc(ITEM_CATEGORY_EN[i.category] ?? i.category)}</td>
-    <td class="small muted" lang="ja">${esc(i.effect)}</td>
+    <td class="small">${
+      i.effect
+        ? `${desc ? `<div>${esc(desc)}</div>` : ''}<div class="muted" lang="ja">${esc(i.effect)}</div>`
+        : '<span class="muted">—</span>'
+    }</td>
     <td>${where}</td>
     <td class="num">${i.buy === null ? '—' : `${fmt(i.buy)} G`}</td>
     <td class="num">${i.sell === null ? '—' : `${fmt(i.sell)} G`}</td>
@@ -768,11 +775,16 @@ export function renderWeapons(): Page {
 }
 
 function weaponRow(w: WeaponEntry): string {
+  const desc = weaponDesc(w.effect);
   return `<tr>
     <td><strong>${esc(weaponEn(w.name))}</strong><div class="jp">${esc(w.name)}</div></td>
     <td class="num">${w.atk ?? '—'}</td>
     <td class="num">${w.buy === null ? '—' : fmt(w.buy)}</td>
-    <td class="small muted" lang="ja">${esc(w.effect || '')}</td>
+    <td class="small">${
+      w.effect
+        ? `${desc ? `<div>${esc(desc)}</div>` : ''}<div class="muted" lang="ja">${esc(w.effect)}</div>`
+        : '<span class="muted">—</span>'
+    }</td>
   </tr>`;
 }
 
