@@ -250,10 +250,12 @@ function recipePicker(): string {
     </label>`;
 }
 
+function isRebirth(m: Monster): boolean {
+  return Boolean(m.obtain.rebirth || m.obtain.other === 'Rebirth monster');
+}
+
 function rebirthTable(): string {
-  const list = MONSTERS.filter((m) => m.obtain.other === 'Rebirth monster').sort(
-    (a, b) => (a.no ?? 9999) - (b.no ?? 9999),
-  );
+  const list = MONSTERS.filter(isRebirth).sort((a, b) => (a.no ?? 9999) - (b.no ?? 9999));
   return `<div class="table-wrap">
     <table class="data" style="font-size:13px">
       <thead><tr><th>Rebirth monster</th><th>Rebirth of</th><th>Location</th></tr></thead>
@@ -345,7 +347,7 @@ export function render(params: URLSearchParams): Page {
       </section>
 
       <section class="card">
-        <div class="card-head"><h2>Rebirth monsters</h2><span class="muted small">転生モンスター · ${MONSTERS.filter((m) => m.obtain.other === 'Rebirth monster').length} records</span></div>
+        <div class="card-head"><h2>Rebirth monsters</h2><span class="muted small">転生モンスター · ${MONSTERS.filter(isRebirth).length} records</span></div>
         ${rebirthTable()}
         <p class="small muted" style="margin:12px 0 0">
           A rebirth monster appears where its base monster is defeated under the recorded condition. The source page
