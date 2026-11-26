@@ -40,7 +40,8 @@ npm run preview  # serve the built dist/
 ```
 
 `dist/` is a self-contained static site: copy it to a USB stick or any static host and it runs as-is
-(`file://` works too, since the build uses a relative base).
+(`file://` works too, since the build uses a relative base). On every push to `main` the CI publishes that same
+build to GitHub Pages — see [Continuous integration & Pages deploy](#continuous-integration--pages-deploy).
 
 | Script | Description |
 | --- | --- |
@@ -128,9 +129,11 @@ Ranks: F → E → D → C → B → A → S → SS.
 
 ---
 
-## Continuous integration
+## Continuous integration & Pages deploy
 
-`.github/workflows/ci.yml` runs on every push to `main`, every pull request and manually:
+`.github/workflows/ci.yml` runs on every push to `main`, every pull request and manually.
+
+**Job `build`**
 
 1. `npm ci` with the npm cache,
 2. `npm run typecheck`,
@@ -138,6 +141,29 @@ Ranks: F → E → D → C → B → A → S → SS.
 4. a bundle check (shell, service worker, offline manifest and ≥ 900 icons present),
 5. uploads `dist/` as the **`dqm2-offline-compendium`** artifact (14-day retention) — download it from the workflow
    run to get a ready-to-use offline build.
+
+**Job `deploy-pages`** (push to `main` only, never on pull requests)
+
+1. downloads the `dqm2-offline-compendium` artifact that `build` just produced (no rebuild),
+2. re-checks the bundle,
+3. adds `.nojekyll` so Pages serves the files untouched,
+4. uploads it as the Pages artifact and deploys it through `actions/deploy-pages`,
+5. publishes the environment URL in the job summary (`github-pages` environment).
+
+The build uses a relative base (`base: './'`), so the same artifact works at a project-site URL such as
+`https://<user>.github.io/<repo>/` as well as on a custom domain or from `file://`.
+
+### Enabling the deployment (repository settings)
+
+1. **Settings → Pages → Build and deployment → Source: _GitHub Actions_.** This is the only required setting;
+   do not pick “Deploy from a branch”, the workflow ships its own artifact.
+2. The first run creates the **`github-pages`** environment (Settings → Environments). If that environment has
+   protection rules, allow the `main` branch or remove required reviewers, otherwise the deploy step waits for approval.
+3. Private repositories need a plan that includes Pages (Pro / Team / Enterprise); public repositories get it for free.
+4. Organisation policies must permit Pages publishing for the repository.
+
+Pages serves the site over HTTPS, which the service worker needs — so the published URL is as offline-capable as
+the local build (visit once, then it keeps working with the network off).
 
 ---
 

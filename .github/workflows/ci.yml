@@ -58,3 +58,48 @@ jobs:
           path: dist
           if-no-files-found: error
           retention-days: 14
+
+  deploy-pages:
+    name: Deploy the offline build to GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - name: Download the offline build
+        uses: actions/download-artifact@v4
+        with:
+          name: dqm2-offline-compendium
+          path: site
+
+      - name: Verify the downloaded bundle
+        run: |
+          set -euo pipefail
+          test -f site/index.html
+          test -f site/sw.js
+          test -f site/offline-assets.json
+          echo "publishing $(du -sh site | cut -f1) with $(find site/img/monster -name '*.webp' | wc -l | tr -d ' ') icons"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Disable Jekyll processing
+        run: touch site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
