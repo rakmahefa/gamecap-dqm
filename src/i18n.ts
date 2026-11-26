@@ -17,6 +17,41 @@ export const ITEM_EN = itemMap as Record<string, string>;
 export const WEAPON_EN = weaponMap as Record<string, string>;
 export const KEY_EN = keyMap as Record<string, string>;
 
+/** Ability categories (種類) of the 特技 pages. */
+export const ABILITY_TYPE_EN: Record<string, string> = {
+  呪文: 'Spell',
+  斬撃: 'Slash',
+  体技: 'Skill',
+  息: 'Breath',
+  踊り: 'Dance',
+  他: 'Other',
+};
+
+/** Target range (範囲) as printed on the ability pages. */
+export const ABILITY_RANGE_EN: Record<string, string> = {
+  敵単体: 'One enemy',
+  敵全体: 'All enemies',
+  敵特殊: 'Special target',
+  味方単体: 'One ally',
+  味方全体: 'All allies',
+  自分: 'Self',
+  全体: 'Everyone',
+  敵味方全体: 'All monsters',
+};
+
+export function abilityTypeEn(jp: string): string {
+  return ABILITY_TYPE_EN[jp] ?? jp;
+}
+
+export function abilityRangeEn(jp: string): string {
+  return ABILITY_RANGE_EN[jp] ?? jp;
+}
+
+/** `メラ･炎属性` → `Frizz · Fire` (the source appends 属性 to the element). */
+export function abilityElementEn(value: string): string {
+  return elementEn(value.replace(/属性$/, ''));
+}
+
 /** Japanese family (系統) as written on the key pages. */
 export const FAMILY_EN: Record<string, string> = {
   スライム: 'Slime',

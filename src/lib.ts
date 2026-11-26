@@ -14,6 +14,11 @@ import rawKeyNames from './data/key-names.json';
 import rawArena from './data/arena.json';
 import rawKameha from './data/kameha.json';
 import rawMonsterWeapons from './data/monster-weapons.json';
+import rawAbilityDetail from './data/ability-detail.json';
+import rawTraitDetail from './data/trait-detail.json';
+import rawAbilityDesc from './data/i18n-ability-desc.json';
+import rawTraitDescEn from './data/i18n-trait-desc.json';
+import rawTraitSpDesc from './data/i18n-trait-sp-desc.json';
 
 export type Rank = 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
 export type StatKey = 'hp' | 'mp' | 'atk' | 'def' | 'agi' | 'wis';
@@ -125,6 +130,44 @@ export interface TraitEntry {
   sp: boolean;
 }
 
+/** A monster as the ability / trait detail pages list it. */
+export interface DetailMonster {
+  jp: string;
+  rank: string;
+  family: string;
+  size: string;
+}
+
+/** One ability page of the reference (特技): combat data, element peers,
+ *  the skill sets that teach it and the monsters that know it. */
+export interface AbilityDetail {
+  jp: string;
+  slug: string;
+  typeJp: string;
+  range: string;
+  mp: number | null;
+  capText: string;
+  elementJp: string;
+  effect: string;
+  peers: { jp: string; type: string; element: string }[];
+  sets: { jp: string; maxSp: number }[];
+  monsters: DetailMonster[];
+}
+
+/** One trait page of the reference (特性): the effect, the SP upgrade, the
+ *  monsters that hold it and the new-life builds that pass it on. */
+export interface TraitDetail {
+  jp: string;
+  slug: string;
+  effect: string;
+  spEffect?: string | null;
+  base: DetailMonster[];
+  plus: DetailMonster[];
+  size: DetailMonster[];
+  sets: { jp: string; maxSp: number }[];
+  builds: { rating: string; name: string }[];
+}
+
 export interface ItemEntry {
   jp: string;
   kind: 'item' | 'material';
@@ -221,6 +264,33 @@ export const KEY_REWARDS = rawKeyRewards as unknown as KeyReward[];
 export const KEY_NAMES = rawKeyNames as unknown as KeyName[];
 export const ARENA_DATA = rawArena as unknown as ArenaData;
 export const KAMEHA = rawKameha as unknown as KamehaReward[];
+export const ABILITY_DETAIL = rawAbilityDetail as unknown as AbilityDetail[];
+export const TRAIT_DETAIL = rawTraitDetail as unknown as TraitDetail[];
+
+/** English effect text, keyed by the whitespace-normalised Japanese effect. */
+export const ABILITY_DESC_EN = rawAbilityDesc as unknown as Record<string, string>;
+export const TRAIT_DESC_EN = rawTraitDescEn as unknown as Record<string, string>;
+export const TRAIT_SP_DESC_EN = rawTraitSpDesc as unknown as Record<string, string>;
+
+export const ABILITY_DETAIL_BY_JP = new Map(ABILITY_DETAIL.map((a) => [a.jp, a]));
+export const TRAIT_DETAIL_BY_JP = new Map(TRAIT_DETAIL.map((t) => [t.jp, t]));
+
+/** Effect texts are stored with line breaks; lookups use the single-line form. */
+export function effectKey(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
+export function abilityDesc(effect: string): string | undefined {
+  return ABILITY_DESC_EN[effectKey(effect)];
+}
+
+export function traitDesc(effect: string): string | undefined {
+  return TRAIT_DESC_EN[effectKey(effect)];
+}
+
+export function traitSpDesc(effect: string): string | undefined {
+  return TRAIT_SP_DESC_EN[effectKey(effect)];
+}
 
 /* The monster pages carry the equippable weapon types as CSS state, which the
  * first scrape dropped. `monster-weapons.json` holds them for all 908 records. */
