@@ -16,13 +16,14 @@ working with the network switched off.
 | --- | --- |
 | **Monster dex** | 908 monsters with dex number, rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, egg pool and special acquisition routes |
 | **Filters** | Rank (F→SS), family (8), size (S/M/G/Super G), A–Z index, free-text search, sort by any stat, pagination |
-| **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapons where recorded, skill-point progression, rank value (位階No.) and synthesis recipes, obtain details (habitat, other-world master’s world, rebirth form and location), shared-family shortcuts, previous/next by dex number, favourites |
+| **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapon types (all seven flags recorded), skill-point progression, rank value (位階No.) and synthesis recipes, obtain details (habitat, other-world master’s world, rebirth form and location), shared-family shortcuts, previous/next by dex number, favourites |
 | **Synthesis** | Two-monster calculator using the rank values (位階配合) with special (特殊配合) and four-monster (4体配合) recipe lookup, the family-combination table, and the rebirth-monster list |
-| **Skill sets** | 261 sets, each listing every monster that learns it, grouped by rank, with the full skill-point → ability progression |
-| **Spells & abilities** | Reference of the established English spell names (Frizz, Sizz, Woosh, Crack, Zap, Zam…) |
-| **Traits** | Body, combat, resistance, support, drawback and plus-value traits |
-| **Weapons** | Seven weapon types, shop stock, forging notes |
-| **Items** | Herbs, cures, seeds, scouting meat, eggs and key items with buy/sell prices where known |
+| **Skill sets** | 261 sets, each listing every monster that learns it, grouped by rank, with the full skill-point → ability progression, in English and Japanese |
+| **Spells & abilities** | All 303 abilities of the reference index in unofficial English, with type (spell, slash, skill, breath, dance), the resistance each is checked against, its damage cap, the SP badge and the skill sets that teach it |
+| **Traits** | All 240 traits with their classification (combat, resistance, support, stats, drawback), English name and the Japanese source text; the traits a monster unlocks at +25/+50/+★ stay on its page |
+| **Weapons** | All 110 weapons of the seven types: attack, shop price, effect, where each is sold and which monster drops it; the equippable types of all 908 monsters |
+| **Items** | 180 items and key items plus 75 forging materials, with effects, buy/sell prices and source tags |
+| **Alchemy-key rewards** | The 115 monsters an alchemy-key quest can hand out, by reward rank (SS/S/A/B) |
 | **Walkthrough** | Seven chapters: key item, towns, dungeons, objectives and the monsters recorded in that realm |
 | **Egg dex** | White / silver / gold / rainbow eggs plus the dream eggs, with their hatching pools |
 | **Arena** | Class C/B/A/S cups, kids’ cup and daily events |
@@ -73,11 +74,19 @@ src/
   app.ts                   hash router, sidebar, global search, service-worker registration
   lib.ts                   types, data access, badges, filters, sorting, favourites
   styles.css               design system (manual-style surfaces, wiki tables, rank/family colours)
+  i18n.ts                  Japanese → English term lookups for traits, abilities, items, weapons
   data/
-    monsters.json          908 records incl. traits, resistances and weapons (generated)
+    monsters.json          908 records incl. traits, resistances and weapon flags (generated)
     skills.json            261 skill sets with their SP progression (generated)
     traits.json            192 trait names with their description text (generated)
-    extras.ts              ranks, families, abilities, traits, items, weapons, chapters, eggs, arena
+    abilities.json         303 abilities: type, element, damage cap, SP flag (generated)
+    trait-extra.json       240 traits with classification and source text (generated)
+    items.json             180 items / key items + 75 materials (generated)
+    weapons.json           110 weapons with price, effect, shops and drop sources (generated)
+    key-rewards.json       115 alchemy-key reward monsters by rank (generated)
+    monster-weapons.json   equippable weapon types for all 908 monsters (generated)
+    i18n-*.json            English renderings for every term in the tables above
+    extras.ts              ranks, families, chapters, eggs, arena and the long-form notes
   pages/
     home.ts monsters.ts skills.ts breeding.ts reference.ts chart.ts tools.ts about.ts
 public/
@@ -87,7 +96,8 @@ public/
   offline-assets.json      manifest of every icon, consumed by the service worker
   favicon.svg manifest.webmanifest
 data-source/               extraction + translation pipeline (not shipped in the build)
-  scrape.py detail2.py build_data.py
+  scrape.py detail2.py build_data.py  monsters, skills, traits from the saved roster dump
+  scrape_lists.py                      ability/trait/item/weapon/key indices + weapon flags
   name-map-a.json name-map-b.json      unofficial English name maps
   roster.json detail_0_908.json        raw records scraped from game-cap.com/dqm2
 .github/workflows/ci.yml   typecheck · build · verify offline bundle · upload dist artifact
@@ -100,7 +110,10 @@ data-source/               extraction + translation pipeline (not shipped in the
 The shipped JSON is generated, not hand-edited. From `data-source/`:
 
 ```bash
-python3 build_data.py     # roster.json + detail_0_908.json + name maps → ../src/data/*.json
+python3 build_data.py      # roster.json + detail_0_908.json + name maps → monsters/skills/traits
+python3 scrape_lists.py    # list pages → abilities, trait-extra, items, weapons,
+                           #              key-rewards and the per-monster weapon flags
+                           # (subset: python3 scrape_lists.py weapons keys)
 ```
 
 - `scrape.py` collects the roster (rank, family, size, stat total, skill set, icon number).
@@ -127,10 +140,15 @@ Ranks: F → E → D → C → B → A → S → SS.
 - Monster records (stats, rank, family, size, skill set, obtain data) are complete for all 908 entries.
 - Per-monster traits (with their +25/+50/+★ and M/G/超G tiers), the 30-slot resistance table and the skill-point
   progression of all 261 sets are extracted from the source pages by `data-source/build_data.py`.
-- The **Traits**, **Spells & abilities**, **Items** and **Weapons** pages are still curated reference lists, not the
-  full in-game catalogues.
-- Equippable-weapon flags could not be recovered for most records: the source marks the usable types with styling the
-  scrape did not keep, so 20 records (those whose page carries a plain-text weapon line) show them.
+- The **Traits**, **Spells & abilities**, **Items**, **Weapons** and **Alchemy-key rewards** pages are built from the
+  reference’s own index pages (`data-source/scrape_lists.py`), so their counts match it: 240 traits, 303 abilities,
+  180 items + 75 materials, 110 weapons and 115 reward monsters.
+- Equippable-weapon flags are now read from the `data-dqm2-equip` state of each of the 908 monster pages, so every
+  record shows its seven weapon types instead of the 20 that kept a plain-text line.
+- Effect texts on the traits, items and weapons pages stay in Japanese: they are the reference’s own wording, and
+  every one of them is shown next to an English name rather than rewritten.
+- 205 skill sets of the reference index are still missing from the local data (it carries the 261 sets that a dex
+  monster uses as its signature set). That gap is the next milestone’s target.
 - Synthesis is modelled from the scrape: all 908 records carry their rank value (位階No.), 403 are marked as
   rank-synthesis results and 427 as special-synthesis results. 419 records carry the two- or four-monster recipe the
   source prints on their page (67 of them four-monster); recipes the page does not print are not inferred.

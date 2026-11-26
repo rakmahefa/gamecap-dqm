@@ -58,7 +58,8 @@ function buildSidebar(): void {
         <li><a href="#/abilities">Spells &amp; abilities</a></li>
         <li><a href="#/traits">Traits</a></li>
         <li><a href="#/weapons">Weapons &amp; forging</a></li>
-        <li><a href="#/items">Items</a></li>
+        <li><a href="#/items">Items &amp; materials</a></li>
+        <li><a href="#/key-rewards">Alchemy-key rewards</a></li>
       </ul>`,
     ),
     sideCard(
@@ -131,6 +132,8 @@ function resolve({ segs, params }: Route): Page {
       return reference.renderWeapons();
     case 'abilities':
       return reference.renderAbilities(params);
+    case 'key-rewards':
+      return reference.renderKeyRewards();
     case 'chart':
       return chart.renderChart(second);
     case 'eggs':

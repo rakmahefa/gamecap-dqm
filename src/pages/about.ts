@@ -1,6 +1,6 @@
 import type { Page } from '../app';
 import { SITE_NOTES } from '../data/extras';
-import { MONSTERS, SKILLS, countBy } from '../lib';
+import { ABILITY_LIST, ITEMS, KEY_REWARDS, MONSTERS, SKILLS, TRAIT_LIST, WEAPONS, countBy } from '../lib';
 
 const ICON_COUNT = new Set(MONSTERS.map((m) => m.icon)).size;
 
@@ -26,13 +26,18 @@ export function render(): Page {
         <div class="grid cols-4">
           <div class="stat"><div class="k">Monsters</div><div class="v">${MONSTERS.length}</div></div>
           <div class="stat"><div class="k">Skill sets</div><div class="v">${SKILLS.length}</div></div>
+          <div class="stat"><div class="k">Abilities</div><div class="v">${ABILITY_LIST.length}</div></div>
+          <div class="stat"><div class="k">Traits</div><div class="v">${TRAIT_LIST.length}</div></div>
+          <div class="stat"><div class="k">Items &amp; materials</div><div class="v">${ITEMS.length}</div></div>
+          <div class="stat"><div class="k">Weapons</div><div class="v">${WEAPONS.length}</div></div>
           <div class="stat"><div class="k">Hatchable</div><div class="v">${eggMonsters}</div></div>
           <div class="stat"><div class="k">Rank SS</div><div class="v">${ss}</div></div>
         </div>
         <ul style="margin-top:14px">
           <li><strong>Monster dex</strong> — all ${MONSTERS.length} records with rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, other-world master’s world, egg pool, rebirth form and special acquisition routes.</li>
           <li><strong>Skill sets</strong> — ${SKILLS.length} sets, each listing every monster that learns it, grouped by rank.</li>
-          <li><strong>Reference data</strong> — traits, spells and abilities, items with shop prices, the seven weapon types and forging notes.</li>
+          <li><strong>Reference data</strong> — the full ${TRAIT_LIST.length}-trait index with its classification, ${ABILITY_LIST.length} spells and abilities with type, element and cap, ${ITEMS.length} items, key items and forging materials, and all ${WEAPONS.length} weapons of the seven types with prices and drop sources.</li>
+          <li><strong>Alchemy keys</strong> — the ${KEY_REWARDS.length} reward monsters an alchemy-key quest can hand out, by reward rank.</li>
           <li><strong>Walkthrough</strong> — seven chapters with key items, towns, dungeons and objectives.</li>
           <li><strong>Synthesis</strong> — a two-monster rank-value calculator, the ${countBy((m) => (m.breed?.recipes.length ?? 0) > 0)} monsters with a printed special or four-monster recipe, and the rebirth-monster list.</li>
           <li><strong>Egg dex, arena and planning tools</strong> — egg pools by colour, arena cups, a team builder and a stat comparison.</li>
@@ -54,7 +59,8 @@ export function render(): Page {
         <div class="card-head"><h2>Terminology</h2></div>
         <p>
           The 3DS game was never released in English, so every name here is an <strong>unofficial English
-          rendering</strong>. Well-established Dragon Quest localisations are reused wherever they exist
+          rendering</strong>. Traits, abilities, items and weapons are all translated that way, and the Japanese
+          source term is kept beside each one. Well-established Dragon Quest localisations are reused wherever they exist
           (<em>Slime</em>, <em>Dracky</em>, <em>Frizz</em>, <em>Killing Machine</em>, <em>Dragonlord</em>…); the rest are
           translated or localised in the same style. The original Japanese name (名前) is shown on every monster
           record so you can cross-check it with the Japanese game.

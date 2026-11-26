@@ -1,5 +1,6 @@
 import type { Page } from '../app';
 import { MONSTERS, RANKS, SKILLS, esc, hashFor, iconSrc, rankBadge } from '../lib';
+import { abilityEn } from '../i18n';
 import type { SkillSet } from '../lib';
 
 function findSkill(name: string): SkillSet | undefined {
@@ -122,12 +123,18 @@ export function renderDetail(name: string): Page {
             ? `<div class="table-wrap"><table class="data">
                 <thead><tr><th class="num">SP</th><th>Learns</th></tr></thead>
                 <tbody>${skill.sp
-                  .map((r) => `<tr><td class="num">${r.sp}</td><td lang="ja">${esc(r.name)}</td></tr>`)
+                  .map((r) => {
+                    const en = abilityEn(r.name);
+                    return `<tr><td class="num">${r.sp}</td><td>${
+                      en ? `<strong>${esc(en)}</strong> <span class="jp">${esc(r.name)}</span>` : `<span lang="ja">${esc(r.name)}</span>`
+                    }</td></tr>`;
+                  })
                   .join('')}</tbody>
               </table></div>
               <p class="small muted" style="margin:10px 0 0">
                 Thresholds and ability names are the skill-point table recorded on every monster that learns this
-                set; all of them share the same table.
+                set; all of them share the same table. Names are shown in English with the Japanese source beside
+                them.
               </p>`
             : `<p class="muted small" style="margin:0">No skill-point table recorded for this set.</p>`
         }

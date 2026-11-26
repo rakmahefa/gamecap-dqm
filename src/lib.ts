@@ -5,6 +5,12 @@
 import rawMonsters from './data/monsters.json';
 import rawSkills from './data/skills.json';
 import rawTraitDesc from './data/traits.json';
+import rawAbilities from './data/abilities.json';
+import rawTraitExtra from './data/trait-extra.json';
+import rawItems from './data/items.json';
+import rawWeapons from './data/weapons.json';
+import rawKeyRewards from './data/key-rewards.json';
+import rawMonsterWeapons from './data/monster-weapons.json';
 
 export type Rank = 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
 export type StatKey = 'hp' | 'mp' | 'atk' | 'def' | 'agi' | 'wis';
@@ -94,9 +100,66 @@ export interface SkillSet {
   monsters: { id: string; name: string; rank: Rank }[];
 }
 
+export interface AbilityEntry {
+  jp: string;
+  type: string;
+  element: string;
+  cap: number | null;
+  sp: boolean;
+}
+
+export interface TraitEntry {
+  jp: string;
+  desc: string;
+  cat: string;
+  sp: boolean;
+}
+
+export interface ItemEntry {
+  jp: string;
+  kind: 'item' | 'material';
+  category: string;
+  effect: string;
+  buy: number | null;
+  sell: number | null;
+  tags: string[];
+}
+
+export interface WeaponEntry {
+  name: string;
+  type: string;
+  atk: number | null;
+  effect: string;
+  buy: number | null;
+  sell: number | null;
+  shops?: string[];
+  drops?: string[];
+}
+
+export interface KeyReward {
+  id: string;
+  jp: string;
+  rank: string;
+  family: string;
+  sp: boolean;
+}
+
 export const MONSTERS = rawMonsters as unknown as Monster[];
 export const SKILLS = rawSkills as unknown as SkillSet[];
 export const TRAIT_DESC = rawTraitDesc as unknown as Record<string, string[]>;
+export const ABILITY_LIST = rawAbilities as unknown as AbilityEntry[];
+export const TRAIT_LIST = rawTraitExtra as unknown as TraitEntry[];
+export const ITEMS = rawItems as unknown as ItemEntry[];
+export const WEAPONS = rawWeapons as unknown as WeaponEntry[];
+export const KEY_REWARDS = rawKeyRewards as unknown as KeyReward[];
+
+/* The monster pages carry the equippable weapon types as CSS state, which the
+ * first scrape dropped. `monster-weapons.json` holds them for all 908 records. */
+const MONSTER_WEAPON_FLAGS = rawMonsterWeapons as unknown as Record<string, string[]>;
+for (const m of MONSTERS) {
+  const flags = MONSTER_WEAPON_FLAGS[m.id];
+  if (flags) m.weapons = flags;
+}
 
 /** 30 resistance slots, in the order the source page lists them. */
 export const RESIST_KEYS = [
@@ -193,7 +256,42 @@ export const STAT_LABELS: [StatKey, string][] = [
 ];
 
 export const MONSTER_BY_ID = new Map(MONSTERS.map((m) => [m.id, m]));
+export const MONSTER_BY_JP = new Map(MONSTERS.map((m) => [m.jp, m]));
 export const SKILL_BY_NAME = new Map(SKILLS.map((s) => [s.name, s]));
+
+/** Which skill sets teach a given ability, and at how many skill points. */
+export interface AbilityUse {
+  skill: string;
+  jp: string;
+  sp: number;
+  count: number;
+}
+
+export const ABILITY_SETS = (() => {
+  const map = new Map<string, AbilityUse[]>();
+  for (const set of SKILLS) {
+    for (const entry of set.sp) {
+      const list = map.get(entry.name) ?? [];
+      if (!list.some((u) => u.skill === set.name)) {
+        list.push({ skill: set.name, jp: set.jp, sp: entry.sp, count: set.count });
+      }
+      map.set(entry.name, list);
+    }
+  }
+  return map;
+})();
+
+/** Monsters that can equip a given weapon type. */
+export const MONSTERS_BY_WEAPON = (() => {
+  const map = new Map<string, Monster[]>();
+  for (const w of WEAPON_TYPES) map.set(w, []);
+  for (const m of MONSTERS) {
+    for (const type of m.weapons ?? []) {
+      map.get(type)?.push(m);
+    }
+  }
+  return map;
+})();
 
 export const FAMILY_COLOR: Record<string, string> = {
   Slime: '#5aa9d6',

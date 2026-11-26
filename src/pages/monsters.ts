@@ -12,7 +12,6 @@ import {
   STAT_LABELS,
   STAT_MAX,
   TRAIT_DESC,
-  TRAIT_EN,
   WEAPON_TYPES,
   esc,
   famBadge,
@@ -31,6 +30,7 @@ import {
   toast,
 } from '../lib';
 import type { Monster } from '../lib';
+import { abilityEn, traitEn } from '../i18n';
 
 const PAGE_SIZE = 100;
 
@@ -269,7 +269,7 @@ function statGrid(m: Monster): string {
 /* ------------------------------------------------------- traits / resist / skill points */
 
 function traitLabel(jp: string): string {
-  const en = TRAIT_EN[jp];
+  const en = traitEn(jp);
   return en
     ? `<strong>${esc(en)}</strong> <span class="jp">${esc(jp)}</span>`
     : `<strong lang="ja">${esc(jp)}</strong>`;
@@ -355,13 +355,11 @@ function weaponsBlock(m: Monster): string {
   ).join(' ');
 
   return `<section class="card">
-    <div class="card-head"><h2>Equippable weapons</h2><span class="muted small">装備できる武器</span></div>
+    <div class="card-head"><h2>Equippable weapons</h2><span class="muted small">装備できる武器 · ${owned.length}/${WEAPON_TYPES.length}</span></div>
     ${
       owned.length
         ? `<div class="badge-list">${chips}</div>`
-        : `<p class="small muted" style="margin:0">The source page lists the seven weapon types but marks the
-           ones a monster can use with styling that this scrape did not capture, so the flags are unknown for this
-           record. They are only shown for the 20 records whose source page keeps a plain-text weapon line.</p>`
+        : `<p class="small muted" style="margin:0">This monster cannot equip any of the seven weapon types.</p>`
     }
   </section>`;
 }
@@ -376,10 +374,15 @@ function skillPointBlock(m: Monster): string {
     </div>
     ${
       rows.length
-        ? `<div class="table-wrap"><table class="data" style="font-size:13px">
+                    ? `<div class="table-wrap"><table class="data" style="font-size:13px">
             <thead><tr><th class="num">SP</th><th>Learns</th></tr></thead>
             <tbody>${rows
-              .map((r) => `<tr><td class="num">${r.sp}</td><td lang="ja">${esc(r.name)}</td></tr>`)
+              .map((r) => {
+                const en = abilityEn(r.name);
+                return `<tr><td class="num">${r.sp}</td><td>${
+                  en ? `<strong>${esc(en)}</strong> <span class="jp">${esc(r.name)}</span>` : `<span lang="ja">${esc(r.name)}</span>`
+                }</td></tr>`;
+              })
               .join('')}</tbody>
           </table></div>
           <p class="small muted" style="margin:10px 0 0">Skill points needed, in the order the set unlocks them.</p>`
