@@ -1,0 +1,286 @@
+0001	Deals slash damage to all enemies; stronger the more Demon-family enemies are present.
+0002	Inflicts sleep on all enemies.
+0003	Removes every good and bad effect from all enemies.
+0004	Calls down lightning for heavy skill damage to all enemies.
+0005	A dance that deals Zap-element damage to all enemies.
+0006	Raises the damage of normal attacks against a single enemy.
+0007	Restores the HP of all allies; the flute is played over several rounds.
+0008	Hurls a rock for skill damage to one enemy.
+0009	The grudge of fallen allies deals heavy damage to all enemies; the more allies are down, the stronger it gets.
+0010	A skill that damages all enemies and may also inflict Mind.
+0011	Inflicts Mind on all enemies for one round only.
+0012	Releases will-o'-wisps for heavy skill damage to all enemies.
+0013	Cures the curse of all allies.
+0014	Deals the maximum breath-element damage to all enemies.
+0015	Deals slash damage and may lower Defence by two stages.
+0016	Wind sickles deal skill damage to one enemy.
+0017	Drops a huge boulder for massive skill damage to all enemies.
+0018	All allies reflect breaths.
+0019	Seals the breath attacks of one enemy.
+0020	A skill that hits one enemy 3–7 times in a row with Fire-breath damage.
+0021	Deals heavy breath-element damage to all enemies.
+0022	Deals massive breath-element damage to all enemies.
+0023	Inflicts Mind on one enemy for one round only.
+0024	Deals slash damage to all enemies; enemies further to the left take more.
+0025	Deals slash damage to one enemy, increased by the number of Nature enemies.
+0026	Strikes one enemy at the start of the turn for less than a normal attack.
+0027	Deals maximum Fire-breath damage to all enemies.
+0028	Blades of wind deal heavy skill damage to all enemies.
+0029	Deals Woosh- and Zam-element slash damage.
+0030	Heavy slash damage to Slime, Dragon, Nature and Beast enemies.
+0031	Deals damage equal to the user's missing HP to one random enemy.
+0032	Shakes the ground for heavy skill damage to all enemies.
+0033	Heavy slash damage to one enemy, but the user takes more damage this turn.
+0034	Makes the normal attacks, slashes and some skills of all enemies miss more often.
+0035	All allies reflect breaths.
+0036	Charges on the first turn and deals skill damage on the next.
+0037	Adds one extra action on the next turn.
+0038	May revive every fallen ally on the next round.
+0039	Heavy skill damage to one enemy, but the user is hurt too.
+0040	A flute that raises all allies' Attack over several rounds; the effect ends when the tune does.
+0041	Greatly reduces damage from blockable attacks; usable once per battle.
+0042	Deals slash damage and may lower Attack by two stages.
+0043	A flute that raises all allies' Wisdom over several rounds; the effect ends when the tune does.
+0044	Calls a tsunami for massive skill damage to all enemies.
+0045	Deals Ice-breath damage to all enemies.
+0046	3–7 random slash hits at 30% of a normal attack.
+0047	A torrent of water deals heavy skill damage to all enemies.
+0048	Heavy slash damage to Demon, Zombie, Material and ??? enemies.
+0049	Damages one same-size enemy with more HP than the user; the bigger the HP gap, the more damage.
+0050	Deals the highest tier of skill damage to all enemies.
+0051	Inflicts poison on all enemies.
+0052	Deals slash damage and may also poison.
+0053	Inflicts Mind on one enemy and sets its Defence to 1.
+0054	Slash damage to all enemies, ignoring Substitute, Counterattack and Attack Mirror.
+0055	Deals slash damage and steals an item.
+0056	Deals slash damage and may also inflict sleep.
+0057	A skill that damages all enemies.
+0058	Deals massive Fire-breath damage to all enemies.
+0059	Four random slash hits at about 40% of a normal attack.
+0060	About 1.2× a normal attack as heavy Bang/Jibaria slash damage.
+0061	Raises every stat of all allies at the cost of the user's life.
+0062	Deals Crack- and Ice-element slash damage.
+0063	Heavy Woosh- and Zam-element slash damage.
+0064	Drains MP from one enemy; stronger the higher the user's level.
+0065	Lowers the spell resistance of all enemies.
+0066	A skill that greatly lowers every resistance of all enemies.
+0067	Heavy slash damage to Material monsters; stronger the more there are.
+0068	An electric shock deals skill damage to one enemy.
+0069	Heavy slash damage to Beast monsters; stronger the more there are.
+0070	Inflicts confusion on all enemies.
+0071	Mimics almost any attack received and strikes back with it; acts last.
+0072	A flute that raises all allies' Defence over several rounds; the effect ends when the tune does.
+0073	The mist negates damage from one valid attack.
+0074	Deals skill damage to all enemies.
+0075	Makes the user more likely to evade slashes.
+0076	The user takes every attack in an ally's place, area attacks included.
+0077	Seals Substitute on one enemy.
+0078	Takes one same-size enemy down a few turns later; the user is knocked out too.
+0079	A critical-hit slash against one enemy or ally.
+0080	Restores about 350 of the user's HP.
+0081	Twice a normal attack as heavy slash damage; the user is hurt too.
+0082	Inflicts paralysis on all enemies.
+0083	Restores all allies' MP; the flute is played over several rounds.
+0084	Inflicts one of the status changes the enemy is weak to.
+0085	A skill that deals Zam-element damage to all enemies.
+0086	3–7 hits to all enemies, sometimes raising all allies' Tension by one stage.
+0087	Woosh/Zam damage to all enemies, sometimes raising all allies' Tension by one stage.
+0088	Heavy Sizz- and Zap-element slash damage.
+0089	Deals Bang- and Jibaria-element slash damage.
+0090	Heavy Frizz-element slash damage.
+0091	Maximum Fire-breath damage to all enemies, sometimes with a Mind effect.
+0092	Deals slash damage (massive) to one enemy.
+0093	Slash damage to one enemy, sometimes with an instant-death effect.
+0094	All allies become immune to every attack but cannot move; once per battle.
+0095	Reflects almost every slash.
+0096	Deals slash damage (maximum) to all enemies.
+0097	Heals all allies on the next round for 40% to full HP, at random.
+0098	Raises normal-attack damage on one enemy and acts last; pierces Attack Mirror.
+0099	Bang-element spell damage to all enemies.
+0100	Maximum Bang-element spell damage to all enemies.
+0101	Massive Bang-element spell damage to all enemies.
+0102	Heavy Bang-element spell damage to all enemies.
+0103	Doubles one ally's Wisdom for 4–7 turns.
+0104	Raises all allies' Wisdom ×1.5 for 4–7 turns.
+0105	Maximum Fire- and Ice-breath damage to all enemies.
+0106	Cures confusion for all allies.
+0107	Cures sleep and paralysis for all allies.
+0108	Cures poison and severe poison on one ally.
+0109	Massive Bang/Zap slash damage to all enemies; more at higher levels.
+0110	Massive Bang slash damage to one enemy; more at higher levels.
+0111	Deals slash damage to one enemy and may paralyse.
+0112	Massive Zap-element spell damage to one enemy.
+0113	Massive Bang slash damage to all enemies; more at higher levels.
+0114	Drains MP from random enemies four times in a row and adds it to the user's MP.
+0115	Sizz-element spell damage to all enemies.
+0116	Maximum Sizz-element spell damage to all enemies.
+0117	The highest tier of Zap/Woosh spell damage to all enemies.
+0118	Raises the damage of normal attacks against all enemies.
+0119	Lowers every resistance of one enemy.
+0120	A normal slash against one enemy that may steal gold.
+0121	May revive one fallen ally; higher Wisdom restores more HP.
+0122	Always revives one fallen ally; higher Wisdom restores more HP.
+0123	Instant-death effect on one enemy.
+0124	Instant-death effect on all enemies.
+0125	4–12 random slash hits at a quarter of a normal attack.
+0126	Randomises the turn order.
+0127	A skill that deals Zap-element damage to all enemies.
+0128	Calls hellish lightning for massive skill damage to all enemies.
+0129	Maximum Zap-element spell damage to one enemy.
+0130	Jibaria-element spell damage to all enemies.
+0131	Heavy Jibaria-element spell damage to all enemies.
+0132	Massive Jibaria-element spell damage to all enemies.
+0133	Maximum Jibaria-element spell damage to all enemies.
+0134	Doubles one ally's Defence for 4–7 turns.
+0135	Raises all allies' Defence ×1.5 for 4–7 turns.
+0136	Vanishes to avoid attacks, then deals skill damage to all enemies with the next action.
+0137	Heavy slash damage to Slime monsters; stronger the more there are.
+0138	Knocks out an enemy that used Black Mist or a similar move.
+0139	Heavy slash damage to Zombie monsters; stronger the more there are.
+0140	Slash damage to all enemies; paralysed targets take more.
+0141	Steals one enemy's Tension and adds it to the user's.
+0142	Lowers one enemy's Attack to a quarter for 2–5 turns.
+0143	Halves all enemies' Attack for 2–5 turns.
+0144	Reveals one enemy's stats.
+0145	An 80%-strength slash that also reveals the enemy's stats.
+0146	Deals Zam- and Betan-element slash damage.
+0147	Two hits of the highest Bang/Zam slash damage to all enemies; stronger at higher levels.
+0148	Heavy Zam- and Betan-element slash damage.
+0149	Lets the other allies act right after the fastest ally.
+0150	Swaps stats with one same-size enemy.
+0151	Gives the user's current Tension to all allies; the user's own Tension is cleared.
+0152	Zap-element spell damage to one enemy.
+0153	Nullifies the traits that bring bad effects for all allies.
+0154	Doubles the activation rate of traits with bad effects on all enemies.
+0155	A tornado deals massive skill damage to all enemies.
+0156	Heavy slash damage to Dragon monsters.
+0157	Heavy Zam-element spell damage to one enemy.
+0158	Zam-element spell damage to one enemy.
+0159	Maximum Zam-element spell damage to one enemy.
+0160	Massive Zam-element spell damage to one enemy.
+0161	Heals random allies 2–6 times in a row; higher levels heal more.
+0162	A flute that raises all allies' Agility over several rounds; the effect ends when the tune does.
+0163	Deals slash damage and may also inflict Mind.
+0164	Doubles one ally's Attack for 2–5 turns.
+0165	Raises all allies' Attack ×1.5 for 2–5 turns.
+0166	Doubles all allies' trait activation rate; harmful traits are unchanged.
+0167	Woosh-element spell damage to all enemies.
+0168	Massive Woosh-element spell damage to all enemies.
+0169	Heavy Woosh-element spell damage to all enemies.
+0170	Maximum Woosh-element spell damage to all enemies.
+0171	Cuts Fire- and Ice-breath damage to one ally to a quarter.
+0172	Anything can happen.
+0173	Swaps the enemy party with its stand-by and locks it until the battle ends.
+0174	Heavy Crack-element spell damage to all enemies.
+0175	Crack-element spell damage to one enemy.
+0176	Slash damage to all enemies, sometimes with sleep or confusion.
+0177	Doubles one ally's Agility for 4–7 turns.
+0178	Raises all allies' Agility ×1.5 for 4–7 turns.
+0179	Halves Fire- and Ice-breath damage for all allies.
+0180	Lowers one enemy's Wisdom to a quarter for 4–7 turns.
+0181	Deals slash damage and may lower Wisdom by two stages.
+0182	Heavy Crack/Ice slash damage.
+0183	Deals slash damage and may seal dances.
+0184	Seals Break effects on all enemies.
+0185	Deals slash damage and may seal breath attacks.
+0186	Sets all enemies' trait activation rate to zero; harmful traits are unaffected.
+0187	Massive Sizz-element spell damage to all enemies.
+0188	Heavy Sizz-element spell damage to all enemies.
+0189	Deals damage equal to 1/8 of every enemy's current HP.
+0190	Deals damage equal to 1/4 of one enemy's current HP.
+0191	Greatly restores one ally's HP; higher Wisdom heals more.
+0192	Moderately restores one ally's HP; higher Wisdom heals more.
+0193	Massively restores all allies' HP; higher Wisdom heals more.
+0194	Moderately restores all allies' HP; higher Wisdom heals more.
+0195	Slightly restores one ally's HP; higher Wisdom heals more.
+0196	Deals Zap- and Bang-element slash damage.
+0197	Heavy Zap/Bang slash damage.
+0198	Lowers one enemy's Agility to a quarter for 4–7 turns.
+0199	Deals slash damage and may lower Agility by two stages.
+0200	Halves all enemies' Agility for 4–7 turns.
+0201	Lowers every resistance of all enemies.
+0202	Raises every resistance of all allies.
+0203	Spends all current MP to deal 1.5× the MP spent to all enemies.
+0204	Deals slash damage and may inflict Dazzle.
+0205	Maximum Crack-element spell damage to all enemies.
+0206	Massive Crack-element spell damage to all enemies.
+0207	Deals slash damage and may paralyse.
+0208	Restores about 20% of the user's max MP.
+0209	Halves all enemies' Wisdom for 4–7 turns.
+0210	Reflects almost every spell back at the caster.
+0211	A wall that bounces almost every spell back once for all allies.
+0212	Seals the spells of one enemy.
+0213	Drains MP from one enemy into the user's MP; more at higher levels.
+0214	Seals the spells of all enemies.
+0215	Cuts one enemy's MP by a third of its current MP.
+0216	Gives all of the user's MP to one ally.
+0217	Gives half of the user's MP to one ally.
+0218	Spends all allies' current MP to deal 1.5× the total to all enemies.
+0219	Heals the user for half the slash damage dealt (up to 100).
+0220	Massive Crack spell damage to all enemies, sometimes with a Mind effect.
+0221	Revives the other allies at half HP for the user's life, at a chance.
+0222	May instantly kill all enemies at the cost of the user's life.
+0223	Always deals slash damage to Metal monsters.
+0224	Confuses one enemy.
+0225	Deals slash damage and may confuse.
+0226	Confuses all enemies.
+0227	The highest tier of Frizz/Crack spell damage to one enemy.
+0228	Frizz-element spell damage to one enemy.
+0229	Maximum Frizz-element spell damage to one enemy.
+0230	Massive Frizz-element spell damage to one enemy.
+0231	Heavy Frizz-element spell damage to one enemy.
+0232	Heavy Zap-element spell damage to one enemy.
+0233	Forces the round to end; usable once per battle.
+0234	Puts one enemy to sleep.
+0235	Puts all enemies to sleep.
+0236	Revives the user automatically when an ally falls.
+0237	Lower-Agility monsters act earlier.
+0238	After acting, keeps healing one ally for about 5% of max HP (up to 200).
+0239	Halves all enemies' Defence for 4–7 turns.
+0240	Lowers one enemy's Defence to a quarter for 4–7 turns.
+0241	Instant death to monsters at 1/8 HP or less.
+0242	Deals slash damage and may curse.
+0243	Seals critical hits and spell criticals on one enemy.
+0244	Reflects all of the enemy's skill attacks.
+0245	Seals skills on one enemy.
+0246	Seals skills on all enemies.
+0247	Fixes one enemy's tactics so it cannot be commanded or changed.
+0248	Fixes all enemies' tactics so they cannot be commanded or changed.
+0249	Attacks one enemy and shaves its maximum HP.
+0250	Removes every negative status change from all allies.
+0251	Makes HP and MP recovery damage everyone instead.
+0252	Curses all enemies.
+0253	Deals the user's missing MP as damage to one random enemy.
+0254	Reflects all of the enemy's spell attacks.
+0255	Deals Sizz- and Jibaria-element slash damage to all enemies.
+0256	Attacks one enemy and shaves its maximum MP.
+0257	Reflects all of the enemy's breath attacks.
+0258	Multiplies the user's Fire/Ice breath damage by 2–2.5 next round.
+0259	Deals four hits in a row to random enemies.
+0260	Reflects all of the enemy's slash attacks.
+0261	Seals slashes on one enemy.
+0262	Seals slashes on all enemies.
+0263	The next action may trigger Star's Wrath, Star's Ward or Star's Gift.
+0264	Raises one ally's Attack, Defence, Agility and Wisdom for several turns.
+0265	Four hits to random enemies; more damage with higher Agility.
+0266	Inflicts death on all enemies.
+0267	A breath that carries a death effect against all enemies.
+0268	A splash of water deals skill damage to one enemy.
+0269	Deals Fire-breath damage to all enemies.
+0270	A pillar of flame deals massive skill damage to all enemies.
+0271	May set the user's and one enemy's HP to 1; likelier at high current HP.
+0272	A vortex of fire deals skill damage to one enemy.
+0273	Prevents everyone from using skills.
+0274	Charges for one turn, then deals maximum Frizz damage and Mind to all enemies.
+0275	Maximum Ice-breath damage to all enemies, sometimes with a Mind effect.
+0276	Heavy slash damage to ??? monsters; stronger the more there are.
+0277	Prevents everyone from using slashes.
+0278	A dance that inflicts Mind on all enemies.
+0279	Reflects all of the enemy's dance attacks.
+0280	Seals dances on all enemies.
+0281	Charges for one turn, then deals maximum slash damage twice to all enemies, hurting the user.
+0282	Damages all enemies and inflicts curse and confusion.
+0283	Raises the damage cap to 9,999 for everyone.
+0284	Likely to miss, but also likely to land a critical hit.
+0285	Prevents everyone from using spells.
+0286	Maximum Fire-breath and Zam damage to all enemies.

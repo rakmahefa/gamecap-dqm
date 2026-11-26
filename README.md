@@ -19,8 +19,8 @@ working with the network switched off.
 | **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapon types (all seven flags recorded), skill-point progression, rank value (位階No.) and synthesis recipes, obtain details (habitat, other-world master’s world, rebirth form and location), shared-family shortcuts, previous/next by dex number, favourites |
 | **Synthesis** | Two-monster calculator using the rank values (位階配合) with special (特殊配合) and four-monster (4体配合) recipe lookup, the family-combination table, and the rebirth-monster list |
 | **Skill sets** | All 425 sets, each with the full skill-point → ability progression in English and Japanese, the monsters that learn it grouped by rank, and the 41 evolution pairs (進化元 → 進化先) |
-| **Spells & abilities** | All 303 abilities of the reference index in unofficial English, with type (spell, slash, skill, breath, dance), the resistance each is checked against, its damage cap, the SP badge and the skill sets that teach it |
-| **Traits** | All 240 traits with their classification (combat, resistance, support, stats, drawback), English name and the Japanese source text; the traits a monster unlocks at +25/+50/+★ stay on its page |
+| **Spells & abilities** | All 303 abilities with an English effect description, type (spell, slash, skill, breath, dance), range, MP cost, the resistance each is checked against, its damage cap, the SP badge, the skill sets that teach it and the monsters that know it; every ability has its own page |
+| **Traits** | All 240 traits with their classification (combat, resistance, support, stats, drawback), an English effect description (base and SP version), the monsters that hold them as a base trait, at a plus value or by body size, the skill sets that grant them and the 3DS new-life builds that pass them on; the traits a monster unlocks at +25/+50/+★ stay on its page |
 | **Weapons** | All 110 weapons of the seven types: attack, shop price, effect, where each is sold and which monster drops it; the equippable types of all 908 monsters |
 | **Items** | 180 items and key items plus 75 forging materials, with effects, buy/sell prices and source tags |
 | **Alchemy keys** | All 76 first halves and 110 second halves of a key name (20 added in SP), each with the title and condition that unlock it, the quest/reward a second half brings and its price where the source prints one |
@@ -86,7 +86,10 @@ src/
     kameha.json            353 Kameha reward monsters with their other routes (generated)
     traits.json            192 trait names with their description text (generated)
     abilities.json         303 abilities: type, element, damage cap, SP flag (generated)
+    ability-detail.json    303 ability pages: range, MP, effect, element peers, sets, holders (generated)
     trait-extra.json       240 traits with classification and source text (generated)
+    trait-detail.json      240 trait pages: effect, SP effect, holders by tier/size, sets, builds (generated)
+    i18n-*-desc.json       English effect descriptions for abilities, traits and SP traits
     items.json             180 items / key items + 75 materials (generated)
     weapons.json           110 weapons with price, effect, shops and drop sources (generated)
     key-rewards.json       115 alchemy-key reward monsters by rank (generated)
@@ -108,6 +111,9 @@ data-source/               extraction + translation pipeline (not shipped in the
                                        rebirth chart + weapon flags
   scrape_skills.py                     the 425-set skill index with holders and evolutions
   scrape_guides.py                     arena cups + endurance rewards, Kameha reward list
+  scrape_details.py                    per-ability and per-trait pages (range, MP, effect, peers, holders)
+  translate_details.py                 merges desc-*.txt / desc-*.en.txt into i18n-*-desc.json
+  desc-abilities*.txt desc-traits*.txt numbered Japanese effect texts and their English renderings
   name-map-a.json name-map-b.json      unofficial English name maps
   roster.json detail_0_908.json        raw records scraped from game-cap.com/dqm2
 .github/workflows/ci.yml   typecheck · build · verify offline bundle · upload dist artifact
@@ -127,6 +133,9 @@ python3 scrape_lists.py    # list pages → abilities, trait-extra, items, weapo
 python3 scrape_skills.py   # skilllist + skill_*.html → all 425 sets, their holders, SP tables
                            #              and evolution links, merged into skills.json
 python3 scrape_guides.py   # chart/c,b,a,s + kachinuki + Kameha → arena.json, kameha.json
+python3 scrape_details.py  # tokugi_*.html + tokusei_*.html → ability-detail.json, trait-detail.json
+python3 translate_details.py  # desc-*.en.txt → i18n-ability-desc.json, i18n-trait-desc.json,
+                              #               i18n-trait-sp-desc.json
 ```
 
 - `scrape.py` collects the roster (rank, family, size, stat total, skill set, icon number).
@@ -159,8 +168,12 @@ Ranks: F → E → D → C → B → A → S → SS.
   180 items + 75 materials, 110 weapons and 115 reward monsters.
 - Equippable-weapon flags are now read from the `data-dqm2-equip` state of each of the 908 monster pages, so every
   record shows its seven weapon types instead of the 20 that kept a plain-text line.
-- Effect texts on the traits, items and weapons pages stay in Japanese: they are the reference’s own wording, and
-  every one of them is shown next to an English name rather than rewritten.
+- Ability and trait effects are translated (303 abilities, 240 traits and their 162 SP versions), with the Japanese
+  source text kept underneath. Effect texts on the **items** and **weapons** pages stay in Japanese: they are the
+  reference’s own wording and are shown next to an English name rather than rewritten.
+- Every ability and trait row opens its own page with the reference’s full record: range, MP cost, effect, element
+  peers, teaching skill sets and holders (abilities); base / plus-value / size holders, SP effect, granting sets and
+  new-life builds (traits).
 - The skill index is complete: all 425 sets of the reference, the 41 evolution pairs and the sets that no dex
   monster holds (crest sets, evolved sets and the job sets).
 - The alchemy-key name index is complete too: 76 first halves, 110 second halves (20 of them SP-only), with the

@@ -1,0 +1,162 @@
+0001	At the start of battle, may freeze an enemy with intimidation; an enemy frozen this way also loses two stages of Tension.
+0002	At the start of battle, may use Fizzle; this Fizzle lands more easily.
+0003	During battle, may automatically unleash Freezing Wave; this triggers more often.
+0004	At the start of battle, may charm an enemy so it cannot move; this charm lands more easily.
+0005	At the start of battle, may raise all allies' Tension; when it triggers, all allies' Attack also rises.
+0006	At the start of battle, its Wisdom may rise or fall a great deal.
+0007	Sometimes takes almost every attack in an ally's place; this triggers more often.
+0008	When its Tension rises, may restore a little HP; if its Tension is at three stages or more, it restores a lot of HP instead.
+0009	While confused, its Tension rises two stages at the start of the round and it attacks enemies with Demon Slash.
+0010	When a mist skill activates, extends that effect by two turns.
+0011	May survive fatal damage with half of the HP it had before the blow.
+0012	Skills that confuse land much more easily; no effect on enemies immune to confusion.
+0013	May confuse the enemy it attacks; it deals a little more damage to confused enemies.
+0014	If it is the only one with this trait, its Defence rises a little; fallen allies bring many kinds of good luck according to their number.
+0015	When an enemy inflicts a status ailment on it, that enemy gets the same ailment; its own ailment may also be cured.
+0016	MP costs are doubled, but the MP spent may be restored.
+0017	Raises the damage dealt by allies a great deal but lowers its own a great deal; inactive when it is alone in the party.
+0018	At the start of battle, its Agility may rise or fall a great deal.
+0019	Running into a monster from behind always lands the pre-emptive attack; running into it from any other side may also succeed.
+0020	While paralysed, may paralyse enemies that attack it directly, taking no damage and reflecting half of the damage it would have taken; its paralysis is then cured.
+0021	When it evades an attack, its Attack and Agility rise sharply at the start of the next round.
+0022	At the start of battle, may automatically raise the Tension of enemies and allies alike by mistake.
+0023	Permanently under Attack Mirror; it cannot be removed in any way. Max HP rises a little.
+0024	Permanently under Magic Mirror; it cannot be removed in any way. Max HP rises a little.
+0025	Even when killed, may revive at a small chance; on revival it gains Oomph and Scrapper.
+0026	During battle, may cast Insulate on itself; this triggers more often.
+0027	During battle, may use Shuffle; this triggers more often.
+0028	During battle, may cast Scrapper on itself; this triggers more often.
+0029	During battle, may raise its own Tension; this triggers more often.
+0030	During battle, may cast Oomph on itself; this triggers more often.
+0031	During battle, may cast Accelerate on itself; this triggers more often.
+0032	During battle, may use Rebirth; this triggers more often.
+0033	During battle, may use Underworld Mist; this triggers more often.
+0034	During battle, may use White Mist; this triggers more often.
+0035	During battle, may use Red Mist; this triggers more often.
+0036	During battle, may use Black Mist; this triggers more often.
+0037	May poison enemies that attack it directly; this triggers more often.
+0038	Skills that poison land much more easily; no effect on enemies immune to poison.
+0039	May poison the enemy it attacks; it deals a little more damage to poisoned enemies.
+0040	During battle, may lower all enemies' Tension by two stages; if an enemy is at three stages or more, its Tension is first set to zero and then lowered one more stage.
+0041	Takes a great deal more slash damage, but also deals a great deal more slash damage.
+0042	While asleep, attacks all enemies; the damage of that attack is higher.
+0043	Skills that put enemies to sleep land much more easily; no effect on enemies immune to sleep.
+0044	May put the enemy it attacks to sleep; it deals a little more damage to sleeping enemies.
+0045	When near death, its chance of a critical hit rises greatly.
+0046	When near death, its chance of a spell critical rises greatly.
+0047	While resting for a round, gathers power, raises its own Tension and lowers the Tension of every enemy.
+0048	During battle, may lower all enemies' Tension; when this lowers Tension, all enemies' Agility falls too.
+0049	While it has 80% or more of its max MP, its spells are 1.3× as effective; at full MP they are 1.5× as effective.
+0050	During battle, may use Ward's Mist; this triggers more often.
+0051	During battle, may raise its own Tension by two stages; this triggers more often.
+0052	During battle, may use Magic Barrier; this triggers more often.
+0053	Evades enemy attacks far more easily; it can now evade attacks it could not evade before.
+0054	When revived, restores a fair amount of HP and MP.
+0055	Deals a third of the damage it took to enemies that attack it directly.
+0056	During battle, may automatically unleash Dark Wave; this triggers more often.
+0057	When its Tension rises, may cast Oomph on itself; if its Tension is at three stages or more, it also casts Scrapper.
+0058	At the start of a round, if it will act last, its Wisdom rises greatly.
+0059	When an enemy's Tension rises during battle, may automatically lower all enemies' Tension; when this triggers, all enemies' Defence falls.
+0060	Raises the item drop rate in battle considerably; more with several copies of the trait.
+0061	Ignores enemy evasion and the Dodge Up ability; the skill Dodge Step cannot be ignored.
+0062	Takes half the damage from combo attacks.
+0063	When its HP is high, its luck may turn bad, but the round after bad luck strikes it gets good luck instead.
+0064	Bang skills land much more easily; no effect on enemies immune to Bang.
+0065	Bang effects rise greatly, or their MP cost drops.
+0066	Sometimes dithers and does not act, but when it does nothing its max HP and max MP rise a little.
+0067	When attacked, may counterattack that enemy; it can counter even when the attack misses.
+0068	Deals considerably heavier damage to Mega, Giga and Super Giga body monsters.
+0069	When attacked, may counter that enemy with even more force than usual.
+0070	Takes considerably more damage, but has a 1/2 chance to take none; when damage becomes 0 this way, something lucky may happen.
+0071	Sizz skills land much more easily; no effect on enemies immune to Sizz.
+0072	Sizz effects rise greatly, or their MP cost drops.
+0073	During battle, may glare at an enemy so it cannot move; when it does, all enemies lose one stage of Tension.
+0074	During battle, may cure an ally's poison or paralysis; when it triggers, every ally gains one stage of Tension.
+0075	Earns 40% more gold in battle; more with several copies of the trait.
+0076	Whack skills land much more easily; no effect on enemies immune to Whack.
+0077	May snuff out the life of the enemy it attacks; defeating an enemy this way raises its Tension one stage.
+0078	May make the enemy it attacks rest for one round; it deals a little more damage to resting enemies.
+0079	Jibaria skills land much more easily; no effect on enemies immune to Jibaria.
+0080	Jibaria effects rise greatly, or their MP cost drops.
+0081	Dazzle, Drain and Magic Hack skills land much more easily; no effect on enemies immune to each.
+0082	Deals considerably heavier damage to Small and Standard body monsters.
+0083	May steal Tension from enemies that attack it directly and raise its own; this triggers more often.
+0084	May steal Tension from the enemy it attacks and raise its own; damage rises while its own Tension is one stage or more.
+0085	Takes more damage, but may survive fatal damage with 1 HP left.
+0086	Dance skills' effects rise greatly, or their MP cost drops.
+0087	During battle, may cure an ally's sleep or confusion; when it triggers, every ally gains one stage of Tension.
+0088	Zap skills land much more easily; no effect on enemies immune to Zap.
+0089	Zap effects rise greatly, or their MP cost drops.
+0090	Zam skills land much more easily; no effect on enemies immune to Zam.
+0091	Zam effects rise greatly, or their MP cost drops.
+0092	At the start of odd rounds, if it has not lost HP, it raises its Tension one stage and then casts Oomph and Insulate on itself.
+0093	Woosh skills land much more easily; no effect on enemies immune to Woosh.
+0094	Woosh effects rise greatly, or their MP cost drops.
+0095	If its raised Tension is lowered, it returns to the previous level; once per battle. Until this triggers, it is immune to Tension-lowering effects.
+0096	Down, Sap, Decelerate and Fool skills land much more easily; no effect on enemies immune to each.
+0097	Crack skills land much more easily; no effect on enemies immune to Crack.
+0098	Crack effects rise greatly, or their MP cost drops.
+0099	When hit by a critical attack its Tension rises two stages; it may also survive fatal damage from criticals and magic bursts with 1 HP left; once per battle.
+0100	May paralyse enemies that attack it directly; this triggers more often.
+0101	Breath skills' effects rise greatly, or their MP cost drops.
+0102	During battle, may pressure an enemy so it cannot move; an enemy stopped this way loses one stage of Tension.
+0103	Sometimes wobbles and does not act, but when it does nothing all enemies lose one stage of Tension.
+0104	Betan skills land much more easily; no effect on enemies immune to Betan.
+0105	Betan effects rise greatly, or their MP cost drops.
+0106	Skills that cause a one-round rest land much more easily; no effect on enemies immune to it.
+0107	Skills that paralyse land much more easily; no effect on enemies immune to paralysis.
+0108	May paralyse the enemy it attacks; it deals a little more damage to paralysed enemies.
+0109	May steal MP from enemies that attack it directly with high probability and add it to its own.
+0110	May steal MP from the enemy it attacks and add it to its own; damage rises while its own MP is at half max or less.
+0111	Adds +5 damage against Metal monsters.
+0112	Frizz skills land much more easily; no effect on enemies immune to Frizz.
+0113	Frizz effects rise greatly, or their MP cost drops.
+0114	Evades enemy attacks more easily and lands critical hits more often; at the start of battle it casts Rebirth on itself.
+0115	When its HP is low its luck may turn good; this triggers more often.
+0116	During battle, may infatuate an enemy so it cannot move; an infatuated enemy may also be confused.
+0117	Damage dealt rises considerably for the first three rounds, then falls considerably.
+0118	Allies of the same family as the holder have triple the chance to burn Tension.
+0119	During battle, its Tension may rise while its HP is reduced, and may shoot up when it is near death.
+0120	May survive fatal damage until the end of the round; when this triggers, its Tension rises two stages.
+0121	Triples the chance of a critical hit.
+0122	Deals more damage to enemies that have already acted.
+0123	During battle, may automatically unleash Light Wave; this triggers more often.
+0124	Every skill lands more easily than before, but MP costs are 1.5×.
+0125	At the start of a round, if it will act first, all allies' Attack rises.
+0126	When attacked, sometimes parries it and damages the attacker; this triggers more often.
+0127	Ice-breath skills land much more easily; no effect on enemies immune to Ice breath.
+0128	During battle, may call a blizzard and inflict Dazzle; this Dazzle lands more easily.
+0129	Skills that curse land much more easily; no effect on enemies immune to curses.
+0130	May curse the enemy it attacks; it deals a little more damage to cursed enemies.
+0131	Triples the chance of a spell critical.
+0132	Recovery skills' effects rise greatly, or their MP cost drops.
+0133	Slash skills land much more easily.
+0134	Spell skills land much more easily.
+0135	At the start of battle, its Defence may rise or fall a great deal.
+0136	Spell, slash, skill, breath and dance seals all land much more easily; no effect on enemies immune to each.
+0137	Every skill lands much more easily than before, but MP costs are doubled.
+0138	Sometimes disobeys and does not act, but when it does nothing it casts Oomph and Scrapper on itself.
+0139	At the start of battle, its Attack may rise or fall a great deal.
+0140	When its HP is low, may raise all allies' Tension by four stages; this triggers more often.
+0141	During battle, one of its stats may rise several times; at the start of battle it casts Rebirth on itself.
+0142	When its HP is low its luck improves a lot; this triggers more often.
+0143	During battle, may spend a little HP to raise its Tension; when this triggers, its Attack rises a little.
+0144	When it takes fatal damage, it deals heavy damage to all enemies before dying.
+0145	When defeated, raises its allies' Attack, Defence, Agility and Wisdom considerably.
+0146	When defeated, inflicts various status ailments on the enemy that killed it and may inflict them on one other enemy.
+0147	Skill attacks land much more easily.
+0148	Fire-breath skills land much more easily; no effect on enemies immune to Fire breath.
+0149	Breath skills land much more easily.
+0150	Dance skills land much more easily.
+0151	Attack, Defence, Agility and Wisdom rise greatly as the rounds go by.
+0152	Earns 20% more experience in battle; more with several copies of the trait.
+0153	Restores HP after acting.
+0154	Its MP slowly drains during battle; at 0 MP, every skill and spell costs 1 MP for the rest of that battle.
+0155	Restores MP after acting.
+0156	Deals more damage to enemies of a higher level than itself.
+0157	Every skill lands extremely easily, more than before, but MP costs are 2.5×.
+0158	Misses more often, but a hit that connects may become a critical; criticals are more likely.
+0159	At the start of battle, its max HP may rise or fall a great deal.
+0160	In battle its HP becomes 2× its max, but Attack and Agility drop to a third.
+0161	At the start of battle, its max MP may rise or fall a great deal.
+0162	In battle its MP becomes 4× its max, but Defence and Wisdom drop to a third.

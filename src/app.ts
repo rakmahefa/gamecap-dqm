@@ -141,12 +141,16 @@ function resolve({ segs, params }: Route): Page {
       return skills.renderDetail(second ?? '');
     case 'traits':
       return reference.renderTraits(params);
+    case 'trait':
+      return reference.renderTraitDetail(second ?? '');
     case 'items':
       return reference.renderItems(params);
     case 'weapons':
       return reference.renderWeapons();
     case 'abilities':
       return reference.renderAbilities(params);
+    case 'ability':
+      return reference.renderAbilityDetail(second ?? '');
     case 'keys':
       return reference.renderAlchemyKeys();
     case 'key-rewards':
@@ -180,7 +184,12 @@ function resolve({ segs, params }: Route): Page {
 function setActiveNav(head: string): void {
   document.querySelectorAll<HTMLAnchorElement>('.main-nav a').forEach((a) => {
     const key = a.dataset.nav ?? '';
-    const isActive = key === head || (head === 'monster' && key === 'monsters') || (head === 'skill' && key === 'skills');
+    const isActive =
+      key === head ||
+      (head === 'monster' && key === 'monsters') ||
+      (head === 'skill' && key === 'skills') ||
+      (head === 'ability' && key === 'abilities') ||
+      (head === 'trait' && key === 'traits');
     a.classList.toggle('active', isActive);
   });
   sidebar.querySelectorAll<HTMLAnchorElement>('a').forEach((a) => a.classList.remove('active'));

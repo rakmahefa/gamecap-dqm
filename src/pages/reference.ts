@@ -1,5 +1,7 @@
 import type { Page } from '../app';
 import {
+  ABILITY_DETAIL,
+  ABILITY_DETAIL_BY_JP,
   ABILITY_LIST,
   ABILITY_SETS,
   ITEMS,
@@ -8,12 +10,18 @@ import {
   MONSTERS_BY_WEAPON,
   MONSTER_BY_ID,
   MONSTER_BY_JP,
+  SKILL_BY_JP,
+  TRAIT_DETAIL,
+  TRAIT_DETAIL_BY_JP,
   TRAIT_LIST,
   WEAPONS,
+  abilityDesc,
   esc,
   fmt,
   hashFor,
   miniMon,
+  traitDesc,
+  traitSpDesc,
 } from '../lib';
 import type { AbilityEntry, ItemEntry, KeyName, TraitEntry, WeaponEntry } from '../lib';
 import {
@@ -21,7 +29,10 @@ import {
   QUEST_EN,
   REWARD_EN,
   TAG_EN,
+  abilityElementEn,
   abilityEn,
+  abilityRangeEn,
+  abilityTypeEn,
   elementEn,
   familyEn,
   itemEn,
@@ -60,6 +71,34 @@ function spBadge(sp: boolean): string {
 /** English name with the Japanese source underneath, as used on every table. */
 function bilingual(en: string, jp: string): string {
   return `<strong>${esc(en)}</strong><div class="jp">${esc(jp)}</div>`;
+}
+
+function abilityHref(jp: string): string {
+  return hashFor(`ability/${encodeURIComponent(jp)}`);
+}
+
+function traitHref(jp: string): string {
+  return hashFor(`trait/${encodeURIComponent(jp)}`);
+}
+
+/** Monster from a detail page, linked to its dex record where the name matches. */
+function detailMonsterLink(m: { jp: string }): string {
+  const rec = MONSTER_BY_JP.get(m.jp);
+  return rec ? miniMon(rec) : `<span class="badge tag">${esc(m.jp)}</span>`;
+}
+
+/** Skill set named on a detail page, linked where the index has it. */
+function detailSetLink(s: { jp: string; maxSp?: number }): string {
+  const rec = SKILL_BY_JP.get(s.jp);
+  const sp = s.maxSp === undefined ? '' : `<span class="muted small"> · max ${s.maxSp} SP</span>`;
+  return rec
+    ? `<a href="${hashFor(`skill/${encodeURIComponent(rec.name)}`)}">${esc(rec.name)}</a> <span class="jp">${esc(s.jp)}</span>${sp}`
+    : `<span lang="ja">${esc(s.jp)}</span>${sp}`;
+}
+
+/** `メラ属性` → `Frizz` for the badge on the ability pages. */
+function elementLabel(value: string): string {
+  return value ? abilityElementEn(value) : '—';
 }
 
 /* ------------------------------------------------------------------ traits */
@@ -104,8 +143,10 @@ export function renderTraits(params: URLSearchParams): Page {
       </div>
       <div class="notice" style="margin-top:16px">
         <p>
-          Trait names are unofficial English renderings of the Japanese 特性. The right-hand column is the effect
-          text exactly as the reference prints it, so a rendering can always be checked against the source.
+          Trait names and effects are unofficial English renderings of the Japanese 特性. Every row opens its own
+          page with the full effect (SP version included), the monsters that hold the trait as a base trait, at a
+          plus value or by body size, the skill sets that grant it and the new-life builds that pass it on. The
+          right-hand column keeps the reference’s own wording.
         </p>
       </div>
     `,
@@ -129,8 +170,12 @@ export function renderTraits(params: URLSearchParams): Page {
 }
 
 function traitRow(t: TraitEntry): string {
+  const detail = TRAIT_DETAIL_BY_JP.get(t.jp);
+  const desc = detail ? traitDesc(detail.effect) : undefined;
   return `<tr>
-    <td>${bilingual(traitEn(t.jp) ?? t.jp, t.jp)}${spBadge(t.sp)}</td>
+    <td><a href="${traitHref(t.jp)}">${bilingual(traitEn(t.jp) ?? t.jp, t.jp)}</a>${spBadge(t.sp)}${
+      desc ? `<div class="small muted">${esc(desc)}</div>` : ''
+    }</td>
     <td><span class="badge ${t.cat === 'Drawback' ? 'tag-red' : 'tag'}">${esc(t.cat)}</span></td>
     <td class="small muted" lang="ja">${esc(t.desc.replace(/ \/ /g, ' / '))}</td>
   </tr>`;
@@ -162,7 +207,7 @@ export function renderAbilities(params: URLSearchParams): Page {
       <section class="filters">${categoryChips('abilities', [...ABILITY_TYPES], cat)}</section>
       <div class="result-count">
         <span>${list.length} abilit${list.length === 1 ? 'y' : 'ies'}</span>
-        <span>Names use the established Dragon Quest English spellings where they exist</span>
+        <span>Every row opens its own page: MP cost, range, effect, element peers and holders</span>
       </div>
       <div class="table-wrap">
         <table class="data">
@@ -187,12 +232,16 @@ export function renderAbilities(params: URLSearchParams): Page {
 
 function abilityRow(a: AbilityEntry): string {
   const uses = ABILITY_SETS.get(a.jp) ?? [];
+  const detail = ABILITY_DETAIL_BY_JP.get(a.jp);
+  const desc = detail ? abilityDesc(detail.effect) : undefined;
   const sets = uses
     .slice(0, 2)
     .map((u) => `<a href="${hashFor(`skill/${encodeURIComponent(u.skill)}`)}">${esc(u.skill)}</a>`)
     .join(', ');
   return `<tr>
-    <td>${bilingual(abilityEn(a.jp) ?? a.jp, a.jp)}${spBadge(a.sp)}</td>
+    <td><a href="${abilityHref(a.jp)}">${bilingual(abilityEn(a.jp) ?? a.jp, a.jp)}</a>${spBadge(a.sp)}${
+      desc ? `<div class="small muted">${esc(desc)}</div>` : ''
+    }</td>
     <td><span class="badge tag">${esc(a.type)}</span></td>
     <td class="small">${a.element ? esc(elementEn(a.element)) : '<span class="muted">—</span>'}</td>
     <td class="num">${a.cap ?? '—'}</td>
@@ -202,6 +251,227 @@ function abilityRow(a: AbilityEntry): string {
         : 'Not in a skill tree recorded here'
     }</td>
   </tr>`;
+}
+
+/* --------------------------------------------- ability & trait detail pages */
+
+function statCard(label: string, value: string): string {
+  return `<div class="stat"><div class="k">${esc(label)}</div><div class="v">${value}</div></div>`;
+}
+
+function detailPager(
+  prev: { jp: string } | undefined,
+  next: { jp: string } | undefined,
+  nameOf: (jp: string) => string,
+  hrefOf: (jp: string) => string,
+): string {
+  if (!prev && !next) return '';
+  return `<div class="chapter-list" style="margin-bottom:18px">
+    ${prev ? `<a class="chapter" href="${hrefOf(prev.jp)}"><span class="no">←</span><span><small>Previous</small><b>${esc(nameOf(prev.jp))}</b></span></a>` : ''}
+    ${next ? `<a class="chapter" href="${hrefOf(next.jp)}"><span class="no">→</span><span><small>Next</small><b>${esc(nameOf(next.jp))}</b></span></a>` : ''}
+  </div>`;
+}
+
+export function renderAbilityDetail(jp: string): Page {
+  const d = ABILITY_DETAIL_BY_JP.get(jp);
+  if (!d) {
+    return {
+      title: 'Ability not found',
+      html: `<div class="card"><h1>Ability not found</h1><p>No ability called <code>${esc(jp)}</code> in the reference index.</p><p><a href="#/abilities">Back to spells &amp; abilities</a></p></div>`,
+    };
+  }
+  const index = ABILITY_DETAIL.findIndex((x) => x.jp === jp);
+  const prev = ABILITY_DETAIL[index - 1];
+  const next = ABILITY_DETAIL[index + 1];
+  const entry = ABILITY_LIST.find((a) => a.jp === jp);
+  const en = abilityEn(jp) ?? jp;
+  const desc = abilityDesc(d.effect);
+  const element = elementLabel(d.elementJp);
+  const peers = d.peers.filter((p) => p.jp !== jp);
+
+  return {
+    title: en,
+    html: `
+      <nav class="breadcrumb"><a href="#/">Home</a><span class="sep">/</span><a href="#/abilities">Spells &amp; abilities</a><span class="sep">/</span><span>${esc(en)}</span></nav>
+      <div class="page-head">
+        <h1>${esc(en)}${spBadge(entry?.sp ?? false)}</h1>
+        <div class="jp">${esc(jp)}</div>
+        <div class="meta">
+          <span class="badge tag">${esc(abilityTypeEn(d.typeJp))}</span>
+          <span class="badge tag">${esc(element)}</span>
+          ${d.mp !== null ? `<span class="badge tag">MP ${d.mp}</span>` : ''}
+          ${d.capText && d.capText !== '-' ? `<span class="badge tag">Cap ${esc(d.capText)}</span>` : ''}
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="card-head"><h2>Effect</h2><span class="muted small">効果</span></div>
+        ${desc ? `<p style="margin:0 0 10px">${esc(desc)}</p>` : `<p class="muted small" style="margin:0 0 10px">No English rendering recorded.</p>`}
+        <p class="small muted" lang="ja" style="margin:0">${esc(d.effect)}</p>
+      </section>
+
+      <div class="grid cols-4">
+        ${statCard('Type', esc(abilityTypeEn(d.typeJp)))}
+        ${statCard('Range', esc(d.range ? abilityRangeEn(d.range) : '—'))}
+        ${statCard('MP cost', d.mp === null ? '—' : String(d.mp))}
+        ${statCard('Damage cap', d.capText && d.capText !== '-' ? esc(d.capText) : '—')}
+        ${statCard('Element', esc(element))}
+        ${statCard('Taught by', `<strong>${d.sets.length}</strong> set${d.sets.length === 1 ? '' : 's'}`)}
+        ${statCard('Known by', `<strong>${d.monsters.length}</strong> monster${d.monsters.length === 1 ? '' : 's'}`)}
+        ${statCard('Added', entry?.sp ? 'SP version' : 'Base release')}
+      </div>
+
+      ${
+        peers.length
+          ? `<section class="card">
+              <div class="card-head"><h2>${esc(element)} abilities</h2><span class="muted small">同じ属性の特技</span></div>
+              <div class="table-wrap"><table class="data">
+                <thead><tr><th>Ability</th><th>Type</th><th>Element</th></tr></thead>
+                <tbody>${peers
+                  .map(
+                    (p) => `<tr>
+                      <td>${
+                        ABILITY_DETAIL_BY_JP.has(p.jp)
+                          ? `<a href="${abilityHref(p.jp)}"><strong>${esc(abilityEn(p.jp) ?? p.jp)}</strong></a><div class="jp">${esc(p.jp)}</div>`
+                          : bilingual(abilityEn(p.jp) ?? p.jp, p.jp)
+                      }</td>
+                      <td class="small">${esc(abilityTypeEn(p.type))}</td>
+                      <td class="small">${esc(elementEn(p.element))}</td>
+                    </tr>`,
+                  )
+                  .join('')}</tbody>
+              </table></div>
+            </section>`
+          : ''
+      }
+
+      <section class="card">
+        <div class="card-head"><h2>Skill sets that teach it</h2><span class="muted small">特技を覚えれるスキル · ${d.sets.length}</span></div>
+        ${
+          d.sets.length
+            ? `<div class="table-wrap"><table class="data">
+                <thead><tr><th>Skill set</th><th class="num">Max SP</th></tr></thead>
+                <tbody>${d.sets
+                  .map(
+                    (s) => `<tr><td>${detailSetLink(s)}</td><td class="num">${s.maxSp}</td></tr>`,
+                  )
+                  .join('')}</tbody>
+              </table></div>`
+            : '<p class="muted small" style="margin:0">No skill set in the reference index teaches it.</p>'
+        }
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Monsters that know it</h2><span class="muted small">特技を持つモンスター</span></div>
+        ${
+          d.monsters.length
+            ? `<div class="grid auto">${d.monsters.map(detailMonsterLink).join('')}</div>`
+            : '<p class="muted small" style="margin:0">No dex monster has it innately; it is only learnt from a skill set.</p>'
+        }
+      </section>
+
+      ${detailPager(prev, next, (name) => abilityEn(name) ?? name, abilityHref)}
+    `,
+  };
+}
+
+export function renderTraitDetail(jp: string): Page {
+  const d = TRAIT_DETAIL_BY_JP.get(jp);
+  if (!d) {
+    return {
+      title: 'Trait not found',
+      html: `<div class="card"><h1>Trait not found</h1><p>No trait called <code>${esc(jp)}</code> in the reference index.</p><p><a href="#/traits">Back to traits</a></p></div>`,
+    };
+  }
+  const index = TRAIT_DETAIL.findIndex((x) => x.jp === jp);
+  const prev = TRAIT_DETAIL[index - 1];
+  const next = TRAIT_DETAIL[index + 1];
+  const entry = TRAIT_LIST.find((t) => t.jp === jp);
+  const en = traitEn(jp) ?? jp;
+  const desc = traitDesc(d.effect);
+  const spDesc = d.spEffect ? traitSpDesc(d.spEffect) : undefined;
+  const holders = d.base.length + d.plus.length + d.size.length;
+
+  return {
+    title: en,
+    html: `
+      <nav class="breadcrumb"><a href="#/">Home</a><span class="sep">/</span><a href="#/traits">Traits</a><span class="sep">/</span><span>${esc(en)}</span></nav>
+      <div class="page-head">
+        <h1>${esc(en)}${spBadge(entry?.sp ?? false)}</h1>
+        <div class="jp">${esc(jp)}</div>
+        <div class="meta">
+          ${entry ? `<span class="badge ${entry.cat === 'Drawback' ? 'tag-red' : 'tag'}">${esc(entry.cat)}</span>` : ''}
+          ${d.spEffect ? '<span class="badge tag-gold">SP upgrade</span>' : ''}
+          <span class="badge tag">${holders} holder${holders === 1 ? '' : 's'} recorded</span>
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="card-head"><h2>Effect</h2><span class="muted small">効果</span></div>
+        ${desc ? `<p style="margin:0 0 10px">${esc(desc)}</p>` : `<p class="muted small" style="margin:0 0 10px">No English rendering recorded.</p>`}
+        <p class="small muted" lang="ja" style="margin:0">${esc(d.effect)}</p>
+      </section>
+
+      ${
+        d.spEffect
+          ? `<section class="card">
+              <div class="card-head"><h2>SP trait effect</h2><span class="muted small">SP特性の効果</span></div>
+              ${spDesc ? `<p style="margin:0 0 10px">${esc(spDesc)}</p>` : `<p class="muted small" style="margin:0 0 10px">No English rendering recorded.</p>`}
+              <p class="small muted" lang="ja" style="margin:0">${esc(d.spEffect)}</p>
+              <p class="small muted" style="margin:10px 0 0">In the SP version this trait replaces its base effect with the text above.</p>
+            </section>`
+          : ''
+      }
+
+      <div class="grid cols-4">
+        ${statCard('Classification', entry ? esc(entry.cat) : '—')}
+        ${statCard('Base holders', String(d.base.length))}
+        ${statCard('Plus-value holders', String(d.plus.length))}
+        ${statCard('Size holders', String(d.size.length))}
+      </div>
+
+      ${traitHolderSection('Base trait', '通常で特性を持つモンスター', d.base)}
+      ${traitHolderSection('At a plus value', 'プラス値特性を持つモンスター', d.plus)}
+      ${traitHolderSection('By body size', 'M・G・超G特性を持つモンスター', d.size)}
+
+      <section class="card">
+        <div class="card-head"><h2>Skill sets that grant it</h2><span class="muted small">特性を覚えれるスキル</span></div>
+        ${
+          d.sets.length
+            ? `<div class="table-wrap"><table class="data">
+                <thead><tr><th>Skill set</th><th class="num">Max SP</th></tr></thead>
+                <tbody>${d.sets.map((s) => `<tr><td>${detailSetLink(s)}</td><td class="num">${s.maxSp}</td></tr>`).join('')}</tbody>
+              </table></div>`
+            : '<p class="muted small" style="margin:0">No skill set in the reference index grants it.</p>'
+        }
+      </section>
+
+      ${
+        d.builds.length
+          ? `<section class="card">
+              <div class="card-head"><h2>New-life builds that pass it on</h2><span class="muted small">3DS版：新生配合で使う育成型 · ${d.builds.length}</span></div>
+              <div class="table-wrap"><table class="data">
+                <thead><tr><th class="num">Rating</th><th>Build</th></tr></thead>
+                <tbody>${d.builds
+                  .map((b) => `<tr><td class="num">${esc(b.rating)}</td><td lang="ja">${esc(b.name)}</td></tr>`)
+                  .join('')}</tbody>
+              </table></div>
+              <p class="small muted" style="margin:10px 0 0">Build names are the reference’s Japanese community entries; the rating is the score it prints.</p>
+            </section>`
+          : ''
+      }
+
+      ${detailPager(prev, next, (name) => traitEn(name) ?? name, traitHref)}
+    `,
+  };
+}
+
+function traitHolderSection(title: string, source: string, list: { jp: string }[]): string {
+  if (!list.length) return '';
+  return `<section class="card">
+    <div class="card-head"><h2>${esc(title)}</h2><span class="muted small">${esc(source)} · ${list.length}</span></div>
+    <div class="grid auto">${list.map(detailMonsterLink).join('')}</div>
+  </section>`;
 }
 
 /* ------------------------------------------------------------------- items */
