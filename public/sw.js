@@ -2,7 +2,9 @@
    Precaches the shell and every monster icon, then serves cache-first so the
    whole compendium keeps working with the network switched off. */
 
-const CACHE = 'dqm2-offline-v1';
+/* Bump this whenever the caching strategy changes: `activate` deletes every
+   other cache, which also clears the stale shell left by older versions. */
+const CACHE = 'dqm2-offline-v2';
 const CORE = ['./', './index.html', './offline-assets.json', './img/hero.jpg', './favicon.svg'];
 
 const absolute = (path) => new URL(path, self.registration.scope).toString();
@@ -67,20 +69,40 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
+  // The HTML shell is network-first so a new deployment (which references new
+  // hashed bundles) is picked up as soon as the app is opened online. The
+  // hashed JS/CSS and icons stay cache-first, since their URLs change on every
+  // build and can never be stale.
+  const isShell =
+    req.mode === 'navigate' ||
+    url.pathname.endsWith('/index.html') ||
+    url.pathname.endsWith('/');
+
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);
+
+      if (isShell) {
+        try {
+          const res = await fetch(req, { cache: 'no-cache' });
+          if (res && res.ok) {
+            await cache.put(req, res.clone());
+            await cache.put(absolute('./index.html'), res.clone());
+          }
+          return res;
+        } catch {
+          const fallback =
+            (await cache.match(req)) || (await cache.match(absolute('./index.html')));
+          if (fallback) return fallback;
+          throw new Error('Offline and no cached shell available');
+        }
+      }
+
       const hit = await cache.match(req);
       if (hit) return hit;
-      try {
-        const res = await fetch(req);
-        if (res && res.ok) cache.put(req, res.clone());
-        return res;
-      } catch (err) {
-        const fallback = await cache.match(absolute('./index.html'));
-        if (fallback) return fallback;
-        throw err;
-      }
+      const res = await fetch(req);
+      if (res && res.ok) cache.put(req, res.clone());
+      return res;
     })(),
   );
 });

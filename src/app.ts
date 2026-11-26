@@ -238,7 +238,9 @@ function boot(): void {
 
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(() => {
+      // `updateViaCache: 'none'` bypasses the HTTP cache for sw.js itself, so a
+      // new deployment is detected on the next visit instead of up to 10 min later.
+      navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).catch(() => {
         /* the app still works offline as a cached page bundle */
       });
     });
