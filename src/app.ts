@@ -237,6 +237,19 @@ function boot(): void {
   renderRoute();
 
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    // The worker calls `skipWaiting()` + `clients.claim()`, so a new deployment
+    // takes control while this page is still running the old bundle. Reloading
+    // once on `controllerchange` swaps the page over instead of leaving it
+    // stale until the reader closes the tab. A first install has no previous
+    // controller, so it never reloads.
+    const hadController = Boolean(navigator.serviceWorker.controller);
+    let reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!hadController || reloading) return;
+      reloading = true;
+      location.reload();
+    });
+
     window.addEventListener('load', () => {
       // `updateViaCache: 'none'` bypasses the HTTP cache for sw.js itself, so a
       // new deployment is detected on the next visit instead of up to 10 min later.

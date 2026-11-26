@@ -4,7 +4,7 @@
 
 /* Bump this whenever the caching strategy changes: `activate` deletes every
    other cache, which also clears the stale shell left by older versions. */
-const CACHE = 'dqm2-offline-v2';
+const CACHE = 'dqm2-offline-v3';
 const CORE = ['./', './index.html', './offline-assets.json', './img/hero.jpg', './favicon.svg'];
 
 const absolute = (path) => new URL(path, self.registration.scope).toString();
