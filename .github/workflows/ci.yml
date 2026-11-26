@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Typecheck, build and package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify the offline bundle
+        run: |
+          set -euo pipefail
+          test -f dist/index.html
+          test -f dist/sw.js
+          test -f dist/offline-assets.json
+          test -f dist/manifest.webmanifest
+          grep -q 'assets/index-' dist/index.html
+          icons=$(find dist/img/monster -name '*.webp' | wc -l | tr -d ' ')
+          echo "monster icons in bundle: $icons"
+          test "$icons" -ge 900
+          node -e "const a = require('./dist/offline-assets.json'); if (!Array.isArray(a.icons) || a.icons.length < 900) { console.error('offline manifest incomplete'); process.exit(1); } console.log('offline manifest entries:', a.icons.length);"
+          test "$(find dist/img/monster -name '*.webp' -size 0 | wc -l | tr -d ' ')" = "0"
+          echo "bundle size: $(du -sh dist | cut -f1)"
+
+      - name: Upload offline build
+        uses: actions/upload-artifact@v4
+        with:
+          name: dqm2-offline-compendium
+          path: dist
+          if-no-files-found: error
+          retention-days: 14
