@@ -1,0 +1,17 @@
+{
+  "name": "dqm2-offline-compendium",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Offline companion for Dragon Quest Monsters 2 (3DS): monster dex, skill sets, traits, items and walkthrough with English (unofficial) terminology.",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

@@ -1,0 +1,9082 @@
+{
+"monst_aobachikihei.html": {
+"icon": "079",
+"jp": "あおバチ騎兵",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4865",
+"skill_jp": "ジャミングナイト"
+},
+"monst_akuamarinhoku.html": {
+"icon": "077",
+"jp": "アクアマリンホーク",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5050",
+"skill_jp": "フェザーウインド"
+},
+"monst_animaruzonbi.html": {
+"icon": "048",
+"jp": "アニマルゾンビ",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4956",
+"skill_jp": "ブラックファイター"
+},
+"monst_arugorizado.html": {
+"icon": "050",
+"jp": "アルゴリザード",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "3590",
+"skill_jp": "どくが"
+},
+"monst_antobea.html": {
+"icon": "022",
+"jp": "アントベア",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4936",
+"skill_jp": "けもの道"
+},
+"monst_ieti.html": {
+"icon": "052",
+"jp": "イエティ",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4912",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_itazuramogura.html": {
+"icon": "015",
+"jp": "いたずらもぐら",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4889",
+"skill_jp": "レンジャー"
+},
+"monst_ibaradoragon.html": {
+"icon": "056",
+"jp": "いばらドラゴン",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4884",
+"skill_jp": "どくが"
+},
+"monst_eteponke.html": {
+"icon": "088",
+"jp": "エテポンゲ",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5024",
+"skill_jp": "ため息"
+},
+"monst_eburushido.html": {
+"icon": "035",
+"jp": "エビルシード",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4930",
+"skill_jp": "メタルハンター"
+},
+"monst_emyu.html": {
+"icon": "089",
+"jp": "エミュー",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4957",
+"skill_jp": "ふういんの技"
+},
+"monst_ogarasu.html": {
+"icon": "087",
+"jp": "おおがらす",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5011",
+"skill_jp": "フェザーウインド"
+},
+"monst_okizuchi.html": {
+"icon": "040",
+"jp": "おおきづち",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4820",
+"skill_jp": "ハンター"
+},
+"monst_oniwatori.html": {
+"icon": "072",
+"jp": "おおにわとり",
+"rank": "F",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5352",
+"skill_jp": "ハンター"
+},
+"monst_onezumi.html": {
+"icon": "090",
+"jp": "おおねずみ",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4887",
+"skill_jp": "あらくれ"
+},
+"monst_omedama.html": {
+"icon": "092",
+"jp": "おおめだま",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5013",
+"skill_jp": "ふういん"
+},
+"monst_onikozo.html": {
+"icon": "102",
+"jp": "おにこぞう",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4997",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_obakekinoko.html": {
+"icon": "043",
+"jp": "おばけきのこ",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5012",
+"skill_jp": "アンデッド"
+},
+"monst_obakekyandoru.html": {
+"icon": "007",
+"jp": "おばけキャンドル",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "レッドファイター"
+},
+"monst_kabashira.html": {
+"icon": "062",
+"jp": "カバシラー",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3583",
+"skill_jp": "バギ＆デイン"
+},
+"monst_kamatchi.html": {
+"icon": "078",
+"jp": "かまっち",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4931",
+"skill_jp": "ふういんの技"
+},
+"monst_karakurieggu.html": {
+"icon": "033",
+"jp": "からくりエッグ",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5035",
+"skill_jp": "こうねつガス"
+},
+"monst_gaon.html": {
+"icon": "066",
+"jp": "ガオン",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5057",
+"skill_jp": "えんかい"
+},
+"monst_gappurin.html": {
+"icon": "061",
+"jp": "ガップリン",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4908",
+"skill_jp": "吹雪"
+},
+"monst_gamanian.html": {
+"icon": "082",
+"jp": "ガマニアン",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4910",
+"skill_jp": "死神"
+},
+"monst_kyatapira.html": {
+"icon": "029",
+"jp": "キャタピラー",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5024",
+"skill_jp": "イオ＆ドルマ"
+},
+"monst_kyattofurai.html": {
+"icon": "065",
+"jp": "キャットフライ",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5030",
+"skill_jp": "ふういん"
+},
+"monst_kirikabuobake.html": {
+"icon": "026",
+"jp": "きりかぶおばけ",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4992",
+"skill_jp": "エコロジー"
+},
+"monst_kirikiribatta.html": {
+"icon": "057",
+"jp": "キリキリバッタ",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3662",
+"skill_jp": "むしのしらせ"
+},
+"monst_kushisashitsuinzu.html": {
+"icon": "014",
+"jp": "くしざしツインズ",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5000",
+"skill_jp": "サムライ"
+},
+"monst_guntaiari.html": {
+"icon": "044",
+"jp": "ぐんたいアリ",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "1〜2",
+"total": "3812",
+"skill_jp": "じこぎせい"
+},
+"monst_kosakkushipu.html": {
+"icon": "075",
+"jp": "コサックシープ",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5061",
+"skill_jp": "ナイトメア"
+},
+"monst_kodora.html": {
+"icon": "013",
+"jp": "コドラ",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "4730",
+"skill_jp": "ぼうぎょ"
+},
+"monst_gosuto.html": {
+"icon": "011",
+"jp": "ゴースト",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "3952",
+"skill_jp": "アンデッド"
+},
+"monst_sabotengorudo.html": {
+"icon": "039",
+"jp": "サボテンゴールド",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4920",
+"skill_jp": "メタルハンター"
+},
+"monst_sabotenboru.html": {
+"icon": "038",
+"jp": "サボテンボール",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4890",
+"skill_jp": "むしのしらせ"
+},
+"monst_shainingu.html": {
+"icon": "059",
+"jp": "シャイニング",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4988",
+"skill_jp": "メラ＆イオ"
+},
+"monst_shaman.html": {
+"icon": "067",
+"jp": "シャーマン",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5151",
+"skill_jp": "インスパイア"
+},
+"monst_shimeda.html": {
+"icon": "095",
+"jp": "シーメーダ",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3941",
+"skill_jp": "みずげい"
+},
+"monst_jinmengaeru.html": {
+"icon": "058",
+"jp": "じんめんガエル",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5054",
+"skill_jp": "ＨＰ回復"
+},
+"monst_sukarugaru.html": {
+"icon": "073",
+"jp": "スカルガルー",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4953",
+"skill_jp": "メタルハンター"
+},
+"monst_sukaruraida.html": {
+"icon": "063",
+"jp": "スカルライダー",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4980",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_sumoku.html": {
+"icon": "009",
+"jp": "スモーク",
+"rank": "F",
+"family_jp": "物質",
+"size": "M",
+"ai": "-",
+"total": "6362",
+"skill_jp": "ふういん"
+},
+"monst_sumoruguru.html": {
+"icon": "068",
+"jp": "スモールグール",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "5097",
+"skill_jp": "ＭＰ回復"
+},
+"monst_suraimu.html": {
+"icon": "003",
+"jp": "スライム",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "3684",
+"skill_jp": "スラフォース"
+},
+"monst_suraimutsuri.html": {
+"icon": "036",
+"jp": "スライムツリー",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5032",
+"skill_jp": "ジャミング"
+},
+"monst_suraimufangu.html": {
+"icon": "096",
+"jp": "スライムファング",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "4826",
+"skill_jp": "サムライ"
+},
+"monst_zukkinya.html": {
+"icon": "051",
+"jp": "ズッキーニャ",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5086",
+"skill_jp": "バラエティ"
+},
+"monst_tamagoron.html": {
+"icon": "027",
+"jp": "タマゴロン",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3938",
+"skill_jp": "ヒャド＆ギラ"
+},
+"monst_tamategai.html": {
+"icon": "098",
+"jp": "たまてがい",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "てっぺき"
+},
+"monst_debirupain.html": {
+"icon": "010",
+"jp": "デビルパイン",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4840",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_dendenryu.html": {
+"icon": "071",
+"jp": "デンデン竜",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4890",
+"skill_jp": "あらくれ"
+},
+"monst_togebozu.html": {
+"icon": "041",
+"jp": "とげぼうず",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5050",
+"skill_jp": "ダイナマイト"
+},
+"monst_tosakahebi.html": {
+"icon": "037",
+"jp": "とさかへび",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4750",
+"skill_jp": "バラエティ"
+},
+"monst_doraki.html": {
+"icon": "017",
+"jp": "ドラキー",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3828",
+"skill_jp": "ブラックファイター"
+},
+"monst_doragosuraimu.html": {
+"icon": "080",
+"jp": "ドラゴスライム",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3712",
+"skill_jp": "スラフォース"
+},
+"monst_doragonkizzu.html": {
+"icon": "004",
+"jp": "ドラゴンキッズ",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "3635",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_dorosara.html": {
+"icon": "046",
+"jp": "ドロザラー",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5154",
+"skill_jp": "ジャミング"
+},
+"monst_doroningyo.html": {
+"icon": "023",
+"jp": "どろにんぎょう",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4872",
+"skill_jp": "ダンサー"
+},
+"monst_dororu.html": {
+"icon": "054",
+"jp": "ドロル",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4940",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_naitoipusu.html": {
+"icon": "086",
+"jp": "ナイトウイプス",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5071",
+"skill_jp": "アンデッド"
+},
+"monst_nasubinara.html": {
+"icon": "094",
+"jp": "ナスビナーラ",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3974",
+"skill_jp": "えんかい"
+},
+"monst_nejimakidori.html": {
+"icon": "032",
+"jp": "ネジまきどり",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3780",
+"skill_jp": "フェザーウインド"
+},
+"monst_hanakawasemi.html": {
+"icon": "005",
+"jp": "はなカワセミ",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3796",
+"skill_jp": "プリンセス"
+},
+"monst_hanesuraimu.html": {
+"icon": "070",
+"jp": "はねスライム",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4905",
+"skill_jp": "どくが"
+},
+"monst_harisenmogura.html": {
+"icon": "006",
+"jp": "はりせんもぐら",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4915",
+"skill_jp": "けもの道"
+},
+"monst_bakudanbebi.html": {
+"icon": "101",
+"jp": "ばくだんベビー",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4947",
+"skill_jp": "ダイナマイト"
+},
+"monst_baburusuraimu.html": {
+"icon": "049",
+"jp": "バブルスライム",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3912",
+"skill_jp": "スラフォース"
+},
+"monst_pikushi.html": {
+"icon": "034",
+"jp": "ピクシー",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4780",
+"skill_jp": "異常回復"
+},
+"monst_pikki.html": {
+"icon": "021",
+"jp": "ピッキー",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4934",
+"skill_jp": "レンジャー"
+},
+"monst_pinkubonbon.html": {
+"icon": "031",
+"jp": "ピンクボンボン",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3871",
+"skill_jp": "ダンサー"
+},
+"monst_faratto.html": {
+"icon": "030",
+"jp": "ファーラット",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3872",
+"skill_jp": "グリーンファイター"
+},
+"monst_furogga.html": {
+"icon": "018",
+"jp": "フロッガー",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5170",
+"skill_jp": "プリンス"
+},
+"monst_burashikozo.html": {
+"icon": "085",
+"jp": "ブラシこぞう",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4949",
+"skill_jp": "ＨＰ回復"
+},
+"monst_puchittokozo.html": {
+"icon": "060",
+"jp": "プチット族",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3715",
+"skill_jp": "メラ＆バギ"
+},
+"monst_pukupukku.html": {
+"icon": "042",
+"jp": "プークプック",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4985",
+"skill_jp": "ダンサー"
+},
+"monst_herubokkuru.html": {
+"icon": "047",
+"jp": "ヘルボックル",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5013",
+"skill_jp": "ヒャド＆ギラ"
+},
+"monst_bebikuraudo.html": {
+"icon": "091",
+"jp": "ベビークラウド",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3876",
+"skill_jp": "ダウナー"
+},
+"monst_bebipansa.html": {
+"icon": "099",
+"jp": "ベビーパンサー",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3688",
+"skill_jp": "けもの道"
+},
+"monst_berogon.html": {
+"icon": "069",
+"jp": "ベロゴン",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4944",
+"skill_jp": "ふういんの技"
+},
+"monst_hoippugosuto.html": {
+"icon": "020",
+"jp": "ホイップゴースト",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5030",
+"skill_jp": "ホワイトファイター"
+},
+"monst_hoimisuraimu.html": {
+"icon": "055",
+"jp": "ホイミスライム",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4028",
+"skill_jp": "ＨＰ回復"
+},
+"monst_poizunrizado.html": {
+"icon": "097",
+"jp": "ポイズンリザード",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4999",
+"skill_jp": "アサシン"
+},
+"monst_ponpokodanuki.html": {
+"icon": "045",
+"jp": "ポンポコだぬき",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4920",
+"skill_jp": "ダンサー"
+},
+"monst_madohando.html": {
+"icon": "074",
+"jp": "マドハンド",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3744",
+"skill_jp": "いしあたま"
+},
+"monst_mandora.html": {
+"icon": "019",
+"jp": "マンドラ",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4024",
+"skill_jp": "ようせいの息吹"
+},
+"monst_miiraotoko.html": {
+"icon": "076",
+"jp": "ミイラおとこ",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4962",
+"skill_jp": "アンデッド"
+},
+"monst_misuteridoru.html": {
+"icon": "084",
+"jp": "ミステリドール",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5175",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_minon.html": {
+"icon": "064",
+"jp": "ミノーン",
+"rank": "F",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5185",
+"skill_jp": "ガード"
+},
+"monst_meragosuto.html": {
+"icon": "093",
+"jp": "メラゴースト",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5197",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_meda.html": {
+"icon": "053",
+"jp": "メーダ",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5003",
+"skill_jp": "ナイトメア"
+},
+"monst_mokokki.html": {
+"icon": "008",
+"jp": "モコッキー",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3898",
+"skill_jp": "いなずまダンサー"
+},
+"monst_momonja.html": {
+"icon": "083",
+"jp": "ももんじゃ",
+"rank": "F",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4944",
+"skill_jp": "けもの道"
+},
+"monst_montonaganbariya.html": {
+"icon": "001",
+"jp": "モントナー(がんばりや)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5100",
+"skill_jp": "モントナー"
+},
+"monst_montonajounetsuka.html": {
+"icon": "001",
+"jp": "モントナー(じょうねつか)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5200",
+"skill_jp": "モントナー"
+},
+"monst_montonasekkyokuteki.html": {
+"icon": "001",
+"jp": "モントナー(せっきょくてき)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5100",
+"skill_jp": "モントナー"
+},
+"monst_montonafutsuu.html": {
+"icon": "001",
+"jp": "モントナー(ふつう)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5150",
+"skill_jp": "モントナー"
+},
+"monst_montonamakezugirai.html": {
+"icon": "001",
+"jp": "モントナー(まけずぎらい)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5200",
+"skill_jp": "モントナー"
+},
+"monst_montonayuukan.html": {
+"icon": "001",
+"jp": "モントナー(ゆうかん)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5100",
+"skill_jp": "モントナー"
+},
+"monst_montonareisei.html": {
+"icon": "001",
+"jp": "モントナー(れいせい)",
+"rank": "F",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5200",
+"skill_jp": "モントナー"
+},
+"monst_yokaigyo.html": {
+"icon": "100",
+"jp": "ようかい魚",
+"rank": "F",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4852",
+"skill_jp": "じごく"
+},
+"monst_rizadokizzu.html": {
+"icon": "028",
+"jp": "リザードキッズ",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "3690",
+"skill_jp": "ブルーファイター"
+},
+"monst_rizadofurai.html": {
+"icon": "081",
+"jp": "リザードフライ",
+"rank": "F",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "3561",
+"skill_jp": "バギ＆ギラ"
+},
+"monst_rippusu.html": {
+"icon": "024",
+"jp": "リップス",
+"rank": "F",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3833",
+"skill_jp": "さいみん"
+},
+"monst_rifa.html": {
+"icon": "012",
+"jp": "リーファ",
+"rank": "F",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3755",
+"skill_jp": "みずげい"
+},
+"monst_waraibukuro.html": {
+"icon": "016",
+"jp": "わらいぶくろ",
+"rank": "F",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5099",
+"skill_jp": "ホラー"
+},
+"monst_akuasuraimu.html": {
+"icon": "190",
+"jp": "アクアスライム",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4950",
+"skill_jp": "みずげい"
+},
+"monst_akuaparasoru.html": {
+"icon": "202",
+"jp": "アクアパラソル",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4810",
+"skill_jp": "ガード"
+},
+"monst_akumanotsubo.html": {
+"icon": "206",
+"jp": "あくまのつぼ",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5268",
+"skill_jp": "ため息"
+},
+"monst_abareushidori.html": {
+"icon": "123",
+"jp": "あばれうしどり",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5004",
+"skill_jp": "あらくれ"
+},
+"monst_arumiraji.html": {
+"icon": "152",
+"jp": "アルミラージ",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4916",
+"skill_jp": "けもの道"
+},
+"monst_arodoggu.html": {
+"icon": "179",
+"jp": "アロードッグ",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4945",
+"skill_jp": "バウンティハンター"
+},
+"monst_ikkakuryu.html": {
+"icon": "107",
+"jp": "いっかく竜",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4804",
+"skill_jp": "じこぎせい"
+},
+"monst_irukachochin.html": {
+"icon": "126",
+"jp": "イルカちょうちん",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "ハンター"
+},
+"monst_wingusuneku.html": {
+"icon": "157",
+"jp": "ウィングスネーク",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5273",
+"skill_jp": "ため息"
+},
+"monst_uzushiokingu.html": {
+"icon": "189",
+"jp": "うずしおキング",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4980",
+"skill_jp": "ブルーファイター"
+},
+"monst_ebirusobitaru.html": {
+"icon": "203",
+"jp": "エビルソピタル",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4880",
+"skill_jp": "どくが"
+},
+"monst_ebirudoraibu.html": {
+"icon": "167",
+"jp": "エビルドライブ",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4930",
+"skill_jp": "ふういんの技"
+},
+"monst_ebirupotto.html": {
+"icon": "110",
+"jp": "エビルポット",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4977",
+"skill_jp": "バギ＆デイン"
+},
+"monst_oiguana.html": {
+"icon": "150",
+"jp": "おおイグアナ",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5409",
+"skill_jp": "インスパイア"
+},
+"monst_osasori.html": {
+"icon": "136",
+"jp": "おおさそり",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5082",
+"skill_jp": "むしのしらせ"
+},
+"monst_okutorichi.html": {
+"icon": "151",
+"jp": "オクトリーチ",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "2",
+"total": "3912",
+"skill_jp": "ダンサー"
+},
+"monst_okoboruto.html": {
+"icon": "103",
+"jp": "オコボルト",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3951",
+"skill_jp": "いしあたま"
+},
+"monst_odoruhoseki.html": {
+"icon": "138",
+"jp": "おどるほうせき",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "2",
+"total": "5225",
+"skill_jp": "ダウナー"
+},
+"monst_onion.html": {
+"icon": "205",
+"jp": "オニオーン",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5140",
+"skill_jp": "さいみん"
+},
+"monst_onimukade.html": {
+"icon": "114",
+"jp": "オニムカデ",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5120",
+"skill_jp": "いしあたま"
+},
+"monst_obakehitode.html": {
+"icon": "140",
+"jp": "おばけヒトデ",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "アンデッド"
+},
+"monst_oku.html": {
+"icon": "172",
+"jp": "オーク",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4967",
+"skill_jp": "しんそく"
+},
+"monst_kamaitachi.html": {
+"icon": "113",
+"jp": "かまいたち",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5048",
+"skill_jp": "バギ＆ギラ"
+},
+"monst_karekusanezumi.html": {
+"icon": "104",
+"jp": "かれくさネズミ",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3824",
+"skill_jp": "いなずまダンサー"
+},
+"monst_kirawebu.html": {
+"icon": "146",
+"jp": "キラーウェーブ",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3691",
+"skill_jp": "みずげい"
+},
+"monst_kingukobura.html": {
+"icon": "135",
+"jp": "キングコブラ",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4990",
+"skill_jp": "たたり"
+},
+"monst_kubikarizoku.html": {
+"icon": "111",
+"jp": "くびかり族",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4770",
+"skill_jp": "バーサーカー"
+},
+"monst_gurizuri.html": {
+"icon": "193",
+"jp": "グリズリー",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "-",
+"total": "5940",
+"skill_jp": "あらくれ"
+},
+"monst_guremurin.html": {
+"icon": "147",
+"jp": "グレムリン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3912",
+"skill_jp": "メラ＆バギ"
+},
+"monst_gorudenkon.html": {
+"icon": "153",
+"jp": "ゴールデンコーン",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "ギラ＆デイン"
+},
+"monst_gorudoman.html": {
+"icon": "186",
+"jp": "ゴールドマン",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4980",
+"skill_jp": "ばくひょうの剣技"
+},
+"monst_sakasazonbi.html": {
+"icon": "148",
+"jp": "さかさゾンビ",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4750",
+"skill_jp": "ジャミング"
+},
+"monst_satsujinikari.html": {
+"icon": "173",
+"jp": "さつじんいかり",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5136",
+"skill_jp": "いしあたま"
+},
+"monst_sandoshaku.html": {
+"icon": "192",
+"jp": "サンドシャーク",
+"rank": "E",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5514",
+"skill_jp": "アサシン"
+},
+"monst_saberukitsune.html": {
+"icon": "133",
+"jp": "サーベルきつね",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4915",
+"skill_jp": "レンジャー"
+},
+"monst_shado.html": {
+"icon": "159",
+"jp": "シャドー",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5116",
+"skill_jp": "死神"
+},
+"monst_shidoggu.html": {
+"icon": "137",
+"jp": "シードッグ",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4839",
+"skill_jp": "ばくひょうの剣技"
+},
+"monst_shirudokozou.html": {
+"icon": "143",
+"jp": "シールドこぞう",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3890",
+"skill_jp": "ＶＳ体技"
+},
+"monst_janbarayan.html": {
+"icon": "130",
+"jp": "ジャンバラヤン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4928",
+"skill_jp": "プリンス"
+},
+"monst_jinmencho.html": {
+"icon": "158",
+"jp": "じんめんちょう",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "1〜2",
+"total": "3888",
+"skill_jp": "どくが"
+},
+"monst_sukarugon.html": {
+"icon": "199",
+"jp": "スカルゴン",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4827",
+"skill_jp": "ヒャド＆ドルマ"
+},
+"monst_sukippa.html": {
+"icon": "131",
+"jp": "スキッパー",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5024",
+"skill_jp": "ジャミング"
+},
+"monst_sutoronguanimaru.html": {
+"icon": "201",
+"jp": "ストロングアニマル",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5409",
+"skill_jp": "ダイナマイト"
+},
+"monst_sunomu.html": {
+"icon": "198",
+"jp": "スノーム",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5155",
+"skill_jp": "ヒャド＆ギラ"
+},
+"monst_suraimukarugo.html": {
+"icon": "141",
+"jp": "スライムカルゴ",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4102",
+"skill_jp": "ＭＰ回復"
+},
+"monst_suraimutsumuri.html": {
+"icon": "115",
+"jp": "スライムつむり",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4028",
+"skill_jp": "ガード"
+},
+"monst_suraimubesu.html": {
+"icon": "106",
+"jp": "スライムベス",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3629",
+"skill_jp": "メラ＆デイン"
+},
+"monst_takotsubokozo.html": {
+"icon": "160",
+"jp": "たこつぼこぞう",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4970",
+"skill_jp": "インスパイア"
+},
+"monst_dasshuran.html": {
+"icon": "125",
+"jp": "ダッシュラン",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4740",
+"skill_jp": "バーサーカー"
+},
+"monst_dasurufen.html": {
+"icon": "182",
+"jp": "ダースウルフェン",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "ヒャド＆ドルマ"
+},
+"monst_chuumajuu.html": {
+"icon": "162",
+"jp": "ちゅうまじゅう",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4020",
+"skill_jp": "インスパイア"
+},
+"monst_teruita.html": {
+"icon": "144",
+"jp": "テールイーター",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4953",
+"skill_jp": "ホワイトファイター"
+},
+"monst_dezatoranna.html": {
+"icon": "117",
+"jp": "デザートランナー",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4931",
+"skill_jp": "しんそく"
+},
+"monst_deddopekka.html": {
+"icon": "178",
+"jp": "デッドペッカー",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4847",
+"skill_jp": "ギラ＆デイン"
+},
+"monst_dendengaeru.html": {
+"icon": "127",
+"jp": "デンデンがえる",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3996",
+"skill_jp": "ダウナー"
+},
+"monst_tosshinkozo.html": {
+"icon": "180",
+"jp": "とっしんこぞう",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5018",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_tomatomare.html": {
+"icon": "121",
+"jp": "トマトマーレ",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4068",
+"skill_jp": "ようせいの息吹"
+},
+"monst_toropikarusuraimu.html": {
+"icon": "168",
+"jp": "トロピカルスライム",
+"rank": "E",
+"family_jp": "スライム",
+"size": "M",
+"ai": "-",
+"total": "6188",
+"skill_jp": "ため息"
+},
+"monst_doragon.html": {
+"icon": "177",
+"jp": "ドラゴン",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5373",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_doragonbageji.html": {
+"icon": "169",
+"jp": "ドラゴンバゲージ",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4870",
+"skill_jp": "火炎"
+},
+"monst_doragonbusshu.html": {
+"icon": "116",
+"jp": "ドラゴンブッシュ",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "4960",
+"skill_jp": "メラ＆バギ"
+},
+"monst_doruido.html": {
+"icon": "120",
+"jp": "ドルイド",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5223",
+"skill_jp": "イオ＆バギ"
+},
+"monst_doronuba.html": {
+"icon": "119",
+"jp": "ドロヌーバ",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5038",
+"skill_jp": "ダウナー"
+},
+"monst_dororumeiji.html": {
+"icon": "134",
+"jp": "ドロルメイジ",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5061",
+"skill_jp": "バギ＆ドルマ"
+},
+"monst_donguribebi.html": {
+"icon": "163",
+"jp": "どんぐりベビー",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3745",
+"skill_jp": "じこぎせい"
+},
+"monst_nubon.html": {
+"icon": "155",
+"jp": "ヌボーン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4980",
+"skill_jp": "えんかい"
+},
+"monst_noroinoranpu.html": {
+"icon": "197",
+"jp": "のろいのランプ",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5181",
+"skill_jp": "ふういん"
+},
+"monst_haeotoko.html": {
+"icon": "156",
+"jp": "ハエおとこ",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4878",
+"skill_jp": "ふういん"
+},
+"monst_hanamado.html": {
+"icon": "161",
+"jp": "はなまどう",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5176",
+"skill_jp": "ヒャド＆ギラ"
+},
+"monst_bakudaniwa.html": {
+"icon": "165",
+"jp": "ばくだんいわ",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5150",
+"skill_jp": "じこぎせい"
+},
+"monst_bapirasu.html": {
+"icon": "191",
+"jp": "バピラス",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4850",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_parasakisu.html": {
+"icon": "204",
+"jp": "パラサキス",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4948",
+"skill_jp": "ＶＳブレス"
+},
+"monst_barusuraimu.html": {
+"icon": "149",
+"jp": "パールスライム",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5110",
+"skill_jp": "ガード"
+},
+"monst_hitokuibako.html": {
+"icon": "154",
+"jp": "ひとくい箱",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4967",
+"skill_jp": "ホラー"
+},
+"monst_hitotsumepiero.html": {
+"icon": "187",
+"jp": "ひとつめピエロ",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3914",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_bikkuai.html": {
+"icon": "145",
+"jp": "ビックアイ",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5061",
+"skill_jp": "さいみん"
+},
+"monst_bikkurisatan.html": {
+"icon": "174",
+"jp": "びっくりサタン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "5140",
+"skill_jp": "ダンサー"
+},
+"monst_biban.html": {
+"icon": "118",
+"jp": "ビーバーン",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4889",
+"skill_jp": "みずげい"
+},
+"monst_fearidoragon.html": {
+"icon": "142",
+"jp": "フェアリードラゴン",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "3816",
+"skill_jp": "プリンセス"
+},
+"monst_feariratto.html": {
+"icon": "132",
+"jp": "フェアリーラット",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3787",
+"skill_jp": "ハンター"
+},
+"monst_fuyuju.html": {
+"icon": "196",
+"jp": "ふゆうじゅ",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4796",
+"skill_jp": "エコロジー"
+},
+"monst_fureimu.html": {
+"icon": "194",
+"jp": "フレイム",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5055",
+"skill_jp": "レッドファイター"
+},
+"monst_fusendoragon.html": {
+"icon": "183",
+"jp": "フーセンドラゴン",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4974",
+"skill_jp": "火炎"
+},
+"monst_buchisuraimu.html": {
+"icon": "124",
+"jp": "ぶちスライム",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "3757",
+"skill_jp": "バギ＆ギラ"
+},
+"monst_butchoman.html": {
+"icon": "166",
+"jp": "ブッチョマン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3756",
+"skill_jp": "バウンティハンター"
+},
+"monst_puchiiru.html": {
+"icon": "108",
+"jp": "プチイール",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3821",
+"skill_jp": "みずげい"
+},
+"monst_purizunyan.html": {
+"icon": "185",
+"jp": "プリズニャン",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4975",
+"skill_jp": "バギ＆ヒャド"
+},
+"monst_bebisatan.html": {
+"icon": "139",
+"jp": "ベビーサタン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5060",
+"skill_jp": "メラ＆イオ"
+},
+"monst_bonpurizuna.html": {
+"icon": "122",
+"jp": "ボーンプリズナー",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4840",
+"skill_jp": "ブルーファイター"
+},
+"monst_pogufisshu.html": {
+"icon": "170",
+"jp": "ポグフィッシュ",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5060",
+"skill_jp": "ハンター"
+},
+"monst_pomupomubomu.html": {
+"icon": "188",
+"jp": "ポムポムボム",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4998",
+"skill_jp": "いしあたま"
+},
+"monst_magumasuraimu.html": {
+"icon": "176",
+"jp": "マグマスライム",
+"rank": "E",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3856",
+"skill_jp": "メラ＆デイン"
+},
+"monst_masakarizoku.html": {
+"icon": "195",
+"jp": "まさかり族",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4900",
+"skill_jp": "バーサーカー"
+},
+"monst_majutsushi.html": {
+"icon": "105",
+"jp": "まじゅつし",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4343",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_maddopuranto.html": {
+"icon": "200",
+"jp": "マッドプラント",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5140",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_maddoron.html": {
+"icon": "175",
+"jp": "マッドロン",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4855",
+"skill_jp": "みずげい"
+},
+"monst_momijikozo.html": {
+"icon": "184",
+"jp": "もみじこぞう",
+"rank": "E",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3776",
+"skill_jp": "レッドファイター"
+},
+"monst_momon.html": {
+"icon": "164",
+"jp": "モーモン",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3915",
+"skill_jp": "メラ＆デイン"
+},
+"monst_yatagarasu.html": {
+"icon": "112",
+"jp": "やたがらす",
+"rank": "E",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5031",
+"skill_jp": "ヒャド＆ドルマ"
+},
+"monst_yamishibari.html": {
+"icon": "025",
+"jp": "やみしばり",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3992",
+"skill_jp": "死神"
+},
+"monst_yorunoteio.html": {
+"icon": "128",
+"jp": "よるのていおう",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "ため息"
+},
+"monst_rantankozou.html": {
+"icon": "171",
+"jp": "ランタンこぞう",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4122",
+"skill_jp": "メラ＆イオ"
+},
+"monst_ryuuhakase.html": {
+"icon": "306",
+"jp": "りゅうはかせ",
+"rank": "E",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5863",
+"skill_jp": "ほのおの魔術師"
+},
+"monst_rinrin.html": {
+"icon": "129",
+"jp": "リンリン",
+"rank": "E",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5233",
+"skill_jp": "いしあたま"
+},
+"monst_ressademon.html": {
+"icon": "181",
+"jp": "レッサーデーモン",
+"rank": "E",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5136",
+"skill_jp": "ようじゅつ"
+},
+"monst_wandafuru.html": {
+"icon": "109",
+"jp": "ワンダーフール",
+"rank": "E",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4973",
+"skill_jp": "インスパイア"
+},
+"monst_aiantatoru.html": {
+"icon": "313",
+"jp": "アイアンタートル",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5429",
+"skill_jp": "ＶＳ呪文"
+},
+"monst_akumashinkan.html": {
+"icon": "271",
+"jp": "あくましんかん",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5154",
+"skill_jp": "イオ＆バギ"
+},
+"monst_akumanosho.html": {
+"icon": "311",
+"jp": "あくまの書",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4051",
+"skill_jp": "ＶＳ呪文"
+},
+"monst_akumanomedama.html": {
+"icon": "282",
+"jp": "あくまのめだま",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5007",
+"skill_jp": "ＶＳ呪文"
+},
+"monst_akumanomokujiroku.html": {
+"icon": "312",
+"jp": "あくまの黙示録",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4064",
+"skill_jp": "最強ＶＳ呪文"
+},
+"monst_abarekomainu.html": {
+"icon": "285",
+"jp": "あばれこまいぬ",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5011",
+"skill_jp": "ＶＳブレス"
+},
+"monst_andeddoman.html": {
+"icon": "258",
+"jp": "アンデッドマン",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4660",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_ieroshikkuru.html": {
+"icon": "328",
+"jp": "イエローシックル",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5000",
+"skill_jp": "アサシン"
+},
+"monst_ikazukin.html": {
+"icon": "239",
+"jp": "イカずきん",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "3",
+"total": "5000",
+"skill_jp": "ダンサー"
+},
+"monst_iwatobiakuma.html": {
+"icon": "256",
+"jp": "いわとびあくま",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4998",
+"skill_jp": "バギ＆ヒャド"
+},
+"monst_uinguasashin.html": {
+"icon": "300",
+"jp": "ウイングアサシン",
+"rank": "D",
+"family_jp": "自然",
+"size": "M",
+"ai": "2",
+"total": "4795",
+"skill_jp": "バギ＆ヒャド"
+},
+"monst_upasoruja.html": {
+"icon": "314",
+"jp": "ウパソルジャー",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4996",
+"skill_jp": "むしのしらせ"
+},
+"monst_ebiruangura.html": {
+"icon": "295",
+"jp": "エビルアングラー",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5073",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_enzerusuraimu.html": {
+"icon": "276",
+"jp": "エンゼルスライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4016",
+"skill_jp": "ＨＰ回復"
+},
+"monst_ooutsubo.html": {
+"icon": "278",
+"jp": "おおうつぼ",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4912",
+"skill_jp": "さいみん"
+},
+"monst_odoraki.html": {
+"icon": "253",
+"jp": "おおドラキー",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4950",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_onamekuji.html": {
+"icon": "264",
+"jp": "おおなめくじ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "G",
+"ai": "1〜3",
+"total": "5835",
+"skill_jp": "グリーンファイター"
+},
+"monst_omimizu.html": {
+"icon": "273",
+"jp": "おおみみず",
+"rank": "D",
+"family_jp": "自然",
+"size": "G",
+"ai": "1〜3",
+"total": "5802",
+"skill_jp": "タイラントワーム"
+},
+"monst_kamakirisenshi.html": {
+"icon": "322",
+"jp": "カマキリせんし",
+"rank": "D",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜3",
+"total": "4993",
+"skill_jp": "メタルハンター"
+},
+"monst_kandatakobun.html": {
+"icon": "330",
+"jp": "カンダタこぶん",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3653",
+"skill_jp": "レンジャー"
+},
+"monst_gaikotsu.html": {
+"icon": "246",
+"jp": "がいこつ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4845",
+"skill_jp": "ダウナー"
+},
+"monst_gamakyanon.html": {
+"icon": "274",
+"jp": "ガマキャノン",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5565",
+"skill_jp": "イオ＆バギ"
+},
+"monst_gamegon.html": {
+"icon": "294",
+"jp": "ガメゴン",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5745",
+"skill_jp": "てっぺき"
+},
+"monst_kitsunebi.html": {
+"icon": "326",
+"jp": "きつねび",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4990",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_kimera.html": {
+"icon": "230",
+"jp": "キメラ",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5053",
+"skill_jp": "異常回復"
+},
+"monst_kiraeipu.html": {
+"icon": "243",
+"jp": "キラーエイプ",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4830",
+"skill_jp": "サムライ"
+},
+"monst_kirapansa.html": {
+"icon": "251",
+"jp": "キラーパンサー",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4730",
+"skill_jp": "しんそく"
+},
+"monst_kirisakipiero.html": {
+"icon": "281",
+"jp": "きりさきピエロ",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "4772",
+"skill_jp": "ばくひょうの剣技"
+},
+"monst_gigantohiruzu.html": {
+"icon": "286",
+"jp": "ギガントヒルズ",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4850",
+"skill_jp": "イエローファイター"
+},
+"monst_gizumo.html": {
+"icon": "235",
+"jp": "ギズモ",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4975",
+"skill_jp": "ＶＳブレス"
+},
+"monst_gyaosu.html": {
+"icon": "266",
+"jp": "ギャオース",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4950",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_kuraunheddo.html": {
+"icon": "324",
+"jp": "クラウンヘッド",
+"rank": "D",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜2",
+"total": "5758",
+"skill_jp": "アッパー"
+},
+"monst_kurayamihapi.html": {
+"icon": "249",
+"jp": "くらやみハーピー",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5050",
+"skill_jp": "やみのダンサー"
+},
+"monst_gurandoshaku.html": {
+"icon": "268",
+"jp": "グランドシャーク",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4872",
+"skill_jp": "メタルハンター"
+},
+"monst_guntaigani.html": {
+"icon": "287",
+"jp": "ぐんたいガニ",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4996",
+"skill_jp": "ぼうぎょ"
+},
+"monst_kemononokishi.html": {
+"icon": "315",
+"jp": "けもののきし",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4770",
+"skill_jp": "レッドファイター"
+},
+"monst_kotetsumajin.html": {
+"icon": "297",
+"jp": "こうてつまじん",
+"rank": "D",
+"family_jp": "物質",
+"size": "M",
+"ai": "-",
+"total": "6332",
+"skill_jp": "バギ＆デイン"
+},
+"monst_satanpapi.html": {
+"icon": "308",
+"jp": "サタンパピー",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5003",
+"skill_jp": "ＨＰ回復"
+},
+"monst_sandowebu.html": {
+"icon": "316",
+"jp": "サンドウェーブ",
+"rank": "D",
+"family_jp": "物質",
+"size": "G",
+"ai": "1〜3",
+"total": "5859",
+"skill_jp": "レンジャー"
+},
+"monst_shirubadebiru.html": {
+"icon": "260",
+"jp": "シルバーデビル",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5185",
+"skill_jp": "ようじゅつ"
+},
+"monst_shinshogeppaku.html": {
+"icon": "219",
+"jp": "神将ゲッパク",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4136",
+"skill_jp": "九神将"
+},
+"monst_shinshokogane.html": {
+"icon": "222",
+"jp": "神将コガネ",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4080",
+"skill_jp": "九神将"
+},
+"monst_shinshoshion.html": {
+"icon": "220",
+"jp": "神将シオン",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4040",
+"skill_jp": "九神将"
+},
+"monst_shinshosuou.html": {
+"icon": "225",
+"jp": "神将スオウ",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4024",
+"skill_jp": "九神将"
+},
+"monst_shinshoseiran.html": {
+"icon": "223",
+"jp": "神将セイラン",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4128",
+"skill_jp": "九神将"
+},
+"monst_shinshotaisha.html": {
+"icon": "218",
+"jp": "神将タイシャ",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4136",
+"skill_jp": "九神将"
+},
+"monst_shinshotetsuguro.html": {
+"icon": "221",
+"jp": "神将テツグロ",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4040",
+"skill_jp": "九神将"
+},
+"monst_shinshotokiwa.html": {
+"icon": "224",
+"jp": "神将トキワ",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4032",
+"skill_jp": "九神将"
+},
+"monst_shinshobenihi.html": {
+"icon": "217",
+"jp": "神将ベニヒ",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜3",
+"total": "4120",
+"skill_jp": "九神将"
+},
+"monst_sukarusapento.html": {
+"icon": "261",
+"jp": "スカルサーペント",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4917",
+"skill_jp": "アッパー"
+},
+"monst_sukaruburedo.html": {
+"icon": "272",
+"jp": "スカルブレード",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4868",
+"skill_jp": "しんそく"
+},
+"monst_sutonsuraimu.html": {
+"icon": "240",
+"jp": "ストーンスライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5100",
+"skill_jp": "イオ＆ギラ"
+},
+"monst_sunodoragon.html": {
+"icon": "321",
+"jp": "スノードラゴン",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5568",
+"skill_jp": "吹雪"
+},
+"monst_subinsuraimu.html": {
+"icon": "302",
+"jp": "スピンスライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3880",
+"skill_jp": "アッパー"
+},
+"monst_supekutetto.html": {
+"icon": "319",
+"jp": "スペクテット",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4934",
+"skill_jp": "ふういん"
+},
+"monst_suraimunaito.html": {
+"icon": "227",
+"jp": "スライムナイト",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5080",
+"skill_jp": "ホワイトファイター"
+},
+"monst_suraniniero.html": {
+"icon": "208",
+"jp": "スラ忍イエロー",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4537",
+"skill_jp": "スラ忍イエロー"
+},
+"monst_suraninorenji.html": {
+"icon": "214",
+"jp": "スラ忍オレンジ",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4358",
+"skill_jp": "スラ忍オレンジ"
+},
+"monst_suraningurin.html": {
+"icon": "211",
+"jp": "スラ忍グリーン",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4878",
+"skill_jp": "スラ忍グリーン"
+},
+"monst_suraninpapuru.html": {
+"icon": "212",
+"jp": "スラ忍パープル",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5036",
+"skill_jp": "スラ忍パープル"
+},
+"monst_suraninpinku.html": {
+"icon": "215",
+"jp": "スラ忍ピンク",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5037",
+"skill_jp": "スラ忍ピンク"
+},
+"monst_suraninburaun.html": {
+"icon": "210",
+"jp": "スラ忍ブラウン",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4582",
+"skill_jp": "スラ忍ブラウン"
+},
+"monst_suraninburakku.html": {
+"icon": "216",
+"jp": "スラ忍ブラック",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4883",
+"skill_jp": "スラ忍ブラック"
+},
+"monst_suraninburu.html": {
+"icon": "213",
+"jp": "スラ忍ブルー",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4368",
+"skill_jp": "スラ忍ブルー"
+},
+"monst_suraninreddo.html": {
+"icon": "209",
+"jp": "スラ忍レッド",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4375",
+"skill_jp": "スラ忍レッド"
+},
+"monst_supatentsuku.html": {
+"icon": "262",
+"jp": "スーパーテンツク",
+"rank": "D",
+"family_jp": "自然",
+"size": "G",
+"ai": "2",
+"total": "5724",
+"skill_jp": "ふういん"
+},
+"monst_semimogura.html": {
+"icon": "304",
+"jp": "せみもぐら",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5056",
+"skill_jp": "ダウナー"
+},
+"monst_taigaransu.html": {
+"icon": "305",
+"jp": "タイガーランス",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5093",
+"skill_jp": "プリンス"
+},
+"monst_tatsunokonaito.html": {
+"icon": "255",
+"jp": "たつのこナイト",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5006",
+"skill_jp": "サムライ"
+},
+"monst_daimaonohidarite.html": {
+"icon": "332",
+"jp": "大魔王の左手",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5096",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_daimaonomigite.html": {
+"icon": "331",
+"jp": "大魔王の右手",
+"rank": "D",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5091",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_dakuai.html": {
+"icon": "290",
+"jp": "ダークアイ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5120",
+"skill_jp": "ナイトメア"
+},
+"monst_dakukurabu.html": {
+"icon": "318",
+"jp": "ダーククラブ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4726",
+"skill_jp": "ダウナー"
+},
+"monst_dakuhon.html": {
+"icon": "257",
+"jp": "ダークホーン",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5195",
+"skill_jp": "コールドスリープ"
+},
+"monst_dasudoragon.html": {
+"icon": "248",
+"jp": "ダースドラゴン",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5520",
+"skill_jp": "ふういん"
+},
+"monst_digongu.html": {
+"icon": "241",
+"jp": "ディゴング",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4929",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_dezatodemon.html": {
+"icon": "245",
+"jp": "デザートデーモン",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5023",
+"skill_jp": "ガード"
+},
+"monst_desukopion.html": {
+"icon": "310",
+"jp": "デスコピオン",
+"rank": "D",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5613",
+"skill_jp": "むしのしらせ"
+},
+"monst_debiruamaa.html": {
+"icon": "289",
+"jp": "デビルアーマー",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5060",
+"skill_jp": "びゃくやの剣技"
+},
+"monst_togekonpo.html": {
+"icon": "234",
+"jp": "とげこんぼう",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4900",
+"skill_jp": "ハンター"
+},
+"monst_todoman.html": {
+"icon": "296",
+"jp": "トドマン",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5439",
+"skill_jp": "ＶＳ踊り"
+},
+"monst_toraotoko.html": {
+"icon": "288",
+"jp": "とらおとこ",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5041",
+"skill_jp": "イエローファイター"
+},
+"monst_totemukira.html": {
+"icon": "252",
+"jp": "トーテムキラー",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5150",
+"skill_jp": "いしあたま"
+},
+"monst_doraigon.html": {
+"icon": "327",
+"jp": "ドライゴン",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4739",
+"skill_jp": "けもの道"
+},
+"monst_doragonmaddo.html": {
+"icon": "229",
+"jp": "ドラゴンマッド",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "4203",
+"skill_jp": "あらくれ"
+},
+"monst_doramugoto.html": {
+"icon": "233",
+"jp": "ドラムゴート",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5050",
+"skill_jp": "アッパー"
+},
+"monst_nekomado.html": {
+"icon": "323",
+"jp": "ねこまどう",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5081",
+"skill_jp": "メラ＆バギ"
+},
+"monst_noroinomasuku.html": {
+"icon": "254",
+"jp": "のろいのマスク",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "2〜3",
+"total": "4462",
+"skill_jp": "たたり"
+},
+"monst_hasamikuwagata.html": {
+"icon": "291",
+"jp": "はさみくわがた",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4966",
+"skill_jp": "むしのしらせ"
+},
+"monst_haniwanaito.html": {
+"icon": "267",
+"jp": "はにわナイト",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5070",
+"skill_jp": "ブレス"
+},
+"monst_hatonaito.html": {
+"icon": "228",
+"jp": "ハートナイト",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "2",
+"total": "3864",
+"skill_jp": "サムライ"
+},
+"monst_batorurekkusu.html": {
+"icon": "303",
+"jp": "バトルレックス",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4800",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_baburudemon.html": {
+"icon": "275",
+"jp": "バブルデーモン",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "G",
+"ai": "1〜3",
+"total": "5610",
+"skill_jp": "みずげい"
+},
+"monst_banpaia.html": {
+"icon": "309",
+"jp": "バンパイア",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4980",
+"skill_jp": "ナイトメア"
+},
+"monst_papettokozo.html": {
+"icon": "280",
+"jp": "パペットこぞう",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4064",
+"skill_jp": "バラエティ"
+},
+"monst_parumobiru.html": {
+"icon": "226",
+"jp": "パールモービル",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4991",
+"skill_jp": "こうねつガス"
+},
+"monst_hitokuisaberu.html": {
+"icon": "270",
+"jp": "ひとくいサーベル",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4919",
+"skill_jp": "えんかい"
+},
+"monst_biraida.html": {
+"icon": "207",
+"jp": "ビーライダー",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4910",
+"skill_jp": "ジャミングナイト"
+},
+"monst_binfaita.html": {
+"icon": "250",
+"jp": "ビーンファイター",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4917",
+"skill_jp": "イエローファイター"
+},
+"monst_pierosuraimu.html": {
+"icon": "320",
+"jp": "ピエロスライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5110",
+"skill_jp": "さいみん"
+},
+"monst_pisaronotesaki.html": {
+"icon": "236",
+"jp": "ピサロのてさき",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5224",
+"skill_jp": "さいみん"
+},
+"monst_fisshuraida.html": {
+"icon": "325",
+"jp": "フィッシュライダー",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4950",
+"skill_jp": "ヒャド＆ギラ"
+},
+"monst_fukubukuro.html": {
+"icon": "301",
+"jp": "ふくぶくろ",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4958",
+"skill_jp": "ホワイトファイター"
+},
+"monst_burauni.html": {
+"icon": "232",
+"jp": "ブラウニー",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4900",
+"skill_jp": "バウンティハンター"
+},
+"monst_burakkusanta.html": {
+"icon": "329",
+"jp": "ブラックサンタ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4890",
+"skill_jp": "ブラックファイター"
+},
+"monst_burizado.html": {
+"icon": "307",
+"jp": "ブリザード",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4944",
+"skill_jp": "ブルーファイター"
+},
+"monst_puchianon.html": {
+"icon": "284",
+"jp": "プチアーノン",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3887",
+"skill_jp": "みずげい"
+},
+"monst_puteranodon.html": {
+"icon": "277",
+"jp": "プテラノドン",
+"rank": "D",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5195",
+"skill_jp": "ハンター"
+},
+"monst_boreikenshi.html": {
+"icon": "237",
+"jp": "ぼうれいけんし",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4811",
+"skill_jp": "グリーンファイター"
+},
+"monst_bokkususuraimu.html": {
+"icon": "265",
+"jp": "ボックススライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4053",
+"skill_jp": "アッパー"
+},
+"monst_majo.html": {
+"icon": "317",
+"jp": "まじょ",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5170",
+"skill_jp": "さいみん"
+},
+"monst_manemane.html": {
+"icon": "292",
+"jp": "マネマネ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4972",
+"skill_jp": "マネマネ"
+},
+"monst_mandoriru.html": {
+"icon": "283",
+"jp": "マンドリル",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "あらくれ"
+},
+"monst_munkimera.html": {
+"icon": "231",
+"jp": "ムーンキメラ",
+"rank": "D",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5040",
+"skill_jp": "ブレス"
+},
+"monst_meidendoru.html": {
+"icon": "238",
+"jp": "メイデンドール",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "-",
+"total": "5178",
+"skill_jp": "ダークビューティー"
+},
+"monst_metappi.html": {
+"icon": "244",
+"jp": "メタッピー",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3962",
+"skill_jp": "フェザーウインド"
+},
+"monst_metarusuraimu.html": {
+"icon": "247",
+"jp": "メタルスライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4571",
+"skill_jp": "スラフォース"
+},
+"monst_medosaboru.html": {
+"icon": "263",
+"jp": "メドーサボール",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "G",
+"ai": "1〜3",
+"total": "5835",
+"skill_jp": "暗黒"
+},
+"monst_morimorisuraimu.html": {
+"icon": "293",
+"jp": "もりもりスライム",
+"rank": "D",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4959",
+"skill_jp": "バギ＆デイン"
+},
+"monst_moza.html": {
+"icon": "269",
+"jp": "モーザ",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5380",
+"skill_jp": "バーサーカー"
+},
+"monst_yoganmajin.html": {
+"icon": "259",
+"jp": "ようがんまじん",
+"rank": "D",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5018",
+"skill_jp": "ガード"
+},
+"monst_rikanto.html": {
+"icon": "279",
+"jp": "リカント",
+"rank": "D",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "びゃくやの剣技"
+},
+"monst_riripatto.html": {
+"icon": "298",
+"jp": "リリパット",
+"rank": "D",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3711",
+"skill_jp": "アッパー"
+},
+"monst_reigigasu.html": {
+"icon": "242",
+"jp": "レイギガース",
+"rank": "D",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜3",
+"total": "4761",
+"skill_jp": "ハンター"
+},
+"monst_wakameoji.html": {
+"icon": "299",
+"jp": "わかめおうじ",
+"rank": "D",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5204",
+"skill_jp": "バラエティ"
+},
+"monst_aianburudo.html": {
+"icon": "403",
+"jp": "アイアンブルドー",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5070",
+"skill_jp": "バギ＆ヒャド"
+},
+"monst_aianhoku.html": {
+"icon": "451",
+"jp": "アイアンホーク",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜3",
+"total": "4666",
+"skill_jp": "フェザーウインド"
+},
+"monst_akumanokagami.html": {
+"icon": "371",
+"jp": "あくまのカガミ",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5101",
+"skill_jp": "インスパイア"
+},
+"monst_araune.html": {
+"icon": "359",
+"jp": "アラウネ",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4083",
+"skill_jp": "ようせいの息吹"
+},
+"monst_arukemisuton.html": {
+"icon": "416",
+"jp": "アルケミストン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5290",
+"skill_jp": "たたり"
+},
+"monst_idomajin.html": {
+"icon": "345",
+"jp": "いどまじん",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4959",
+"skill_jp": "死神"
+},
+"monst_inobutaman.html": {
+"icon": "391",
+"jp": "イノブタマン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜3",
+"total": "4771",
+"skill_jp": "ふういんの技"
+},
+"monst_witchiredi.html": {
+"icon": "341",
+"jp": "ウィッチレディ",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4340",
+"skill_jp": "バギ＆ギラ"
+},
+"monst_uindomaji.html": {
+"icon": "420",
+"jp": "ウインドマージ",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜3",
+"total": "4850",
+"skill_jp": "ようじゅつ"
+},
+"monst_ebira.html": {
+"icon": "396",
+"jp": "エビラ",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "ＭＰ回復"
+},
+"monst_ebiruposuto.html": {
+"icon": "429",
+"jp": "エビルポスト",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4670",
+"skill_jp": "バラエティ"
+},
+"monst_ebirumasuta.html": {
+"icon": "346",
+"jp": "エビルマスター",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5021",
+"skill_jp": "ＶＳ踊り"
+},
+"monst_ebiruwando.html": {
+"icon": "354",
+"jp": "エビルワンド",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5055",
+"skill_jp": "レッドファイター"
+},
+"monst_enpusa.html": {
+"icon": "355",
+"jp": "エンプーサ",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜3",
+"total": "4883",
+"skill_jp": "ダンサー"
+},
+"monst_okutosentori.html": {
+"icon": "379",
+"jp": "オクトセントリー",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "5059",
+"skill_jp": "ふうらいの剣技"
+},
+"monst_obakekareki.html": {
+"icon": "440",
+"jp": "おばけかれき",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "2〜3",
+"total": "4209",
+"skill_jp": "ジャミング"
+},
+"monst_ogaheddo.html": {
+"icon": "347",
+"jp": "オーガヘッド",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5419",
+"skill_jp": "たたり"
+},
+"monst_kairyu.html": {
+"icon": "360",
+"jp": "海竜",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4976",
+"skill_jp": "吹雪"
+},
+"monst_kakutopansa.html": {
+"icon": "376",
+"jp": "かくとうパンサー",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4720",
+"skill_jp": "しんそく"
+},
+"monst_kabochanokishi.html": {
+"icon": "365",
+"jp": "かぼちゃの騎士",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4386",
+"skill_jp": "ふうらいの剣技"
+},
+"monst_karyuso.html": {
+"icon": "390",
+"jp": "かりゅうそう",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5017",
+"skill_jp": "ブレス"
+},
+"monst_gasudango.html": {
+"icon": "398",
+"jp": "ガスダンゴ",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5180",
+"skill_jp": "ＶＳ体技"
+},
+"monst_gankodori.html": {
+"icon": "343",
+"jp": "ガンコどり",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3779",
+"skill_jp": "ガード"
+},
+"monst_gagoiru.html": {
+"icon": "362",
+"jp": "ガーゴイル",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4964",
+"skill_jp": "フェザーウインド"
+},
+"monst_kirashikkuru.html": {
+"icon": "424",
+"jp": "キラーシックル",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5007",
+"skill_jp": "アサシン"
+},
+"monst_kirasukoppu.html": {
+"icon": "344",
+"jp": "キラースコップ",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4752",
+"skill_jp": "けもの道"
+},
+"monst_kirasutoka.html": {
+"icon": "393",
+"jp": "キラーストーカー",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4905",
+"skill_jp": "イエローファイター"
+},
+"monst_kingusuraimu.html": {
+"icon": "381",
+"jp": "キングスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5125",
+"skill_jp": "ゆうき"
+},
+"monst_gigahando.html": {
+"icon": "378",
+"jp": "ギガハンド",
+"rank": "C",
+"family_jp": "物質",
+"size": "G",
+"ai": "-",
+"total": "7165",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_gigahiro.html": {
+"icon": "439",
+"jp": "ギガヒーロー",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "G",
+"ai": "1〜3",
+"total": "5510",
+"skill_jp": "バギ＆デイン"
+},
+"monst_kukuri.html": {
+"icon": "454",
+"jp": "ククリ",
+"rank": "C",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4211",
+"skill_jp": "ピピット"
+},
+"monst_kusattashitai.html": {
+"icon": "356",
+"jp": "くさった死体",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4805",
+"skill_jp": "ため息"
+},
+"monst_kumonodaio.html": {
+"icon": "363",
+"jp": "くもの大王",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5095",
+"skill_jp": "ガード"
+},
+"monst_kurabuman.html": {
+"icon": "445",
+"jp": "クラブマン",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "1〜3",
+"total": "4860",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_gurinmokki.html": {
+"icon": "349",
+"jp": "グリーンモッキー",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3852",
+"skill_jp": "いなずまダンサー"
+},
+"monst_keruberosu.html": {
+"icon": "400",
+"jp": "ケルベロス",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜3",
+"total": "3831",
+"skill_jp": "火炎"
+},
+"monst_kotobukino.html": {
+"icon": "399",
+"jp": "コトブキーノ",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4909",
+"skill_jp": "ＶＳ踊り"
+},
+"monst_kohakuso.html": {
+"icon": "438",
+"jp": "コハクそう",
+"rank": "C",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜2",
+"total": "5833",
+"skill_jp": "てっぺき"
+},
+"monst_konpeito.html": {
+"icon": "434",
+"jp": "こんぺいとう",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3955",
+"skill_jp": "イエローファイター"
+},
+"monst_gotodon.html": {
+"icon": "446",
+"jp": "ゴートドン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5006",
+"skill_jp": "ゆうき"
+},
+"monst_goremu.html": {
+"icon": "417",
+"jp": "ゴーレム",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5026",
+"skill_jp": "いしあたま"
+},
+"monst_saikoron.html": {
+"icon": "421",
+"jp": "サイコロン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4934",
+"skill_jp": "グリーンファイター"
+},
+"monst_sairesu.html": {
+"icon": "392",
+"jp": "サイレス",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "4998",
+"skill_jp": "ＶＳ呪文"
+},
+"monst_samayoyoroi.html": {
+"icon": "373",
+"jp": "さまようよろい",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "ＶＳブレス"
+},
+"monst_shinigami.html": {
+"icon": "411",
+"jp": "しにがみ",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4608",
+"skill_jp": "ブラックファイター"
+},
+"monst_shupuringa.html": {
+"icon": "435",
+"jp": "シュプリンガー",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5009",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_shigoremu.html": {
+"icon": "386",
+"jp": "シーゴーレム",
+"rank": "C",
+"family_jp": "物質",
+"size": "M",
+"ai": "-",
+"total": "6162",
+"skill_jp": "ガード"
+},
+"monst_jenerarudante.html": {
+"icon": "410",
+"jp": "ジェネラルダンテ",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5050",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_jigokunomonban.html": {
+"icon": "364",
+"jp": "じごくのもんばん",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4910",
+"skill_jp": "メラ＆ドルマ"
+},
+"monst_jinmenju.html": {
+"icon": "351",
+"jp": "じんめんじゅ",
+"rank": "C",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5648",
+"skill_jp": "エコロジー"
+},
+"monst_suraimutawa.html": {
+"icon": "394",
+"jp": "スライムタワー",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "5010",
+"skill_jp": "イオ＆デイン"
+},
+"monst_suraimuburesu.html": {
+"icon": "374",
+"jp": "スライムブレス",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3768",
+"skill_jp": "ドラゴンスピリッツ"
+},
+"monst_suraimubogu.html": {
+"icon": "412",
+"jp": "スライムボーグ",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5069",
+"skill_jp": "ジャミング"
+},
+"monst_surappi.html": {
+"icon": "348",
+"jp": "スラッピー",
+"rank": "C",
+"family_jp": "スライム",
+"size": "M",
+"ai": "1〜2",
+"total": "5135",
+"skill_jp": "レンジャー"
+},
+"monst_seirengosuto.html": {
+"icon": "409",
+"jp": "セイレーンゴースト",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "-",
+"total": "5120",
+"skill_jp": "ダークビューティー"
+},
+"monst_setsugenryu.html": {
+"icon": "395",
+"jp": "せつげんりゅう",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4750",
+"skill_jp": "吹雪"
+},
+"monst_soranokaryudo.html": {
+"icon": "432",
+"jp": "そらの狩人",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4770",
+"skill_jp": "インスパイア"
+},
+"monst_sododoragon.html": {
+"icon": "367",
+"jp": "ソードドラゴン",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5345",
+"skill_jp": "バーサーカー"
+},
+"monst_sodofantomu.html": {
+"icon": "422",
+"jp": "ソードファントム",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4989",
+"skill_jp": "バギ＆ドルマ"
+},
+"monst_daiakumanosho.html": {
+"icon": "441",
+"jp": "だいあくまの書",
+"rank": "C",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜2",
+"total": "5737",
+"skill_jp": "ＶＳ体技"
+},
+"monst_daiakumanomokujiroku.html": {
+"icon": "442",
+"jp": "だいあくまの黙示録",
+"rank": "C",
+"family_jp": "物質",
+"size": "M",
+"ai": "2",
+"total": "5099",
+"skill_jp": "最強ＶＳ体技"
+},
+"monst_dakkukaito.html": {
+"icon": "414",
+"jp": "ダックカイト",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4865",
+"skill_jp": "ホラー"
+},
+"monst_dansukyarotto.html": {
+"icon": "388",
+"jp": "ダンスキャロット",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4809",
+"skill_jp": "えんかい"
+},
+"monst_danbiramucho.html": {
+"icon": "437",
+"jp": "ダンビラムーチョ",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4840",
+"skill_jp": "バーサーカー"
+},
+"monst_cherisuraimu.html": {
+"icon": "337",
+"jp": "チェリースライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3930",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_choroujiyu.html": {
+"icon": "352",
+"jp": "ちょうろうじゅ",
+"rank": "C",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜3",
+"total": "5021",
+"skill_jp": "エコロジー"
+},
+"monst_tsurarasuraimu.html": {
+"icon": "428",
+"jp": "つららスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5020",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_tiko.html": {
+"icon": "453",
+"jp": "ティコ",
+"rank": "C",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3970",
+"skill_jp": "ピピット"
+},
+"monst_desusosa.html": {
+"icon": "447",
+"jp": "デスソーサー",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4820",
+"skill_jp": "バラエティ"
+},
+"monst_desufarena.html": {
+"icon": "406",
+"jp": "デスファレーナ",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5151",
+"skill_jp": "どくが"
+},
+"monst_desufuratta.html": {
+"icon": "383",
+"jp": "デスフラッター",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4814",
+"skill_jp": "ジャミング"
+},
+"monst_desumaesutoro.html": {
+"icon": "427",
+"jp": "デスマエストロ",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "2",
+"total": "4152",
+"skill_jp": "バラエティ"
+},
+"monst_dentazaurusu.html": {
+"icon": "413",
+"jp": "デンタザウルス",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5084",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_tochukaso.html": {
+"icon": "450",
+"jp": "とうちゅうかそう",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4853",
+"skill_jp": "エコロジー"
+},
+"monst_totsugekiuo.html": {
+"icon": "375",
+"jp": "とつげきうお",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4783",
+"skill_jp": "イオ＆ギラ"
+},
+"monst_tonburero.html": {
+"icon": "415",
+"jp": "トンブレロ",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5130",
+"skill_jp": "イエローファイター"
+},
+"monst_doragobishoppu.html": {
+"icon": "419",
+"jp": "ドラゴビショップ",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5822",
+"skill_jp": "ほのおの魔術師"
+},
+"monst_doragonhebi.html": {
+"icon": "444",
+"jp": "ドラゴンヘビー",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "2",
+"total": "5640",
+"skill_jp": "ＶＳブレス"
+},
+"monst_nazonoshinkan.html": {
+"icon": "387",
+"jp": "なぞのしんかん",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "5244",
+"skill_jp": "バギ＆ドルマ"
+},
+"monst_baburukingu.html": {
+"icon": "443",
+"jp": "バブルキング",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5098",
+"skill_jp": "ため息"
+},
+"monst_barunba.html": {
+"icon": "389",
+"jp": "バルンバ",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4899",
+"skill_jp": "ダイナマイト"
+},
+"monst_hyogamajin.html": {
+"icon": "408",
+"jp": "ひょうがまじん",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "バギ＆ヒャド"
+},
+"monst_pyuro.html": {
+"icon": "436",
+"jp": "ピューロ",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4930",
+"skill_jp": "しんそく"
+},
+"monst_bichisuraimu.html": {
+"icon": "333",
+"jp": "ピーチスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3850",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_fankibado.html": {
+"icon": "402",
+"jp": "ファンキーバード",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4926",
+"skill_jp": "ダンサー"
+},
+"monst_fiapapetto.html": {
+"icon": "404",
+"jp": "フィアーパペット",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5030",
+"skill_jp": "ダンサー"
+},
+"monst_fearibatto.html": {
+"icon": "369",
+"jp": "フェアリーバット",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5040",
+"skill_jp": "やみのダンサー"
+},
+"monst_furaingudebiru.html": {
+"icon": "448",
+"jp": "フライングデビル",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4750",
+"skill_jp": "レンジャー"
+},
+"monst_buchikingu.html": {
+"icon": "340",
+"jp": "ぶちキング",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4864",
+"skill_jp": "スラフォース"
+},
+"monst_buoon.html": {
+"icon": "384",
+"jp": "プオーン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4864",
+"skill_jp": "ブオーン"
+},
+"monst_purinsuraimu.html": {
+"icon": "339",
+"jp": "プリンスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3840",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_hebikomori.html": {
+"icon": "342",
+"jp": "へびこうもり",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5135",
+"skill_jp": "ホラー"
+},
+"monst_herukondoru.html": {
+"icon": "361",
+"jp": "ヘルコンドル",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "全体回復"
+},
+"monst_herubisuto.html": {
+"icon": "372",
+"jp": "ヘルビースト",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5069",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_behomasuraimu.html": {
+"icon": "405",
+"jp": "ベホマスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "3983",
+"skill_jp": "ＨＰ回復"
+},
+"monst_berisuraimu.html": {
+"icon": "336",
+"jp": "ベリースライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3850",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_beruzaburu.html": {
+"icon": "449",
+"jp": "ベルザブル",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4700",
+"skill_jp": "じこぎせい"
+},
+"monst_hoippusuraimu.html": {
+"icon": "338",
+"jp": "ホイップスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3770",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_hokuburizado.html": {
+"icon": "368",
+"jp": "ホークブリザード",
+"rank": "C",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4979",
+"skill_jp": "コールドスリープ"
+},
+"monst_makyoshierushion.html": {
+"icon": "418",
+"jp": "魔教師エルシオン",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "-",
+"total": "5930",
+"skill_jp": "ばくひょうの剣技"
+},
+"monst_matango.html": {
+"icon": "433",
+"jp": "マタンゴ",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5080",
+"skill_jp": "ため息"
+},
+"monst_machigaeru.html": {
+"icon": "430",
+"jp": "まちガエル",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "1〜3",
+"total": "5842",
+"skill_jp": "メタルつぶし"
+},
+"monst_maddosumisu.html": {
+"icon": "357",
+"jp": "マッドスミス",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "暗黒"
+},
+"monst_mahotsukai.html": {
+"icon": "426",
+"jp": "まほうつかい",
+"rank": "C",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜3",
+"total": "5140",
+"skill_jp": "ようじゅつ"
+},
+"monst_maruchiai.html": {
+"icon": "452",
+"jp": "マルチアイ",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "ダウナー"
+},
+"monst_mataiga.html": {
+"icon": "407",
+"jp": "マータイガー",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "1〜3",
+"total": "5676",
+"skill_jp": "バーサーカー"
+},
+"monst_maman.html": {
+"icon": "370",
+"jp": "マーマン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4966",
+"skill_jp": "みずげい"
+},
+"monst_misutoingu.html": {
+"icon": "380",
+"jp": "ミストウイング",
+"rank": "C",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5315",
+"skill_jp": "死神"
+},
+"monst_megabogu.html": {
+"icon": "431",
+"jp": "メガボーグ",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4945",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_metarudoragon.html": {
+"icon": "350",
+"jp": "メタルドラゴン",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5085",
+"skill_jp": "アサシン"
+},
+"monst_metaruhanta.html": {
+"icon": "385",
+"jp": "メタルハンター",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "4368",
+"skill_jp": "メタルハンター"
+},
+"monst_metaruraida.html": {
+"icon": "366",
+"jp": "メタルライダー",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4221",
+"skill_jp": "びゃくやの剣技"
+},
+"monst_morimoribesu.html": {
+"icon": "358",
+"jp": "もりもりベス",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4967",
+"skill_jp": "メラ＆ドルマ"
+},
+"monst_yunikon.html": {
+"icon": "397",
+"jp": "ユニコーン",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5154",
+"skill_jp": "ＨＰ回復"
+},
+"monst_raionheddo.html": {
+"icon": "353",
+"jp": "ライオンヘッド",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜3",
+"total": "4986",
+"skill_jp": "ハンター"
+},
+"monst_rainosoruja.html": {
+"icon": "425",
+"jp": "ライノソルジャー",
+"rank": "C",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5005",
+"skill_jp": "イエローファイター"
+},
+"monst_raiban.html": {
+"icon": "423",
+"jp": "ライバーン",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5368",
+"skill_jp": "バウンティハンター"
+},
+"monst_raimusuraimu.html": {
+"icon": "335",
+"jp": "ライムスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3850",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_rizadoman.html": {
+"icon": "401",
+"jp": "リザードマン",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "5100",
+"skill_jp": "びゃくやの剣技"
+},
+"monst_ribinguhanma.html": {
+"icon": "377",
+"jp": "リビングハンマー",
+"rank": "C",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4880",
+"skill_jp": "じこぎせい"
+},
+"monst_remonsuraimu.html": {
+"icon": "334",
+"jp": "レモンスライム",
+"rank": "C",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3850",
+"skill_jp": "スイーツカーニバル"
+},
+"monst_rengokutenma.html": {
+"icon": "382",
+"jp": "れんごく天馬",
+"rank": "C",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5002",
+"skill_jp": "メラ＆デイン"
+},
+"monst_akumanokishi.html": {
+"icon": "528",
+"jp": "あくまの騎士",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5094",
+"skill_jp": "たたり"
+},
+"monst_akkusushaku.html": {
+"icon": "526",
+"jp": "アックスシャーク",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4750",
+"skill_jp": "いしあたま"
+},
+"monst_arakurechappi.html": {
+"icon": "512",
+"jp": "あらくれチャッピー",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4680",
+"skill_jp": "バーサーカー"
+},
+"monst_arugongureto.html": {
+"icon": "465",
+"jp": "アルゴングレート",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4840",
+"skill_jp": "ブレス"
+},
+"monst_akudemon.html": {
+"icon": "546",
+"jp": "アークデーモン",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "5055",
+"skill_jp": "メラ＆イオ"
+},
+"monst_wingudebiru.html": {
+"icon": "558",
+"jp": "ウィングデビル",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "2",
+"total": "5029",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_uingutaiga.html": {
+"icon": "491",
+"jp": "ウイングタイガー",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "1〜3",
+"total": "5612",
+"skill_jp": "ウイングタイガー"
+},
+"monst_ugokusekizo.html": {
+"icon": "554",
+"jp": "うごくせきぞう",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5056",
+"skill_jp": "てっぺき"
+},
+"monst_ebirusupirittsu.html": {
+"icon": "529",
+"jp": "エビルスピリッツ",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5206",
+"skill_jp": "アンデッド"
+},
+"monst_ebiruchariotto.html": {
+"icon": "468",
+"jp": "エビルチャリオット",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "4449",
+"skill_jp": "バギ＆ドルマ"
+},
+"monst_entashisuman.html": {
+"icon": "527",
+"jp": "エンタシスマン",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5020",
+"skill_jp": "バラエティ"
+},
+"monst_oga.html": {
+"icon": "502",
+"jp": "オーガー",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4828",
+"skill_jp": "あらくれ"
+},
+"monst_kabutokozo.html": {
+"icon": "480",
+"jp": "かぶとこぞう",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4981",
+"skill_jp": "むしのしらせ"
+},
+"monst_kiraanburera.html": {
+"icon": "470",
+"jp": "キラーアンブレラ",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "3909",
+"skill_jp": "さいみん"
+},
+"monst_kiraaaama.html": {
+"icon": "513",
+"jp": "キラーアーマー",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4958",
+"skill_jp": "コールドスリープ"
+},
+"monst_kiragusu.html": {
+"icon": "511",
+"jp": "キラーグース",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4830",
+"skill_jp": "暗黒"
+},
+"monst_kirapikkeru.html": {
+"icon": "532",
+"jp": "キラーピッケル",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4820",
+"skill_jp": "こうじちゅう"
+},
+"monst_kirapoddo.html": {
+"icon": "483",
+"jp": "キラーポッド",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "2",
+"total": "3940",
+"skill_jp": "こうねつガス"
+},
+"monst_kiramashin.html": {
+"icon": "520",
+"jp": "キラーマシン",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "2",
+"total": "4047",
+"skill_jp": "アサシン"
+},
+"monst_gigantesu.html": {
+"icon": "540",
+"jp": "ギガンテス",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5415",
+"skill_jp": "メタルハンター"
+},
+"monst_girimekara.html": {
+"icon": "538",
+"jp": "ギリメカラ",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜3",
+"total": "4917",
+"skill_jp": "イオ＆デイン"
+},
+"monst_kuinsuraimu.html": {
+"icon": "535",
+"jp": "クイーンスライム",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5270",
+"skill_jp": "プリンセス"
+},
+"monst_kumihimokozo.html": {
+"icon": "482",
+"jp": "くみひもこぞう",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4960",
+"skill_jp": "ダウナー"
+},
+"monst_kurokishireokon.html": {
+"icon": "560",
+"jp": "黒騎士レオコーン",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4975",
+"skill_jp": "ふうらいの剣技"
+},
+"monst_gureitohon.html": {
+"icon": "553",
+"jp": "グレイトホーン",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5517",
+"skill_jp": "ＶＳ体技"
+},
+"monst_genjikabuto.html": {
+"icon": "552",
+"jp": "げんじかぶと",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5170",
+"skill_jp": "むしのしらせ"
+},
+"monst_koatoru.html": {
+"icon": "551",
+"jp": "コアトル",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5198",
+"skill_jp": "イオ＆デイン"
+},
+"monst_konguheddo.html": {
+"icon": "460",
+"jp": "コングヘッド",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4870",
+"skill_jp": "ハンター"
+},
+"monst_shinigamisuraidaku.html": {
+"icon": "530",
+"jp": "死神スライダーク",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "4475",
+"skill_jp": "死神"
+},
+"monst_shadonooburu.html": {
+"icon": "487",
+"jp": "シャドーノーブル",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4910",
+"skill_jp": "死神"
+},
+"monst_shakumaju.html": {
+"icon": "479",
+"jp": "シャークマジュ",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4927",
+"skill_jp": "ブレス"
+},
+"monst_shonenreosodo.html": {
+"icon": "562",
+"jp": "少年レオソード",
+"rank": "B",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "3239",
+"skill_jp": "神聖"
+},
+"monst_shiryonokishi.html": {
+"icon": "478",
+"jp": "しりょうのきし",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4878",
+"skill_jp": "ＨＰ回復"
+},
+"monst_shinkairyu.html": {
+"icon": "542",
+"jp": "しんかいりゅう",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "1〜3",
+"total": "5672",
+"skill_jp": "ハンター"
+},
+"monst_shihosu.html": {
+"icon": "457",
+"jp": "シーホース",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4910",
+"skill_jp": "コールドスリープ"
+},
+"monst_jigokunomendosa.html": {
+"icon": "534",
+"jp": "じごくのメンドーサ",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5140",
+"skill_jp": "全体回復"
+},
+"monst_jamirasu.html": {
+"icon": "533",
+"jp": "ジャミラス",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "2",
+"total": "4160",
+"skill_jp": "メラ＆バギ"
+},
+"monst_jaryusenshi.html": {
+"icon": "536",
+"jp": "じゃりゅうせんし",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5274",
+"skill_jp": "グリーンファイター"
+},
+"monst_sukaidoragon.html": {
+"icon": "517",
+"jp": "スカイドラゴン",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5358",
+"skill_jp": "ブレス"
+},
+"monst_sumairurizado.html": {
+"icon": "473",
+"jp": "スマイルリザード",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "3570",
+"skill_jp": "火炎"
+},
+"monst_suraidahiro.html": {
+"icon": "504",
+"jp": "スライダーヒーロー",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4906",
+"skill_jp": "ゆうき"
+},
+"monst_suraimubehomazun.html": {
+"icon": "523",
+"jp": "スライムベホマズン",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5247",
+"skill_jp": "全体回復"
+},
+"monst_taipuji.html": {
+"icon": "521",
+"jp": "タイプG",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "2",
+"total": "3856",
+"skill_jp": "じごく"
+},
+"monst_tairantowamu.html": {
+"icon": "490",
+"jp": "タイラントワーム",
+"rank": "B",
+"family_jp": "自然",
+"size": "G",
+"ai": "1〜3",
+"total": "5790",
+"skill_jp": "タイラントワーム"
+},
+"monst_takeyarihei.html": {
+"icon": "501",
+"jp": "たけやりへい",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "バウンティハンター"
+},
+"monst_dagon.html": {
+"icon": "525",
+"jp": "ダゴン",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "2〜3",
+"total": "3346",
+"skill_jp": "ＭＰ回復"
+},
+"monst_danjonebi.html": {
+"icon": "506",
+"jp": "ダンジョンえび",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4206",
+"skill_jp": "ぼうぎょ"
+},
+"monst_dakukingu.html": {
+"icon": "550",
+"jp": "ダークキング",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "4621",
+"skill_jp": "さいみん"
+},
+"monst_dakusuraimu.html": {
+"icon": "472",
+"jp": "ダークスライム",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "3980",
+"skill_jp": "じごく"
+},
+"monst_dakunaito.html": {
+"icon": "509",
+"jp": "ダークナイト",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5051",
+"skill_jp": "ブラックファイター"
+},
+"monst_dakuhobitto.html": {
+"icon": "485",
+"jp": "ダークホビット",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4920",
+"skill_jp": "ぼうぎょ"
+},
+"monst_desugogon.html": {
+"icon": "559",
+"jp": "デスゴーゴン",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5450",
+"skill_jp": "いしあたま"
+},
+"monst_desutaranchura.html": {
+"icon": "522",
+"jp": "デスタランチュラ",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5300",
+"skill_jp": "ホラー"
+},
+"monst_desumadomoazeru.html": {
+"icon": "499",
+"jp": "デスマドモアゼル",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "-",
+"total": "5337",
+"skill_jp": "ダークビューティー"
+},
+"monst_demonresura.html": {
+"icon": "493",
+"jp": "デーモンレスラー",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4941",
+"skill_jp": "イオ＆ドルマ"
+},
+"monst_toraiwainda.html": {
+"icon": "505",
+"jp": "トライワインダー",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4856",
+"skill_jp": "アサシン"
+},
+"monst_doragonsoruja.html": {
+"icon": "496",
+"jp": "ドラゴンソルジャー",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4730",
+"skill_jp": "レンジャー"
+},
+"monst_doragonraida.html": {
+"icon": "531",
+"jp": "ドラゴンライダー",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "4390",
+"skill_jp": "メラ＆イオ"
+},
+"monst_doragonrodo.html": {
+"icon": "514",
+"jp": "ドラゴンロード",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5841",
+"skill_jp": "ほのおの魔術師"
+},
+"monst_naitoritchi.html": {
+"icon": "494",
+"jp": "ナイトリッチ",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_nukegarahei.html": {
+"icon": "503",
+"jp": "ぬけがらへい",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4780",
+"skill_jp": "暗黒"
+},
+"monst_haguremetaru.html": {
+"icon": "464",
+"jp": "はぐれメタル",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4493",
+"skill_jp": "ダイナマイト"
+},
+"monst_barikunaja.html": {
+"icon": "462",
+"jp": "バリクナジャ",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "G",
+"ai": "1〜3",
+"total": "6079",
+"skill_jp": "ＶＳ踊り"
+},
+"monst_badofaita.html": {
+"icon": "475",
+"jp": "バードファイター",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4790",
+"skill_jp": "フェザーウインド"
+},
+"monst_paomu.html": {
+"icon": "519",
+"jp": "パオーム",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5380",
+"skill_jp": "けもの道"
+},
+"monst_hikuidori.html": {
+"icon": "458",
+"jp": "ひくいどり",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4902",
+"skill_jp": "ギラ＆デイン"
+},
+"monst_hitokuiso.html": {
+"icon": "518",
+"jp": "ひとくいそう",
+"rank": "B",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5449",
+"skill_jp": "コールドスリープ"
+},
+"monst_byomapanderumu.html": {
+"icon": "508",
+"jp": "病魔パンデルム",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5101",
+"skill_jp": "ナイトメア"
+},
+"monst_pinkumomon.html": {
+"icon": "481",
+"jp": "ピンクモーモン",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3739",
+"skill_jp": "バギ＆ヒャド"
+},
+"monst_furawazonbi.html": {
+"icon": "547",
+"jp": "フラワーゾンビ",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5155",
+"skill_jp": "バラエティ"
+},
+"monst_buchisuraimubesu.html": {
+"icon": "497",
+"jp": "ぶちスライムベス",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3757",
+"skill_jp": "マネマネ"
+},
+"monst_buraddoredi.html": {
+"icon": "456",
+"jp": "ブラッドレディ",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5035",
+"skill_jp": "やみのダンサー"
+},
+"monst_burizadoman.html": {
+"icon": "545",
+"jp": "ブリザードマン",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5002",
+"skill_jp": "吹雪"
+},
+"monst_purotokira.html": {
+"icon": "461",
+"jp": "プロトキラー",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜3",
+"total": "4026",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_herudaiba.html": {
+"icon": "510",
+"jp": "ヘルダイバー",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_herupairetsu.html": {
+"icon": "507",
+"jp": "ヘルパイレーツ",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4750",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_heruhonetto.html": {
+"icon": "474",
+"jp": "ヘルホーネット",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3704",
+"skill_jp": "ふういんの技"
+},
+"monst_bebigoiru.html": {
+"icon": "477",
+"jp": "ベビーゴイル",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3854",
+"skill_jp": "ナイトメア"
+},
+"monst_hononosenshi.html": {
+"icon": "539",
+"jp": "炎の戦士",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4979",
+"skill_jp": "火炎"
+},
+"monst_bosutororu.html": {
+"icon": "469",
+"jp": "ボストロール",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5432",
+"skill_jp": "ＶＳブレス"
+},
+"monst_bonnaito.html": {
+"icon": "486",
+"jp": "ボーンナイト",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4839",
+"skill_jp": "アサシン"
+},
+"monst_bonbatto.html": {
+"icon": "463",
+"jp": "ボーンバット",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4660",
+"skill_jp": "たたり"
+},
+"monst_ponpokoaniki.html": {
+"icon": "467",
+"jp": "ポンポコあにき",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5101",
+"skill_jp": "インスパイア"
+},
+"monst_maonosho.html": {
+"icon": "548",
+"jp": "魔王の書",
+"rank": "B",
+"family_jp": "物質",
+"size": "G",
+"ai": "1〜3",
+"total": "5966",
+"skill_jp": "ＶＳ踊り"
+},
+"monst_maonomokujiroku.html": {
+"icon": "549",
+"jp": "魔王の黙示録",
+"rank": "B",
+"family_jp": "物質",
+"size": "G",
+"ai": "2〜3",
+"total": "5219",
+"skill_jp": "禁断の魔導書"
+},
+"monst_massurugado.html": {
+"icon": "492",
+"jp": "マッスルガード",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5233",
+"skill_jp": "ＶＳ体技"
+},
+"monst_maddohanibi.html": {
+"icon": "561",
+"jp": "マッドハニービー",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "ジャミングナイト"
+},
+"monst_maddorobusuta.html": {
+"icon": "537",
+"jp": "マッドロブスター",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4960",
+"skill_jp": "バウンティハンター"
+},
+"monst_madosuraimu.html": {
+"icon": "455",
+"jp": "まどうスライム",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4005",
+"skill_jp": "ギラ＆デイン"
+},
+"monst_mami.html": {
+"icon": "541",
+"jp": "マミー",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4993",
+"skill_jp": "アンデッド"
+},
+"monst_manita.html": {
+"icon": "543",
+"jp": "マンイーター",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4820",
+"skill_jp": "ナイトメア"
+},
+"monst_mandoragora.html": {
+"icon": "556",
+"jp": "マンドラゴラ",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4996",
+"skill_jp": "コールドスリープ"
+},
+"monst_mimikku.html": {
+"icon": "476",
+"jp": "ミミック",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4974",
+"skill_jp": "ナイトメア"
+},
+"monst_megazarurokku.html": {
+"icon": "459",
+"jp": "メガザルロック",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5350",
+"skill_jp": "ダイナマイト"
+},
+"monst_medapanishikkuru.html": {
+"icon": "498",
+"jp": "メダパニシックル",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5113",
+"skill_jp": "ホラー"
+},
+"monst_messara.html": {
+"icon": "515",
+"jp": "メッサーラ",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5008",
+"skill_jp": "イオ＆ギラ"
+},
+"monst_yureisencho.html": {
+"icon": "471",
+"jp": "ゆうれい船長",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5040",
+"skill_jp": "じごく"
+},
+"monst_yumenyudo.html": {
+"icon": "500",
+"jp": "ゆめにゅうどう",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5040",
+"skill_jp": "インスパイア"
+},
+"monst_yonakunidori.html": {
+"icon": "516",
+"jp": "よなくにどり",
+"rank": "B",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4880",
+"skill_jp": "ため息"
+},
+"monst_yoroimukade.html": {
+"icon": "466",
+"jp": "よろいムカデ",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5031",
+"skill_jp": "ぼうぎょ"
+},
+"monst_yoroiryu.html": {
+"icon": "524",
+"jp": "よろい竜",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4075",
+"skill_jp": "ぼうぎょ"
+},
+"monst_ranpunomao.html": {
+"icon": "555",
+"jp": "ランプの魔王",
+"rank": "B",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5076",
+"skill_jp": "ギラ＆デイン"
+},
+"monst_rizadofattsu.html": {
+"icon": "489",
+"jp": "リザードファッツ",
+"rank": "B",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4900",
+"skill_jp": "コールドスリープ"
+},
+"monst_rubanka.html": {
+"icon": "544",
+"jp": "ルバンカ",
+"rank": "B",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5160",
+"skill_jp": "ナイトメア"
+},
+"monst_rufa.html": {
+"icon": "488",
+"jp": "ルーファ",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3950",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_rokkucho.html": {
+"icon": "557",
+"jp": "ロック鳥",
+"rank": "B",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4865",
+"skill_jp": "神聖"
+},
+"monst_waiyaman.html": {
+"icon": "484",
+"jp": "ワイヤーマン",
+"rank": "B",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "バラエティ"
+},
+"monst_wandaeggu.html": {
+"icon": "495",
+"jp": "ワンダーエッグ",
+"rank": "B",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3991",
+"skill_jp": "エコロジー"
+},
+"monst_asashinburosu.html": {
+"icon": "612",
+"jp": "アサシンブロス",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2",
+"total": "4706",
+"skill_jp": "アサシンブロス"
+},
+"monst_akkuru.html": {
+"icon": "671",
+"jp": "アックル",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4027",
+"skill_jp": "戦帝アックル"
+},
+"monst_arakurepanda.html": {
+"icon": "563",
+"jp": "あらくれパンダ",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "-",
+"total": "5841",
+"skill_jp": "バーサーカー"
+},
+"monst_ankuruhon.html": {
+"icon": "630",
+"jp": "アンクルホーン",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5060",
+"skill_jp": "ヒャド＆ギラ"
+},
+"monst_andorearu.html": {
+"icon": "567",
+"jp": "アンドレアル",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4986",
+"skill_jp": "どくが"
+},
+"monst_ikarinomajin.html": {
+"icon": "601",
+"jp": "怒りの魔人",
+"rank": "A",
+"family_jp": "物質",
+"size": "M",
+"ai": "2",
+"total": "4882",
+"skill_jp": "てっぺき"
+},
+"monst_idearagon.html": {
+"icon": "605",
+"jp": "イデアラゴン",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5421",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_inazumabiri.html": {
+"icon": "569",
+"jp": "いなずまビリー",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3711",
+"skill_jp": "いなずまダンサー"
+},
+"monst_iburu.html": {
+"icon": "650",
+"jp": "イブール",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5087",
+"skill_jp": "イオ＆バギ"
+},
+"monst_windeo.html": {
+"icon": "669",
+"jp": "ウィンデオ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3921",
+"skill_jp": "皇帝ウィンディオ"
+},
+"monst_urutorakimeira.html": {
+"icon": "598",
+"jp": "ウルトラキメイラ",
+"rank": "A",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜3",
+"total": "4987",
+"skill_jp": "ＨＰ回復"
+},
+"monst_urufudoragon.html": {
+"icon": "564",
+"jp": "ウルフドラゴン",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5309",
+"skill_jp": "火炎"
+},
+"monst_okarutobisuku.html": {
+"icon": "633",
+"jp": "オカルトビスク",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "-",
+"total": "5180",
+"skill_jp": "ダークビューティー"
+},
+"monst_orugodemira.html": {
+"icon": "660",
+"jp": "オルゴ・デミーラ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4473",
+"skill_jp": "じごく"
+},
+"monst_oshankuro.html": {
+"icon": "617",
+"jp": "オーシャンクロー",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4944",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_kapurigon.html": {
+"icon": "652",
+"jp": "カプリゴン",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5509",
+"skill_jp": "バギ＆デイン"
+},
+"monst_kandata.html": {
+"icon": "611",
+"jp": "カンダタ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4958",
+"skill_jp": "バウンティハンター"
+},
+"monst_gaikotsukenshi.html": {
+"icon": "587",
+"jp": "がいこつけんし",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4680",
+"skill_jp": "ブルーファイター"
+},
+"monst_gaogaiya.html": {
+"icon": "672",
+"jp": "ガオガイヤ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3852",
+"skill_jp": "義帝ガオガイヤ"
+},
+"monst_garuhato.html": {
+"icon": "662",
+"jp": "ガルハート",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3751",
+"skill_jp": "ガルハート"
+},
+"monst_garuda.html": {
+"icon": "629",
+"jp": "ガルーダ",
+"rank": "A",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5011",
+"skill_jp": "メラ＆デイン"
+},
+"monst_kimairarodo.html": {
+"icon": "590",
+"jp": "キマイラロード",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "2",
+"total": "4853",
+"skill_jp": "イオ＆バギ"
+},
+"monst_kingurizado.html": {
+"icon": "596",
+"jp": "キングリザード",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4599",
+"skill_jp": "火炎"
+},
+"monst_gigamyutanto.html": {
+"icon": "572",
+"jp": "ギガミュータント",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4890",
+"skill_jp": "吹雪"
+},
+"monst_gyumeishogun.html": {
+"icon": "668",
+"jp": "ギュメイ将軍",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "2",
+"total": "3837",
+"skill_jp": "ゆうき"
+},
+"monst_kuinmomon.html": {
+"icon": "600",
+"jp": "クイーンモーモン",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "3887",
+"skill_jp": "しっぷう・ゼロ封じ"
+},
+"monst_gurakosu.html": {
+"icon": "620",
+"jp": "グラコス",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "5142",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_gurabuzon.html": {
+"icon": "663",
+"jp": "グラブゾン",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3694",
+"skill_jp": "グラブゾン"
+},
+"monst_gureitodoragon.html": {
+"icon": "623",
+"jp": "グレイトドラゴン",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4900",
+"skill_jp": "吹雪"
+},
+"monst_gureitobonba.html": {
+"icon": "607",
+"jp": "グレイトボンバー",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4929",
+"skill_jp": "こうねつガス"
+},
+"monst_gurenderu.html": {
+"icon": "568",
+"jp": "グレンデル",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4895",
+"skill_jp": "アサシン"
+},
+"monst_gema.html": {
+"icon": "653",
+"jp": "ゲマ",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4736",
+"skill_jp": "メラ＆イオ"
+},
+"monst_gemon.html": {
+"icon": "632",
+"jp": "ゲモン",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5276",
+"skill_jp": "メラ＆ドルマ"
+},
+"monst_gerunikkushogun.html": {
+"icon": "667",
+"jp": "ゲルニック将軍",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5183",
+"skill_jp": "バギ＆ギラ"
+},
+"monst_koteiganasadai.html": {
+"icon": "594",
+"jp": "皇帝ガナサダイ",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5502",
+"skill_jp": "ブラックファイター"
+},
+"monst_kokuryumaru.html": {
+"icon": "578",
+"jp": "黒竜丸",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "4414",
+"skill_jp": "じごく"
+},
+"monst_kosumofantomu.html": {
+"icon": "571",
+"jp": "コスモファントム",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4957",
+"skill_jp": "ＶＳ体技"
+},
+"monst_goreonshogun.html": {
+"icon": "666",
+"jp": "ゴレオン将軍",
+"rank": "A",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4880",
+"skill_jp": "メタルハンター"
+},
+"monst_gonzu.html": {
+"icon": "625",
+"jp": "ゴンズ",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4717",
+"skill_jp": "ふうらいの剣技"
+},
+"monst_sandabaado.html": {
+"icon": "579",
+"jp": "サンダーバード",
+"rank": "A",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5413",
+"skill_jp": "ギラ＆デイン"
+},
+"monst_shinigamikizoku.html": {
+"icon": "622",
+"jp": "死神きぞく",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5048",
+"skill_jp": "ようじゅつ"
+},
+"monst_shirudoooga.html": {
+"icon": "591",
+"jp": "シールドオーガ",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5087",
+"skill_jp": "てっぺき"
+},
+"monst_jigokunomadonna.html": {
+"icon": "626",
+"jp": "じごくのマドンナ",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5342",
+"skill_jp": "じごくのマドンナ"
+},
+"monst_jami.html": {
+"icon": "644",
+"jp": "ジャミ",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5126",
+"skill_jp": "メラ＆バギ"
+},
+"monst_sukarusupaida.html": {
+"icon": "648",
+"jp": "スカルスパイダー",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5545",
+"skill_jp": "暗黒"
+},
+"monst_supedio.html": {
+"icon": "661",
+"jp": "スペディオ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3809",
+"skill_jp": "スペディオ"
+},
+"monst_suraidagaaru.html": {
+"icon": "628",
+"jp": "スライダーガール",
+"rank": "A",
+"family_jp": "スライム",
+"size": "M",
+"ai": "1〜3",
+"total": "4585",
+"skill_jp": "スライダーガール"
+},
+"monst_suraidakizzu.html": {
+"icon": "588",
+"jp": "スライダーキッズ",
+"rank": "A",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "4446",
+"skill_jp": "ゆうき"
+},
+"monst_suraimujeneraru.html": {
+"icon": "637",
+"jp": "スライムジェネラル",
+"rank": "A",
+"family_jp": "スライム",
+"size": "S",
+"ai": "1〜2",
+"total": "4642",
+"skill_jp": "ばくひょうの剣技"
+},
+"monst_suraimutaru.html": {
+"icon": "597",
+"jp": "スライムタール",
+"rank": "A",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4890",
+"skill_jp": "火炎"
+},
+"monst_suraimufamiri.html": {
+"icon": "565",
+"jp": "スライムファミリー",
+"rank": "A",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2〜3",
+"total": "4844",
+"skill_jp": "ヒャド＆ドルマ"
+},
+"monst_zushiomaru.html": {
+"icon": "573",
+"jp": "ずしおうまる",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4936",
+"skill_jp": "フェザーウインド"
+},
+"monst_sebasuchan.html": {
+"icon": "610",
+"jp": "セバスチャン",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4453",
+"skill_jp": "異常回復"
+},
+"monst_zomazudebiru.html": {
+"icon": "656",
+"jp": "ゾーマズデビル",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "3647",
+"skill_jp": "ようじゅつ"
+},
+"monst_taimumasuta.html": {
+"icon": "609",
+"jp": "タイムマスター",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜3",
+"total": "4240",
+"skill_jp": "メラ＆ドルマ"
+},
+"monst_taurasu.html": {
+"icon": "651",
+"jp": "タウラス",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5283",
+"skill_jp": "メラ＆デイン"
+},
+"monst_daioika.html": {
+"icon": "655",
+"jp": "大王イカ",
+"rank": "A",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜3",
+"total": "4702",
+"skill_jp": "異常回復"
+},
+"monst_daburuita.html": {
+"icon": "614",
+"jp": "ダブルイーター",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "2",
+"total": "3692",
+"skill_jp": "しんそく"
+},
+"monst_dakusakyubasu.html": {
+"icon": "574",
+"jp": "ダークサキュバス",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5160",
+"skill_jp": "やみのダンサー"
+},
+"monst_choroupipitto.html": {
+"icon": "665",
+"jp": "長老ピピット",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4219",
+"skill_jp": "ピピット"
+},
+"monst_dianogu.html": {
+"icon": "664",
+"jp": "ディアノーグ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3968",
+"skill_jp": "ディアノーグ"
+},
+"monst_desusoshisuto.html": {
+"icon": "615",
+"jp": "デスソシスト",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5734",
+"skill_jp": "デスソシスト"
+},
+"monst_desutamua.html": {
+"icon": "659",
+"jp": "デスタムーア",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4473",
+"skill_jp": "デスタムーア"
+},
+"monst_deddomasuka.html": {
+"icon": "604",
+"jp": "デッドマスカー",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜2",
+"total": "5641",
+"skill_jp": "ダイナマイト"
+},
+"monst_dyurahannaito.html": {
+"icon": "593",
+"jp": "デュラハンナイト",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4523",
+"skill_jp": "プリンス"
+},
+"monst_dyurahan.html": {
+"icon": "643",
+"jp": "デュラハーン",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5179",
+"skill_jp": "サムライ"
+},
+"monst_dyuran.html": {
+"icon": "640",
+"jp": "デュラン",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4858",
+"skill_jp": "死神"
+},
+"monst_todaitaiga.html": {
+"icon": "608",
+"jp": "とうだいタイガー",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4876",
+"skill_jp": "イエローファイター"
+},
+"monst_torappubokkusu.html": {
+"icon": "576",
+"jp": "トラップボックス",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5038",
+"skill_jp": "ホラー"
+},
+"monst_tororubonba.html": {
+"icon": "577",
+"jp": "トロルボンバー",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "-",
+"total": "5809",
+"skill_jp": "ＶＳ体技"
+},
+"monst_dogusenshi.html": {
+"icon": "646",
+"jp": "どぐう戦士",
+"rank": "A",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜3",
+"total": "4901",
+"skill_jp": "バギ＆デイン"
+},
+"monst_doragonkopusu.html": {
+"icon": "627",
+"jp": "ドラゴンコープス",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4943",
+"skill_jp": "アンデッド"
+},
+"monst_donmogura.html": {
+"icon": "639",
+"jp": "ドン・モグーラ",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5005",
+"skill_jp": "インスパイア"
+},
+"monst_naitokingu.html": {
+"icon": "634",
+"jp": "ナイトキング",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5072",
+"skill_jp": "ギラ＆ドルマ"
+},
+"monst_nagekinoborei.html": {
+"icon": "621",
+"jp": "なげきのぼうれい",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5194",
+"skill_jp": "たたり"
+},
+"monst_bazuzu.html": {
+"icon": "647",
+"jp": "バズズ",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "5097",
+"skill_jp": "ダイナマイト"
+},
+"monst_baffaron.html": {
+"icon": "580",
+"jp": "バッファロン",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4877",
+"skill_jp": "バーサーカー"
+},
+"monst_baru.html": {
+"icon": "583",
+"jp": "バル",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "4048",
+"skill_jp": "ＭＰ回復"
+},
+"monst_baruzakkubisuto.html": {
+"icon": "619",
+"jp": "バルザックビースト",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "2",
+"total": "5060",
+"skill_jp": "イオ＆ギラ"
+},
+"monst_hihyurudenotsukai.html": {
+"icon": "642",
+"jp": "ヒヒュルデの使い",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5069",
+"skill_jp": "イオ＆ドルマ"
+},
+"monst_pisaronaito.html": {
+"icon": "636",
+"jp": "ピサロナイト",
+"rank": "A",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4594",
+"skill_jp": "ふういんの技"
+},
+"monst_fureisha.html": {
+"icon": "670",
+"jp": "フレイシャ",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4027",
+"skill_jp": "女帝フレイシャ"
+},
+"monst_puoon.html": {
+"icon": "575",
+"jp": "ブオーン",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "2",
+"total": "5814",
+"skill_jp": "ブオーン"
+},
+"monst_buraddoporisu.html": {
+"icon": "566",
+"jp": "ブラッドポリス",
+"rank": "A",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "4710",
+"skill_jp": "ジャミングナイト"
+},
+"monst_buru.html": {
+"icon": "585",
+"jp": "ブル",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "3879",
+"skill_jp": "アッパー"
+},
+"monst_puchitaku.html": {
+"icon": "657",
+"jp": "プチターク",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "3560",
+"skill_jp": "エスターク"
+},
+"monst_puchittogaruzu.html": {
+"icon": "613",
+"jp": "プチットガールズ",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "3859",
+"skill_jp": "全体回復"
+},
+"monst_herakureiza.html": {
+"icon": "606",
+"jp": "ヘラクレイザー",
+"rank": "A",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5030",
+"skill_jp": "バウンティハンター"
+},
+"monst_herukuraudo.html": {
+"icon": "654",
+"jp": "ヘルクラウド",
+"rank": "A",
+"family_jp": "物質",
+"size": "G",
+"ai": "2",
+"total": "5880",
+"skill_jp": "ヘルクラウド"
+},
+"monst_beriaru.html": {
+"icon": "641",
+"jp": "ベリアル",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "4642",
+"skill_jp": "イオ＆ドルマ"
+},
+"monst_beru.html": {
+"icon": "584",
+"jp": "ベル",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "3820",
+"skill_jp": "ＨＰ回復"
+},
+"monst_horaidaio.html": {
+"icon": "631",
+"jp": "ほうらい大王",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5598",
+"skill_jp": "イオ＆ギラ"
+},
+"monst_hoerumaji.html": {
+"icon": "603",
+"jp": "ホエールマージ",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "2",
+"total": "5064",
+"skill_jp": "みずげい"
+},
+"monst_boru.html": {
+"icon": "582",
+"jp": "ボル",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "3844",
+"skill_jp": "ぼうぎょ"
+},
+"monst_maonotsukai.html": {
+"icon": "586",
+"jp": "魔王の使い",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "2",
+"total": "4155",
+"skill_jp": "ヒャド＆ドルマ"
+},
+"monst_masutasuraimu.html": {
+"icon": "595",
+"jp": "マスタースライム",
+"rank": "A",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3815",
+"skill_jp": "ゆうき"
+},
+"monst_maporena.html": {
+"icon": "599",
+"jp": "マポレーナ",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4092",
+"skill_jp": "巨大モンスターつぶし"
+},
+"monst_mamu.html": {
+"icon": "581",
+"jp": "マムー",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "-",
+"total": "6019",
+"skill_jp": "けもの道"
+},
+"monst_marindyueru.html": {
+"icon": "645",
+"jp": "マリンデュエル",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5398",
+"skill_jp": "マリンデュエル"
+},
+"monst_mirudorasu.html": {
+"icon": "658",
+"jp": "ミルドラース",
+"rank": "A",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4526",
+"skill_jp": "ミルドラース"
+},
+"monst_mekaban.html": {
+"icon": "638",
+"jp": "メカバーン",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5056",
+"skill_jp": "てっぺき"
+},
+"monst_metarukaiza.html": {
+"icon": "616",
+"jp": "メタルカイザー",
+"rank": "A",
+"family_jp": "スライム",
+"size": "M",
+"ai": "1〜2",
+"total": "5175",
+"skill_jp": "イオ＆ドルマ"
+},
+"monst_metarukingu.html": {
+"icon": "649",
+"jp": "メタルキング",
+"rank": "A",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5140",
+"skill_jp": "イオ＆ヒャド"
+},
+"monst_mokubanokishi.html": {
+"icon": "570",
+"jp": "木馬の騎士",
+"rank": "A",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4610",
+"skill_jp": "ホワイトファイター"
+},
+"monst_mohikanto.html": {
+"icon": "618",
+"jp": "モヒカント",
+"rank": "A",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4900",
+"skill_jp": "ホワイトファイター"
+},
+"monst_yojoishudaru.html": {
+"icon": "635",
+"jp": "妖女イシュダル",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5503",
+"skill_jp": "ブルーファイター"
+},
+"monst_yominohana.html": {
+"icon": "602",
+"jp": "黄泉の花",
+"rank": "A",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "3948",
+"skill_jp": "ようせいの息吹"
+},
+"monst_raionekku.html": {
+"icon": "592",
+"jp": "ライオネック",
+"rank": "A",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5052",
+"skill_jp": "バギ＆ドルマ"
+},
+"monst_rozudansu.html": {
+"icon": "624",
+"jp": "ローズダンス",
+"rank": "A",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "5511",
+"skill_jp": "ローズダンス"
+},
+"monst_waniban.html": {
+"icon": "589",
+"jp": "ワニバーン",
+"rank": "A",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4942",
+"skill_jp": "けもの道"
+},
+"monst_akuba.html": {
+"icon": "694",
+"jp": "アクバー",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "2",
+"total": "4237",
+"skill_jp": "火炎"
+},
+"monst_akumazaigasu.html": {
+"icon": "737",
+"jp": "悪魔ザイガス",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "5000",
+"skill_jp": "暗黒"
+},
+"monst_atorasu.html": {
+"icon": "684",
+"jp": "アトラス",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜3",
+"total": "4874",
+"skill_jp": "ようじゅつ"
+},
+"monst_ankokuteioganasadai.html": {
+"icon": "759",
+"jp": "暗黒皇帝ガナサダイ",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "G",
+"ai": "2〜3",
+"total": "5117",
+"skill_jp": "暗黒皇帝ガナサダイ"
+},
+"monst_ankokunomajin.html": {
+"icon": "760",
+"jp": "暗黒の魔神",
+"rank": "S",
+"family_jp": "物質",
+"size": "G",
+"ai": "2",
+"total": "6021",
+"skill_jp": "暗黒の魔神"
+},
+"monst_urubeamajinhei.html": {
+"icon": "738",
+"jp": "ウルベア魔神兵",
+"rank": "S",
+"family_jp": "物質",
+"size": "G",
+"ai": "1〜3",
+"total": "5851",
+"skill_jp": "バーサーカー"
+},
+"monst_eggurandochikira.html": {
+"icon": "763",
+"jp": "エッグラ＆チキーラ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4564",
+"skill_jp": "びゃくやの剣技"
+},
+"monst_ebirupurisuto.html": {
+"icon": "709",
+"jp": "エビルプリースト",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5470",
+"skill_jp": "ヒャド＆デイン"
+},
+"monst_oseanon.html": {
+"icon": "755",
+"jp": "オセアーノン",
+"rank": "S",
+"family_jp": "自然",
+"size": "G",
+"ai": "2",
+"total": "5818",
+"skill_jp": "オセアーノン"
+},
+"monst_onikonbo.html": {
+"icon": "692",
+"jp": "おにこんぼう",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4860",
+"skill_jp": "じこぎせい"
+},
+"monst_kaijupusugon.html": {
+"icon": "735",
+"jp": "怪獣プスゴン",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2",
+"total": "4967",
+"skill_jp": "イオ＆デイン"
+},
+"monst_kairikigunsoiboinosu.html": {
+"icon": "680",
+"jp": "怪力軍曹イボイノス",
+"rank": "S",
+"family_jp": "自然",
+"size": "S",
+"ai": "1〜2",
+"total": "4278",
+"skill_jp": "ふうらいの剣技"
+},
+"monst_kakaron.html": {
+"icon": "764",
+"jp": "カカロン",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4767",
+"skill_jp": "異常回復"
+},
+"monst_kakurenho.html": {
+"icon": "674",
+"jp": "かくれんぼう",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2",
+"total": "3248",
+"skill_jp": "ワルぼう"
+},
+"monst_kandataoyabun.html": {
+"icon": "762",
+"jp": "カンダタおやぶん",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4321",
+"skill_jp": "たたり"
+},
+"monst_kandatawaifu.html": {
+"icon": "761",
+"jp": "カンダタワイフ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4766",
+"skill_jp": "カンダタワイフ"
+},
+"monst_gamadeusu.html": {
+"icon": "707",
+"jp": "ガマデウス",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5049",
+"skill_jp": "ため息"
+},
+"monst_kyattoriberio.html": {
+"icon": "711",
+"jp": "キャット・リベリオ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "5520",
+"skill_jp": "キャット・リベリオ"
+},
+"monst_kyaputenkuro.html": {
+"icon": "752",
+"jp": "キャプテン・クロウ",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "4880",
+"skill_jp": "キャプテン・クロウ"
+},
+"monst_kiramashinsuri.html": {
+"icon": "716",
+"jp": "キラーマシン3",
+"rank": "S",
+"family_jp": "物質",
+"size": "G",
+"ai": "2〜3",
+"total": "4626",
+"skill_jp": "キラーマシン3"
+},
+"monst_kiramashintsu.html": {
+"icon": "683",
+"jp": "キラーマシン2",
+"rank": "S",
+"family_jp": "物質",
+"size": "S",
+"ai": "2",
+"total": "3901",
+"skill_jp": "ふうらいの剣技"
+},
+"monst_kiramajinga.html": {
+"icon": "757",
+"jp": "キラーマジンガ",
+"rank": "S",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "4365",
+"skill_jp": "キラーマジンガ"
+},
+"monst_kinguazurairu.html": {
+"icon": "720",
+"jp": "キングアズライル",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜3",
+"total": "4764",
+"skill_jp": "イエローファイター"
+},
+"monst_kingumomon.html": {
+"icon": "728",
+"jp": "キングモーモン",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "2",
+"total": "5067",
+"skill_jp": "キングモーモン"
+},
+"monst_kingureo.html": {
+"icon": "688",
+"jp": "キングレオ",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜2",
+"total": "5626",
+"skill_jp": "イオ＆ギラ"
+},
+"monst_gigantodoragon.html": {
+"icon": "686",
+"jp": "ギガントドラゴン",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4940",
+"skill_jp": "あらくれ"
+},
+"monst_kusharami.html": {
+"icon": "765",
+"jp": "クシャラミ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4717",
+"skill_jp": "サムライ"
+},
+"monst_kurisutarusuraimu.html": {
+"icon": "676",
+"jp": "クリスタルスライム",
+"rank": "S",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4338",
+"skill_jp": "フェザーウインド"
+},
+"monst_guransuraimu.html": {
+"icon": "753",
+"jp": "グランスライム",
+"rank": "S",
+"family_jp": "スライム",
+"size": "M",
+"ai": "1〜2",
+"total": "5790",
+"skill_jp": "イオ＆デイン"
+},
+"monst_gurifinkusu.html": {
+"icon": "717",
+"jp": "グリフィンクス",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "2〜3",
+"total": "5364",
+"skill_jp": "神聖"
+},
+"monst_gunshintogamihime.html": {
+"icon": "697",
+"jp": "軍神トガミヒメ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5390",
+"skill_jp": "軍神トガミヒメ"
+},
+"monst_gorudengoremu.html": {
+"icon": "693",
+"jp": "ゴールデンゴーレム",
+"rank": "S",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5009",
+"skill_jp": "神聖"
+},
+"monst_gorudensuraimu.html": {
+"icon": "758",
+"jp": "ゴールデンスライム",
+"rank": "S",
+"family_jp": "スライム",
+"size": "M",
+"ai": "1〜2",
+"total": "5270",
+"skill_jp": "イオ＆デイン"
+},
+"monst_sasoriamaa.html": {
+"icon": "714",
+"jp": "さそりアーマー",
+"rank": "S",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "4469",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_shikigunouzorude.html": {
+"icon": "773",
+"jp": "屍騎軍王ゾルデ",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜3",
+"total": "3916",
+"skill_jp": "屍騎軍王ゾルデ"
+},
+"monst_shinigaminokishi.html": {
+"icon": "703",
+"jp": "死神の騎士",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜2",
+"total": "5430",
+"skill_jp": "死神の騎士"
+},
+"monst_shantaku.html": {
+"icon": "731",
+"jp": "シャンタク",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4742",
+"skill_jp": "ブレス"
+},
+"monst_shogekinoshippodan.html": {
+"icon": "726",
+"jp": "衝撃のしっぽ団",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "2",
+"total": "5649",
+"skill_jp": "えんかい"
+},
+"monst_shirubarinusu.html": {
+"icon": "699",
+"jp": "シルバリヌス",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5290",
+"skill_jp": "てっぺき"
+},
+"monst_jagankoteiauruto.html": {
+"icon": "681",
+"jp": "邪眼皇帝アウルート",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "4570",
+"skill_jp": "バギ＆ドルマ"
+},
+"monst_jaryuugunougaringa.html": {
+"icon": "772",
+"jp": "邪竜軍王ガリンガ",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2",
+"total": "4997",
+"skill_jp": "邪竜軍王ガリンガ"
+},
+"monst_suiryugirugisshu.html": {
+"icon": "740",
+"jp": "水竜ギルギッシュ",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4872",
+"skill_jp": "コールドスリープ"
+},
+"monst_suraidakurobo.html": {
+"icon": "685",
+"jp": "スライダークロボ",
+"rank": "S",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2〜3",
+"total": "4935",
+"skill_jp": "スライダークロボ"
+},
+"monst_suraimumadyura.html": {
+"icon": "712",
+"jp": "スライムマデュラ",
+"rank": "S",
+"family_jp": "スライム",
+"size": "M",
+"ai": "2",
+"total": "4867",
+"skill_jp": "しっぷう・ゼロ封じ"
+},
+"monst_surakyansa.html": {
+"icon": "754",
+"jp": "スラキャンサー",
+"rank": "S",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2",
+"total": "5959",
+"skill_jp": "スラキャンサー"
+},
+"monst_suraningorudo.html": {
+"icon": "705",
+"jp": "スラ忍ゴールド",
+"rank": "S",
+"family_jp": "スライム",
+"size": "M",
+"ai": "2",
+"total": "5149",
+"skill_jp": "スラ忍ゴールド"
+},
+"monst_suraninshiruba.html": {
+"icon": "696",
+"jp": "スラ忍シルバー",
+"rank": "S",
+"family_jp": "スライム",
+"size": "M",
+"ai": "2",
+"total": "6399",
+"skill_jp": "スラ忍シルバー"
+},
+"monst_serugeinasu.html": {
+"icon": "698",
+"jp": "セルゲイナス",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5515",
+"skill_jp": "ヒャド＆ドルマ"
+},
+"monst_taitanisu.html": {
+"icon": "723",
+"jp": "タイタニス",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "2",
+"total": "5235",
+"skill_jp": "メラ＆ドルマ"
+},
+"monst_daionryomamon.html": {
+"icon": "734",
+"jp": "大怨霊マアモン",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5050",
+"skill_jp": "たたり"
+},
+"monst_daichinoryubaugia.html": {
+"icon": "736",
+"jp": "大地の竜バウギア",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4295",
+"skill_jp": "メタルつぶし"
+},
+"monst_dakukurisutaru.html": {
+"icon": "689",
+"jp": "ダーククリスタル",
+"rank": "S",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜2",
+"total": "5484",
+"skill_jp": "イオ＆ドルマ"
+},
+"monst_dakumata.html": {
+"icon": "721",
+"jp": "ダークマター",
+"rank": "S",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜3",
+"total": "5070",
+"skill_jp": "暗黒"
+},
+"monst_chokogoremu.html": {
+"icon": "673",
+"jp": "チョコゴーレム",
+"rank": "S",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "4950",
+"skill_jp": "てっぺき"
+},
+"monst_tekkigunoukiragorudo.html": {
+"icon": "775",
+"jp": "鉄鬼軍王キラゴルド",
+"rank": "S",
+"family_jp": "物質",
+"size": "M",
+"ai": "2",
+"total": "5005",
+"skill_jp": "鉄鬼軍王キラゴルド"
+},
+"monst_desumashin.html": {
+"icon": "702",
+"jp": "デスマシーン",
+"rank": "S",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜2",
+"total": "5456",
+"skill_jp": "レッドファイター"
+},
+"monst_domedi.html": {
+"icon": "767",
+"jp": "ドメディ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "5088",
+"skill_jp": "ＭＰ回復"
+},
+"monst_doragonmashin.html": {
+"icon": "708",
+"jp": "ドラゴンマシン",
+"rank": "S",
+"family_jp": "物質",
+"size": "M",
+"ai": "1〜2",
+"total": "5325",
+"skill_jp": "マネマネ"
+},
+"monst_dorumagesu.html": {
+"icon": "756",
+"jp": "ドルマゲス",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5184",
+"skill_jp": "ドルマゲス"
+},
+"monst_doku.html": {
+"icon": "747",
+"jp": "ドーク",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5010",
+"skill_jp": "ドーク"
+},
+"monst_nawobawareshio.html": {
+"icon": "710",
+"jp": "名をうばわれし王",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "1〜3",
+"total": "5104",
+"skill_jp": "ばくひょうの剣技"
+},
+"monst_nijikujaku.html": {
+"icon": "701",
+"jp": "にじくじゃく",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4902",
+"skill_jp": "にじくじゃく"
+},
+"monst_nijigoron.html": {
+"icon": "769",
+"jp": "ニジゴロン",
+"rank": "S",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "4050",
+"skill_jp": "プリンス"
+},
+"monst_nushisama.html": {
+"icon": "679",
+"jp": "ぬしさま",
+"rank": "S",
+"family_jp": "自然",
+"size": "G",
+"ai": "2〜3",
+"total": "5141",
+"skill_jp": "みずげい"
+},
+"monst_hakaigunoujakora.html": {
+"icon": "771",
+"jp": "覇海軍王ジャコラ",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "超G",
+"ai": "2〜3",
+"total": "6122",
+"skill_jp": "覇海軍王ジャコラ"
+},
+"monst_hakaishinshido.html": {
+"icon": "750",
+"jp": "破壊神シドー",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "5168",
+"skill_jp": "ＨＰ回復"
+},
+"monst_hakuryuou.html": {
+"icon": "713",
+"jp": "はくりゅうおう",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5597",
+"skill_jp": "ゆうき"
+},
+"monst_hagon.html": {
+"icon": "744",
+"jp": "ハーゴン",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5178",
+"skill_jp": "異常回復"
+},
+"monst_baberuboburu.html": {
+"icon": "729",
+"jp": "バベルボブル",
+"rank": "S",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5108",
+"skill_jp": "てっぺき"
+},
+"monst_baramosu.html": {
+"icon": "745",
+"jp": "バラモス",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4719",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_baramosuzonbi.html": {
+"icon": "704",
+"jp": "バラモスゾンビ",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "G",
+"ai": "1〜3",
+"total": "5736",
+"skill_jp": "びゃくやの剣技"
+},
+"monst_baruzakku.html": {
+"icon": "715",
+"jp": "バルザック",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "1〜3",
+"total": "4925",
+"skill_jp": "メラ＆ギラ"
+},
+"monst_barubaru.html": {
+"icon": "766",
+"jp": "バルバルー",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4692",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_foroboshita.html": {
+"icon": "749",
+"jp": "フォロボシータ",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "G",
+"ai": "2",
+"total": "5633",
+"skill_jp": "グリーンファイター"
+},
+"monst_forobosu.html": {
+"icon": "751",
+"jp": "フォロボス",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2",
+"total": "3824",
+"skill_jp": "じごく"
+},
+"monst_furufuru.html": {
+"icon": "725",
+"jp": "フールフール",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2",
+"total": "5142",
+"skill_jp": "ほのおの魔術師"
+},
+"monst_buiron.html": {
+"icon": "768",
+"jp": "Vロン",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "2",
+"total": "5660",
+"skill_jp": "神聖"
+},
+"monst_bushinkunikuzushi.html": {
+"icon": "706",
+"jp": "武神クニクズシ",
+"rank": "S",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5187",
+"skill_jp": "武神クニクズシ"
+},
+"monst_burakkudoragon.html": {
+"icon": "678",
+"jp": "ブラックドラゴン",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "4861",
+"skill_jp": "ＶＳ呪文"
+},
+"monst_puchibo.html": {
+"icon": "675",
+"jp": "プチぼう",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2",
+"total": "3232",
+"skill_jp": "わたぼう"
+},
+"monst_herugorako.html": {
+"icon": "719",
+"jp": "ヘルゴラゴ",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "M",
+"ai": "2〜3",
+"total": "4134",
+"skill_jp": "アサシン"
+},
+"monst_herubatora.html": {
+"icon": "730",
+"jp": "ヘルバトラー",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "-",
+"total": "4932",
+"skill_jp": "バギ＆ギラ"
+},
+"monst_honbitoru.html": {
+"icon": "700",
+"jp": "ホーンビートル",
+"rank": "S",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜2",
+"total": "4519",
+"skill_jp": "バウンティハンター"
+},
+"monst_poseidon.html": {
+"icon": "722",
+"jp": "ポセイドン",
+"rank": "S",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5256",
+"skill_jp": "神聖"
+},
+"monst_maodesutamua.html": {
+"icon": "748",
+"jp": "魔王デスタムーア",
+"rank": "S",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "5504",
+"skill_jp": "デスタムーア"
+},
+"monst_magunshireihomerosu.html": {
+"icon": "776",
+"jp": "魔軍司令ホメロス",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2",
+"total": "4144",
+"skill_jp": "魔軍司令ホメロス"
+},
+"monst_makenshinreparudo.html": {
+"icon": "682",
+"jp": "魔剣神レパルド",
+"rank": "S",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4285",
+"skill_jp": "ふうえんの剣技"
+},
+"monst_madokibedora.html": {
+"icon": "732",
+"jp": "魔導鬼ベドラー",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5060",
+"skill_jp": "暗黒"
+},
+"monst_mayuushaanrushia.html": {
+"icon": "841",
+"jp": "魔勇者アンルシア",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜3",
+"total": "4956",
+"skill_jp": "魔勇者アンルシア"
+},
+"monst_maryuunedora.html": {
+"icon": "742",
+"jp": "魔竜ネドラ",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5380",
+"skill_jp": "暗黒"
+},
+"monst_mudo.html": {
+"icon": "746",
+"jp": "ムドー",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2〜3",
+"total": "5094",
+"skill_jp": "ナイトメア"
+},
+"monst_merutoa.html": {
+"icon": "724",
+"jp": "メルトア",
+"rank": "S",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "6290",
+"skill_jp": "ダークビューティー"
+},
+"monst_monsutaparedo.html": {
+"icon": "770",
+"jp": "モンスターパレード",
+"rank": "S",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4812",
+"skill_jp": "神聖"
+},
+"monst_yamatanorochi.html": {
+"icon": "690",
+"jp": "やまたのおろち",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "1〜3",
+"total": "5828",
+"skill_jp": "やまたのおろち"
+},
+"monst_yushasuraringaru.html": {
+"icon": "677",
+"jp": "勇車スラリンガル",
+"rank": "S",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2",
+"total": "4557",
+"skill_jp": "ゆうしゃのふえ"
+},
+"monst_yureisen.html": {
+"icon": "727",
+"jp": "ゆうれい船",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "G",
+"ai": "2",
+"total": "5490",
+"skill_jp": "ゆうれい船"
+},
+"monst_yokenshioren.html": {
+"icon": "741",
+"jp": "妖剣士オーレン",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "2",
+"total": "4024",
+"skill_jp": "サムライ"
+},
+"monst_youmagunoubugi.html": {
+"icon": "774",
+"jp": "妖魔軍王ブギー",
+"rank": "S",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "2",
+"total": "3033",
+"skill_jp": "妖魔軍王ブギー"
+},
+"monst_razamanasu.html": {
+"icon": "718",
+"jp": "ラザマナス",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "2",
+"total": "5131",
+"skill_jp": "死神"
+},
+"monst_ryuous.html": {
+"icon": "743",
+"jp": "りゅうおう",
+"rank": "S",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "-",
+"total": "5106",
+"skill_jp": "暗黒"
+},
+"monst_rizuretto.html": {
+"icon": "739",
+"jp": "リーズレット",
+"rank": "S",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2",
+"total": "4512",
+"skill_jp": "リーズレット"
+},
+"monst_retisu.html": {
+"icon": "687",
+"jp": "レティス",
+"rank": "S",
+"family_jp": "自然",
+"size": "G",
+"ai": "1〜3",
+"total": "5680",
+"skill_jp": "レティス"
+},
+"monst_rozubatora.html": {
+"icon": "691",
+"jp": "ローズバトラー",
+"rank": "S",
+"family_jp": "自然",
+"size": "M",
+"ai": "1〜3",
+"total": "5132",
+"skill_jp": "暗黒"
+},
+"monst_waitokingu.html": {
+"icon": "695",
+"jp": "ワイトキング",
+"rank": "S",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "-",
+"total": "5380",
+"skill_jp": "死神"
+},
+"monst_wakabanoseirei.html": {
+"icon": "733",
+"jp": "若葉の精霊",
+"rank": "S",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "5150",
+"skill_jp": "ＨＰ回復"
+},
+"monst_agirogosu.html": {
+"icon": "874",
+"jp": "アギロゴス",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "1〜3",
+"total": "5702",
+"skill_jp": "アギロゴス"
+},
+"monst_asurazoma.html": {
+"icon": "883",
+"jp": "アスラゾーマ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "4990",
+"skill_jp": "アスラゾーマ"
+},
+"monst_arudarara.html": {
+"icon": "875",
+"jp": "アルダララ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "6149",
+"skill_jp": "アルダララ"
+},
+"monst_ankokushinrapuson.html": {
+"icon": "859",
+"jp": "暗黒神ラプソーン",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "6203",
+"skill_jp": "暗黒神ラプソーン"
+},
+"monst_egudorashiru.html": {
+"icon": "838",
+"jp": "エグドラシル",
+"rank": "SS",
+"family_jp": "自然",
+"size": "G",
+"ai": "1〜3",
+"total": "6183",
+"skill_jp": "エグドラシル"
+},
+"monst_esutaku.html": {
+"icon": "857",
+"jp": "エスターク",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "5791",
+"skill_jp": "エスターク"
+},
+"monst_erisuguru.html": {
+"icon": "831",
+"jp": "エリスグール",
+"rank": "SS",
+"family_jp": "物質",
+"size": "G",
+"ai": "1〜3",
+"total": "4458",
+"skill_jp": "エリスグール"
+},
+"monst_erugiosu.html": {
+"icon": "870",
+"jp": "エルギオス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "2",
+"total": "4065",
+"skill_jp": "エルギオス"
+},
+"monst_omudororesu.html": {
+"icon": "867",
+"jp": "オムド・ロレス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5707",
+"skill_jp": "オムド・ロレス"
+},
+"monst_oriharugon.html": {
+"icon": "819",
+"jp": "オリハルゴン",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "超G",
+"ai": "3〜4",
+"total": "5277",
+"skill_jp": "オリハルゴン"
+},
+"monst_kaioshin.html": {
+"icon": "855",
+"jp": "海王神",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "5743",
+"skill_jp": "海王神"
+},
+"monst_kaichuaragune.html": {
+"icon": "813",
+"jp": "怪蟲アラグネ",
+"rank": "SS",
+"family_jp": "自然",
+"size": "G",
+"ai": "2",
+"total": "5672",
+"skill_jp": "怪蟲アラグネ"
+},
+"monst_kamisama.html": {
+"icon": "829",
+"jp": "かみさま",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5143",
+"skill_jp": "神聖"
+},
+"monst_karannoryuuantero.html": {
+"icon": "892",
+"jp": "禍乱の竜アンテロ",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "1〜3",
+"total": "5672",
+"skill_jp": "禍乱の竜アンテロ"
+},
+"monst_kandatasebun.html": {
+"icon": "794",
+"jp": "カンダタセブン",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "3",
+"total": "4983",
+"skill_jp": "巨大モンスターつぶし"
+},
+"monst_kandataredisu.html": {
+"icon": "785",
+"jp": "カンダタレディース",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "4894",
+"skill_jp": "全体回復"
+},
+"monst_kandatarokkusu.html": {
+"icon": "793",
+"jp": "カンダタロックス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5512",
+"skill_jp": "ダンサー"
+},
+"monst_garubirusu.html": {
+"icon": "877",
+"jp": "ガルビルス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5732",
+"skill_jp": "ガルビルス"
+},
+"monst_garumazado.html": {
+"icon": "890",
+"jp": "ガルマザード",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "2",
+"total": "6660",
+"skill_jp": "ガルマザード"
+},
+"monst_garumazzo.html": {
+"icon": "826",
+"jp": "ガルマッゾ",
+"rank": "SS",
+"family_jp": "ゾンビ",
+"size": "M",
+"ai": "2",
+"total": "5041",
+"skill_jp": "ガルマッゾ"
+},
+"monst_gadisu.html": {
+"icon": "843",
+"jp": "ガーディス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5181",
+"skill_jp": "ガーディス"
+},
+"monst_kyomajumeiza.html": {
+"icon": "879",
+"jp": "凶魔獣メイザー",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "4985",
+"skill_jp": "凶魔獣メイザー"
+},
+"monst_kingusupedio.html": {
+"icon": "780",
+"jp": "キングスペーディオ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5118",
+"skill_jp": "キング"
+},
+"monst_kinguhidora.html": {
+"icon": "791",
+"jp": "キングヒドラ",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "1〜2",
+"total": "6427",
+"skill_jp": "ブレス"
+},
+"monst_kinguhoimisuraimu.html": {
+"icon": "779",
+"jp": "キングホイミスライム",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "-",
+"total": "7244",
+"skill_jp": "全体回復"
+},
+"monst_gigademon.html": {
+"icon": "790",
+"jp": "ギガデーモン",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "1〜3",
+"total": "5932",
+"skill_jp": "ジャミング"
+},
+"monst_gisuvagu.html": {
+"icon": "868",
+"jp": "ギスヴァーグ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜2",
+"total": "5545",
+"skill_jp": "ギスヴァーグ"
+},
+"monst_giteigaogaiya.html": {
+"icon": "853",
+"jp": "義帝ガオガイヤ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4990",
+"skill_jp": "義帝ガオガイヤ"
+},
+"monst_kuingaruhato.html": {
+"icon": "781",
+"jp": "クインガルハート",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4692",
+"skill_jp": "クィーン"
+},
+"monst_gurabuzonjakku.html": {
+"icon": "782",
+"jp": "グラブゾンジャック",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5056",
+"skill_jp": "ジャック"
+},
+"monst_guranesutaku.html": {
+"icon": "894",
+"jp": "グランエスターク",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "4895",
+"skill_jp": "グランエスターク"
+},
+"monst_gureinaru.html": {
+"icon": "837",
+"jp": "グレイナル",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2",
+"total": "4819",
+"skill_jp": "竜のひざけ"
+},
+"monst_kouteiwindio.html": {
+"icon": "850",
+"jp": "皇帝ウィンディオ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5060",
+"skill_jp": "皇帝ウィンディオ"
+},
+"monst_gorudomajinga.html": {
+"icon": "823",
+"jp": "ゴールドマジンガ",
+"rank": "SS",
+"family_jp": "物質",
+"size": "M",
+"ai": "2",
+"total": "4294",
+"skill_jp": "メタルつぶし"
+},
+"monst_saikopisaro.html": {
+"icon": "884",
+"jp": "サイコピサロ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "4955",
+"skill_jp": "サイコピサロ"
+},
+"monst_sajinnogenma.html": {
+"icon": "778",
+"jp": "砂塵の幻馬",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "5000",
+"skill_jp": "光の使い手"
+},
+"monst_sajitausu.html": {
+"icon": "840",
+"jp": "サージタウス",
+"rank": "SS",
+"family_jp": "物質",
+"size": "G",
+"ai": "2",
+"total": "5796",
+"skill_jp": "サージタウス"
+},
+"monst_shubosharazuban.html": {
+"icon": "818",
+"jp": "守護者ラズバーン",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4794",
+"skill_jp": "守護者ラズバーン"
+},
+"monst_shinchoretisu.html": {
+"icon": "860",
+"jp": "神鳥レティス",
+"rank": "SS",
+"family_jp": "自然",
+"size": "G",
+"ai": "2",
+"total": "5510",
+"skill_jp": "神鳥レティス"
+},
+"monst_shindenreidametesu.html": {
+"icon": "817",
+"jp": "神殿レイダメテス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5299",
+"skill_jp": "神聖"
+},
+"monst_shinmaouzaramu.html": {
+"icon": "856",
+"jp": "真・魔王ザラーム",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5111",
+"skill_jp": "真・魔王ザラーム"
+},
+"monst_shinryu.html": {
+"icon": "845",
+"jp": "神竜",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4882",
+"skill_jp": "ブレス"
+},
+"monst_shinryuou.html": {
+"icon": "881",
+"jp": "しん・りゅうおう",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "超G",
+"ai": "4",
+"total": "5012",
+"skill_jp": "しん・りゅうおう"
+},
+"monst_jesuta.html": {
+"icon": "864",
+"jp": "JESTER",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4851",
+"skill_jp": "ＪＥＳＴＥＲ"
+},
+"monst_jenoshido.html": {
+"icon": "882",
+"jp": "ジェノシドー",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "5135",
+"skill_jp": "ジェノシドー"
+},
+"monst_jenodaku.html": {
+"icon": "787",
+"jp": "ジェノダーク",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜3",
+"total": "4778",
+"skill_jp": "ジェノダーク"
+},
+"monst_jigenryu.html": {
+"icon": "854",
+"jp": "じげんりゅう",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2〜3",
+"total": "4245",
+"skill_jp": "じげんりゅう"
+},
+"monst_jashinnizuzerufa.html": {
+"icon": "902",
+"jp": "邪神ニズゼルファ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "5093",
+"skill_jp": "邪神ニズゼルファ"
+},
+"monst_jashinreosodo.html": {
+"icon": "865",
+"jp": "邪神レオソード",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "5681",
+"skill_jp": "邪神レオソード"
+},
+"monst_jajuhihyurude.html": {
+"icon": "833",
+"jp": "邪獣ヒヒュルデ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "4577",
+"skill_jp": "邪獣ヒヒュルデ"
+},
+"monst_jaryuushinnadoraga.html": {
+"icon": "893",
+"jp": "邪竜神ナドラガ",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "2〜3",
+"total": "5117",
+"skill_jp": "邪竜神ナドラガ"
+},
+"monst_jujutsushimarin.html": {
+"icon": "814",
+"jp": "呪術師マリーン",
+"rank": "SS",
+"family_jp": "悪魔",
+"size": "M",
+"ai": "1〜3",
+"total": "5070",
+"skill_jp": "呪術師マリーン"
+},
+"monst_joteifureisha.html": {
+"icon": "851",
+"jp": "女帝フレイシャ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5190",
+"skill_jp": "女帝フレイシャ"
+},
+"monst_joka.html": {
+"icon": "863",
+"jp": "JOKER",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4838",
+"skill_jp": "JOKER"
+},
+"monst_suraidakingu.html": {
+"icon": "792",
+"jp": "スライダーキング",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2",
+"total": "5483",
+"skill_jp": "ゆうき"
+},
+"monst_suraibasen.html": {
+"icon": "800",
+"jp": "スライバ船",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2〜3",
+"total": "4923",
+"skill_jp": "スラリン船"
+},
+"monst_suraburasuta.html": {
+"icon": "786",
+"jp": "スラ・ブラスター",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "1〜3",
+"total": "5391",
+"skill_jp": "スラ・ブラスター"
+},
+"monst_surarinsen.html": {
+"icon": "799",
+"jp": "スラリン船",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "1〜3",
+"total": "5957",
+"skill_jp": "スラリン船"
+},
+"monst_supakiramashin.html": {
+"icon": "784",
+"jp": "スーパーキラーマシン",
+"rank": "SS",
+"family_jp": "物質",
+"size": "M",
+"ai": "2",
+"total": "4828",
+"skill_jp": "メタルつぶし"
+},
+"monst_seiryumirakurea.html": {
+"icon": "887",
+"jp": "聖竜ミラクレア",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "5214",
+"skill_jp": "モントナー"
+},
+"monst_senteiakkuru.html": {
+"icon": "852",
+"jp": "戦帝アックル",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5205",
+"skill_jp": "戦帝アックル"
+},
+"monst_zetsubotozouonomakyu.html": {
+"icon": "847",
+"jp": "絶望と憎悪の魔宮",
+"rank": "SS",
+"family_jp": "物質",
+"size": "G",
+"ai": "2",
+"total": "5976",
+"skill_jp": "絶望と憎悪の魔宮"
+},
+"monst_souzoushinmadesagora.html": {
+"icon": "889",
+"jp": "創造神マデサゴーラ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5078",
+"skill_jp": "創造神マデサゴーラ"
+},
+"monst_daimaouurunoga.html": {
+"icon": "898",
+"jp": "大魔王ウルノーガ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "6112",
+"skill_jp": "魔王ウルノーガ"
+},
+"monst_daimaozooma.html": {
+"icon": "827",
+"jp": "大魔王ゾーマ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "4660",
+"skill_jp": "大魔王ゾーマ"
+},
+"monst_daimaodesutamua.html": {
+"icon": "832",
+"jp": "大魔王デスタムーア",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜3",
+"total": "5014",
+"skill_jp": "デスタムーア"
+},
+"monst_daimaoumadyuraja.html": {
+"icon": "899",
+"jp": "大魔王マデュラージャ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5238",
+"skill_jp": "大魔王マデュラージャ"
+},
+"monst_daiyamondosuraimu.html": {
+"icon": "795",
+"jp": "ダイヤモンドスライム",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "S",
+"ai": "-",
+"total": "5075",
+"skill_jp": "ダイヤモンドスライム"
+},
+"monst_dagujagaruma.html": {
+"icon": "897",
+"jp": "ダグジャガルマ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "2",
+"total": "6406",
+"skill_jp": "ダグジャガルマ"
+},
+"monst_dakudoreamu.html": {
+"icon": "858",
+"jp": "ダークドレアム",
+"rank": "SS",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "4380",
+"skill_jp": "神聖"
+},
+"monst_dasugaruma.html": {
+"icon": "896",
+"jp": "ダースガルマ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "5108",
+"skill_jp": "ダースガルマ"
+},
+"monst_tennomonban.html": {
+"icon": "777",
+"jp": "てんのもんばん",
+"rank": "SS",
+"family_jp": "物質",
+"size": "S",
+"ai": "1〜2",
+"total": "4569",
+"skill_jp": "メタルハンター"
+},
+"monst_tenmakwabaruna.html": {
+"icon": "816",
+"jp": "天魔クァバルナ",
+"rank": "SS",
+"family_jp": "悪魔",
+"size": "G",
+"ai": "1〜3",
+"total": "5444",
+"skill_jp": "天魔クァバルナ"
+},
+"monst_dianoguesu.html": {
+"icon": "783",
+"jp": "ディアノーグエース",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5176",
+"skill_jp": "エース"
+},
+"monst_desupisaro.html": {
+"icon": "796",
+"jp": "デスピサロ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜2",
+"total": "5143",
+"skill_jp": "暗黒"
+},
+"monst_demonsupedio.html": {
+"icon": "862",
+"jp": "デモンスペーディオ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "5069",
+"skill_jp": "たたり"
+},
+"monst_toshinreosodo.html": {
+"icon": "866",
+"jp": "闘神レオソード",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "5704",
+"skill_jp": "闘神レオソード"
+},
+"monst_torode.html": {
+"icon": "802",
+"jp": "トロデ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3766",
+"skill_jp": "えんかい"
+},
+"monst_topo.html": {
+"icon": "846",
+"jp": "トーポ",
+"rank": "SS",
+"family_jp": "自然",
+"size": "S",
+"ai": "-",
+"total": "3756",
+"skill_jp": "トーポ"
+},
+"monst_namoyakiyaminoou.html": {
+"icon": "895",
+"jp": "名もなき闇の王",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "5035",
+"skill_jp": "狭間の闇の王"
+},
+"monst_neodoku.html": {
+"icon": "880",
+"jp": "ネオ・ドーク",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "5057",
+"skill_jp": "ネオ・ドーク"
+},
+"monst_haguremetarukingu.html": {
+"icon": "828",
+"jp": "はぐれメタルキング",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2〜3",
+"total": "4832",
+"skill_jp": "はぐれメタルキング"
+},
+"monst_hazamanoyaminoou.html": {
+"icon": "891",
+"jp": "狭間の闇の王",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "4",
+"total": "4902",
+"skill_jp": "狭間の闇の王"
+},
+"monst_baruborosu.html": {
+"icon": "836",
+"jp": "バルボロス",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2",
+"total": "4886",
+"skill_jp": "くろくかがやくやみ"
+},
+"monst_hihyudorado.html": {
+"icon": "873",
+"jp": "ヒヒュドラード",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2〜3",
+"total": "4838",
+"skill_jp": "ヒヒュドラード"
+},
+"monst_fainaruwepon.html": {
+"icon": "835",
+"jp": "ファイナルウェポン",
+"rank": "SS",
+"family_jp": "物質",
+"size": "M",
+"ai": "2",
+"total": "4784",
+"skill_jp": "ファイナルウェポン"
+},
+"monst_bokunbasagurande.html": {
+"icon": "815",
+"jp": "暴君バサグランデ",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "G",
+"ai": "1〜3",
+"total": "5429",
+"skill_jp": "暴君バサグランデ"
+},
+"monst_maouurunoga.html": {
+"icon": "871",
+"jp": "魔王ウルノーガ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜2",
+"total": "5478",
+"skill_jp": "魔王ウルノーガ"
+},
+"monst_maouomudorekusu.html": {
+"icon": "878",
+"jp": "魔王オムド・レクス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5737",
+"skill_jp": "魔王オムド・レクス"
+},
+"monst_maouorugodemira.html": {
+"icon": "842",
+"jp": "魔王オルゴ・デミーラ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "1〜3",
+"total": "5089",
+"skill_jp": "じごく"
+},
+"monst_maojeimu.html": {
+"icon": "801",
+"jp": "魔王ジェイム",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "2〜3",
+"total": "4862",
+"skill_jp": "魔王ジェイム"
+},
+"monst_maomirudorasu.html": {
+"icon": "797",
+"jp": "魔王ミルドラース",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4944",
+"skill_jp": "ミルドラース"
+},
+"monst_makaishinmadyurasha.html": {
+"icon": "901",
+"jp": "魔界神マデュラーシャ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "3",
+"total": "5164",
+"skill_jp": "魔界神マデュラーシャ"
+},
+"monst_magarugi.html": {
+"icon": "839",
+"jp": "マガルギ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5877",
+"skill_jp": "マガルギ"
+},
+"monst_magunshiiddo.html": {
+"icon": "812",
+"jp": "魔軍師イッド",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "2〜3",
+"total": "4510",
+"skill_jp": "魔軍師イッド"
+},
+"monst_majesudoreamu.html": {
+"icon": "903",
+"jp": "マジェス・ドレアム",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "超G",
+"ai": "3",
+"total": "5471",
+"skill_jp": "マジェス・ドレアム"
+},
+"monst_masutadoragon.html": {
+"icon": "872",
+"jp": "マスタードラゴン",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "1〜3",
+"total": "5831",
+"skill_jp": "マスタードラゴン"
+},
+"monst_masenshiarugo.html": {
+"icon": "807",
+"jp": "魔戦士アルゴ",
+"rank": "SS",
+"family_jp": "悪魔",
+"size": "S",
+"ai": "1〜2",
+"total": "4833",
+"skill_jp": "魔戦士アルゴ"
+},
+"monst_masenshisaifon.html": {
+"icon": "808",
+"jp": "魔戦士サイフォン",
+"rank": "SS",
+"family_jp": "ゾンビ",
+"size": "S",
+"ai": "1〜2",
+"total": "4887",
+"skill_jp": "魔戦士サイフォン"
+},
+"monst_masenshihogeira.html": {
+"icon": "805",
+"jp": "魔戦士ホゲイラ",
+"rank": "SS",
+"family_jp": "自然",
+"size": "S",
+"ai": "1〜2",
+"total": "4458",
+"skill_jp": "魔戦士ホゲイラ"
+},
+"monst_masenshimeiza.html": {
+"icon": "810",
+"jp": "魔戦士メイザー",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "1〜2",
+"total": "5013",
+"skill_jp": "魔戦士メイザー"
+},
+"monst_masenshadabido.html": {
+"icon": "804",
+"jp": "魔戦車ダビド",
+"rank": "SS",
+"family_jp": "物質",
+"size": "G",
+"ai": "2",
+"total": "5942",
+"skill_jp": "魔戦車ダビド"
+},
+"monst_masenshirugiusu.html": {
+"icon": "809",
+"jp": "魔戦士ルギウス",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "S",
+"ai": "1〜2",
+"total": "4311",
+"skill_jp": "魔戦士ルギウス"
+},
+"monst_masenshinzemerugiasu.html": {
+"icon": "886",
+"jp": "魔戦神ゼメルギアス",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5717",
+"skill_jp": "魔戦神ゼメルギアス"
+},
+"monst_masenshivera.html": {
+"icon": "806",
+"jp": "魔戦士ヴェーラ",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "1〜2",
+"total": "4243",
+"skill_jp": "魔戦士ヴェーラ"
+},
+"monst_matsuboinhera.html": {
+"icon": "803",
+"jp": "魔壺インヘーラー",
+"rank": "SS",
+"family_jp": "物質",
+"size": "S",
+"ai": "-",
+"total": "5097",
+"skill_jp": "魔壺インヘーラー"
+},
+"monst_manmodeusu.html": {
+"icon": "821",
+"jp": "マンモデウス",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "超G",
+"ai": "3〜4",
+"total": "5123",
+"skill_jp": "マンモデウス"
+},
+"monst_meionerugeru.html": {
+"icon": "885",
+"jp": "冥王ネルゲル",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "2",
+"total": "4821",
+"skill_jp": "冥王ネルゲル"
+},
+"monst_meijuounerugeru.html": {
+"icon": "888",
+"jp": "冥獣王ネルゲル",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "3",
+"total": "4533",
+"skill_jp": "冥獣王ネルゲル"
+},
+"monst_metarugoddesu.html": {
+"icon": "849",
+"jp": "メタルゴッデス",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "超G",
+"ai": "3〜4",
+"total": "4667",
+"skill_jp": "巨大モンスターつぶし"
+},
+"monst_metarusukopion.html": {
+"icon": "788",
+"jp": "メタルスコーピオン",
+"rank": "SS",
+"family_jp": "自然",
+"size": "M",
+"ai": "-",
+"total": "5064",
+"skill_jp": "ＶＳ斬撃"
+},
+"monst_metarusuta.html": {
+"icon": "834",
+"jp": "メタルスター",
+"rank": "SS",
+"family_jp": "スライム",
+"size": "G",
+"ai": "2〜3",
+"total": "4678",
+"skill_jp": "ふういん"
+},
+"monst_yaminoouvurato.html": {
+"icon": "876",
+"jp": "闇の王ヴラート",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "-",
+"total": "7321",
+"skill_jp": "闇の王ヴラート"
+},
+"monst_yamiryuushamuda.html": {
+"icon": "844",
+"jp": "闇竜シャムダ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "2",
+"total": "5964",
+"skill_jp": "闇竜シャムダ"
+},
+"monst_yomajuriante.html": {
+"icon": "811",
+"jp": "妖魔ジュリアンテ",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4890",
+"skill_jp": "さいみん"
+},
+"monst_yotchizu.html": {
+"icon": "825",
+"jp": "ヨッチーズ",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3998",
+"skill_jp": "ヨッチーズ"
+},
+"monst_rapuson.html": {
+"icon": "848",
+"jp": "ラプソーン",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "4113",
+"skill_jp": "ラプソーン"
+},
+"monst_ramia.html": {
+"icon": "861",
+"jp": "ラーミア",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "G",
+"ai": "1〜3",
+"total": "5582",
+"skill_jp": "ラーミア"
+},
+"monst_ribaiasama.html": {
+"icon": "820",
+"jp": "リバイアさま",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "超G",
+"ai": "3〜4",
+"total": "5120",
+"skill_jp": "リバイアさま"
+},
+"monst_ryuouss.html": {
+"icon": "798",
+"jp": "竜王",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜3",
+"total": "4970",
+"skill_jp": "竜王"
+},
+"monst_ryukoteibarugudisu.html": {
+"icon": "822",
+"jp": "竜皇帝バルグディス",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "G",
+"ai": "2〜3",
+"total": "4979",
+"skill_jp": "竜皇帝バルグディス"
+},
+"monst_ryujino.html": {
+"icon": "869",
+"jp": "竜神王",
+"rank": "SS",
+"family_jp": "ドラゴン",
+"size": "M",
+"ai": "1〜2",
+"total": "5433",
+"skill_jp": "竜神王"
+},
+"monst_reoparudo.html": {
+"icon": "789",
+"jp": "レオパルド",
+"rank": "SS",
+"family_jp": "魔獣",
+"size": "S",
+"ai": "-",
+"total": "4908",
+"skill_jp": "レオパルド"
+},
+"monst_watabo.html": {
+"icon": "830",
+"jp": "わたぼう",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3792",
+"skill_jp": "わたぼう"
+},
+"monst_warubo.html": {
+"icon": "824",
+"jp": "ワルぼう",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "S",
+"ai": "-",
+"total": "3874",
+"skill_jp": "ワルぼう"
+},
+"monst_warudo.html": {
+"icon": "900",
+"jp": "WORLD",
+"rank": "SS",
+"family_jp": "？？？",
+"size": "M",
+"ai": "-",
+"total": "5961",
+"skill_jp": "ＷＯＲＬＤ"
+}
+}
