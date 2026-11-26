@@ -18,17 +18,18 @@ working with the network switched off.
 | **Filters** | Rank (F→SS), family (8), size (S/M/G/Super G), A–Z index, free-text search, sort by any stat, pagination |
 | **Monster pages** | Portrait, badges, scaled stat bars, traits (base, +25/+50/+★ and M/G/Super G), 30-slot resistance table, equippable weapon types (all seven flags recorded), skill-point progression, rank value (位階No.) and synthesis recipes, obtain details (habitat, other-world master’s world, rebirth form and location), shared-family shortcuts, previous/next by dex number, favourites |
 | **Synthesis** | Two-monster calculator using the rank values (位階配合) with special (特殊配合) and four-monster (4体配合) recipe lookup, the family-combination table, and the rebirth-monster list |
-| **Skill sets** | 261 sets, each listing every monster that learns it, grouped by rank, with the full skill-point → ability progression, in English and Japanese |
+| **Skill sets** | All 425 sets, each with the full skill-point → ability progression in English and Japanese, the monsters that learn it grouped by rank, and the 41 evolution pairs (進化元 → 進化先) |
 | **Spells & abilities** | All 303 abilities of the reference index in unofficial English, with type (spell, slash, skill, breath, dance), the resistance each is checked against, its damage cap, the SP badge and the skill sets that teach it |
 | **Traits** | All 240 traits with their classification (combat, resistance, support, stats, drawback), English name and the Japanese source text; the traits a monster unlocks at +25/+50/+★ stay on its page |
 | **Weapons** | All 110 weapons of the seven types: attack, shop price, effect, where each is sold and which monster drops it; the equippable types of all 908 monsters |
 | **Items** | 180 items and key items plus 75 forging materials, with effects, buy/sell prices and source tags |
+| **Alchemy keys** | All 76 first halves and 110 second halves of a key name (20 added in SP), each with the title and condition that unlock it, the quest/reward a second half brings and its price where the source prints one |
 | **Alchemy-key rewards** | The 115 monsters an alchemy-key quest can hand out, by reward rank (SS/S/A/B) |
 | **Walkthrough** | Seven chapters: key item, towns, dungeons, objectives and the monsters recorded in that realm |
 | **Egg dex** | White / silver / gold / rainbow eggs plus the dream eggs, with their hatching pools |
 | **Arena** | Class C/B/A/S cups, kids’ cup and daily events |
 | **Tools** | Three-slot team builder with summed stat caps, and a two-monster stat comparison |
-| **Rebirth monsters** | Every record the source tags as a rebirth monster (転生モンスター), with the monster it is the rebirth of and the recorded location |
+| **Rebirth monsters** | Every record the source tags as a rebirth monster (転生モンスター) — the 19 rows of the rebirth chart plus the one only a monster page records — with the monster each is the rebirth of and its location |
 
 ---
 
@@ -77,7 +78,8 @@ src/
   i18n.ts                  Japanese → English term lookups for traits, abilities, items, weapons
   data/
     monsters.json          908 records incl. traits, resistances and weapon flags (generated)
-    skills.json            261 skill sets with their SP progression (generated)
+    skills.json            425 skill sets with SP progression, holders and evolution links (generated)
+    key-names.json         76 + 110 alchemy-key name halves with titles and conditions (generated)
     traits.json            192 trait names with their description text (generated)
     abilities.json         303 abilities: type, element, damage cap, SP flag (generated)
     trait-extra.json       240 traits with classification and source text (generated)
@@ -97,7 +99,9 @@ public/
   favicon.svg manifest.webmanifest
 data-source/               extraction + translation pipeline (not shipped in the build)
   scrape.py detail2.py build_data.py  monsters, skills, traits from the saved roster dump
-  scrape_lists.py                      ability/trait/item/weapon/key indices + weapon flags
+  scrape_lists.py                      ability/trait/item/weapon/key indices, key names,
+                                       rebirth chart + weapon flags
+  scrape_skills.py                     the 425-set skill index with holders and evolutions
   name-map-a.json name-map-b.json      unofficial English name maps
   roster.json detail_0_908.json        raw records scraped from game-cap.com/dqm2
 .github/workflows/ci.yml   typecheck · build · verify offline bundle · upload dist artifact
@@ -111,9 +115,11 @@ The shipped JSON is generated, not hand-edited. From `data-source/`:
 
 ```bash
 python3 build_data.py      # roster.json + detail_0_908.json + name maps → monsters/skills/traits
-python3 scrape_lists.py    # list pages → abilities, trait-extra, items, weapons,
-                           #              key-rewards and the per-monster weapon flags
-                           # (subset: python3 scrape_lists.py weapons keys)
+python3 scrape_lists.py    # list pages → abilities, trait-extra, items, weapons, key-rewards,
+                           #              key-names, rebirth chart + the per-monster weapon flags
+                           # (subset: python3 scrape_lists.py weapons keys key-names rebirth)
+python3 scrape_skills.py   # skilllist + skill_*.html → all 425 sets, their holders, SP tables
+                           #              and evolution links, merged into skills.json
 ```
 
 - `scrape.py` collects the roster (rank, family, size, stat total, skill set, icon number).
@@ -139,7 +145,8 @@ Ranks: F → E → D → C → B → A → S → SS.
 
 - Monster records (stats, rank, family, size, skill set, obtain data) are complete for all 908 entries.
 - Per-monster traits (with their +25/+50/+★ and M/G/超G tiers), the 30-slot resistance table and the skill-point
-  progression of all 261 sets are extracted from the source pages by `data-source/build_data.py`.
+  progression of all 425 sets are extracted from the source pages (`build_data.py` for the sets a dex monster uses,
+  `scrape_skills.py` for the rest of the reference index).
 - The **Traits**, **Spells & abilities**, **Items**, **Weapons** and **Alchemy-key rewards** pages are built from the
   reference’s own index pages (`data-source/scrape_lists.py`), so their counts match it: 240 traits, 303 abilities,
   180 items + 75 materials, 110 weapons and 115 reward monsters.
@@ -147,14 +154,16 @@ Ranks: F → E → D → C → B → A → S → SS.
   record shows its seven weapon types instead of the 20 that kept a plain-text line.
 - Effect texts on the traits, items and weapons pages stay in Japanese: they are the reference’s own wording, and
   every one of them is shown next to an English name rather than rewritten.
-- 205 skill sets of the reference index are still missing from the local data (it carries the 261 sets that a dex
-  monster uses as its signature set). That gap is the next milestone’s target.
+- The skill index is complete: all 425 sets of the reference, the 41 evolution pairs and the sets that no dex
+  monster holds (crest sets, evolved sets and the job sets).
+- The alchemy-key name index is complete too: 76 first halves, 110 second halves (20 of them SP-only), with the
+  title and condition that unlock each one.
 - Synthesis is modelled from the scrape: all 908 records carry their rank value (位階No.), 403 are marked as
   rank-synthesis results and 427 as special-synthesis results. 419 records carry the two- or four-monster recipe the
   source prints on their page (67 of them four-monster); recipes the page does not print are not inferred.
-- 146 records name the world of an other-world master (他国マスター). 19 records are tagged as rebirth monsters and
-  the source page carries a location line for 15 of them; the four 3DS rebirth monsters without one (Wire Man,
-  Thorn Clubber, Shadow Noble, Queen Moosifer) are shown without a location rather than given a guessed one.
+- 146 records name the world of an other-world master (他国マスター). 20 records are rebirth monsters after merging
+  the 19 entries of `chart/009.html`; every one of them carries the location the chart prints, and the longer
+  location text a monster page states is kept instead of the chart’s shorter line.
 - Habitat text is present for 257 records (the rest are boss, egg, event or synthesis exclusives).
 
 ---

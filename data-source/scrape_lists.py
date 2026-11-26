@@ -325,6 +325,105 @@ def scrape_key_rewards():
     print('  matched to a monster id:', sum(1 for r in unique if r['id']), '/', len(unique))
 
 
+# --------------------------------------- alchemy-key names (錬金カギの名前)
+def scrape_key_names():
+    """The 76 first halves and 110 second halves of an alchemy-key name, with the
+    title and condition that unlock each.  chart/009.html also prices 15 of the
+    second halves (the ones a rebirth monster adds), so those get a `price`."""
+    prices = {}
+    for cells, _ in rows(content(get('chart/009.html'))):
+        if len(cells) == 4 and cells[2].isdigit():
+            prices[cells[1]] = int(cells[2])
+
+    names = []
+    for cells, tr in rows(content(get('data/renkinshogo.html'))):
+        pick = re.search(r'data-kt-pick="(front|back):', tr)
+        name = re.search(r'data-kt-name>(.*?)</span>', tr, re.S)
+        if not pick or not name:
+            continue
+        title = re.search(r'data-kt-title>(.*?)</strong>', tr, re.S)
+        condition = re.search(r'data-kt-condition>(.*?)</p>', tr, re.S)
+        detail = re.search(r'class="dqm2-kt-detail">(.*?)</p>', tr, re.S)
+        entry = {
+            'jp': text_of(name.group(1)),
+            'half': 'prefix' if pick.group(1) == 'front' else 'suffix',
+            'sp': bool(re.search(r'SP追加', tr)),
+            'title': text_of(title.group(1)) if title else '',
+            'condition': text_of(condition.group(1)) if condition else '',
+        }
+        body = text_of(detail.group(1)) if detail else ''
+        for part in re.split(r'\s*/\s*|／', body):
+            part = part.strip()
+            if part.startswith('系統：'):
+                entry['families'] = [f.strip() for f in part[3:].split('・') if f.strip()]
+            elif part.startswith('クエスト：'):
+                entry['quest'] = part[5:].strip()
+            elif part.startswith('報酬：'):
+                entry['reward'] = part[3:].strip()
+        if entry['jp'] in prices:
+            entry['price'] = prices[entry['jp']]
+        names.append(entry)
+
+    dump('key-names.json', names)
+    print('  prefixes:', sum(1 for n in names if n['half'] == 'prefix'),
+          '| suffixes:', sum(1 for n in names if n['half'] == 'suffix'),
+          '| priced:', sum(1 for n in names if 'price' in n))
+
+
+# -------------------------------------------- rebirth monsters (転生モンスター)
+LOCATION_EN = {
+    '砂漠の世界': 'Desert Realm',
+    '水の世界': 'Water Realm',
+    '雪と氷の世界': 'Snow & Ice Realm',
+    '天空の世界': 'Sky Realm',
+    '海神の神殿(水の世界)': 'Temple of the Sea God (Water Realm)',
+    '宿り木の塔(外観)': 'Tower of Mistletoe (exterior)',
+    '宿り木の塔(2F)': 'Tower of Mistletoe (2F)',
+    '宿り木の塔(4Fへの道)': 'Tower of Mistletoe (path to 4F)',
+    '宿り木の塔(5Fへの道)': 'Tower of Mistletoe (path to 5F)',
+    '雪と氷の世界：まよいの森MAP中央あたり(昼)':
+        'Snow & Ice Realm: Lost Woods, around the centre of the map (day)',
+    '水の世界：ポローニャ村の西の砂浜から出た海の上(MAP中央のリバイアさまの東あたりの海上)':
+        'Water Realm: on the sea reached from the sandy beach west of Polonia Village '
+        '(on the sea east of Lady Leviathan at the centre of the map)',
+    '天空の世界：ペイの町周辺(町の西側あたりに出現)':
+        'Sky Realm: around Pey town (appears on the west side of town)',
+    '雪と氷の世界：まよいの森のMAP南側(MAP北側あたりでメイデンドールを倒して南側に戻ってくると出現)':
+        'Snow & Ice Realm: south side of the Lost Woods map (appears after defeating Maiden Doll '
+        'near the north side and coming back south)',
+    '雪と氷の世界：北の山の入り口前(入口前のグリズリー付近)':
+        'Snow & Ice Realm: in front of the North Mountain entrance (near the Grizzly at the entrance)',
+}
+
+
+def scrape_rebirth():
+    """chart/009.html lists every rebirth monster with what it is the rebirth of
+    and where it shows up; merge that into the monster records."""
+    monsters = json.load(open('../src/data/monsters.json'))
+    by_jp = {m['jp']: m for m in monsters}
+    found = 0
+    for cells, _ in rows(content(get('chart/009.html'))):
+        if len(cells) < 5 or not re.fullmatch(r'[FEDCBAS]{1,2}', cells[0]):
+            continue
+        target = by_jp.get(cells[1])
+        if not target:
+            print('  no monster record for', cells[1])
+            continue
+        before = by_jp.get(cells[2])
+        current = target['obtain'].get('rebirth') or {}
+        # The monster page carries a longer English location from its own detail
+        # page; keep that when it is already there.
+        target['obtain']['rebirth'] = {
+            'of': before['name'] if before else cells[2],
+            'where': current.get('where') or LOCATION_EN.get(cells[4], cells[4]),
+        }
+        target['obtain'].setdefault('other', 'Rebirth monster')
+        found += 1
+    json.dump(monsters, open('../src/data/monsters.json', 'w'), ensure_ascii=False,
+              separators=(',', ':'))
+    print('rebirth monsters:', found)
+
+
 # ------------------------------------------- per-monster weapon flags (装備武器)
 def scrape_monster_weapons():
     monsters = json.load(open('../src/data/monsters.json'))
@@ -355,13 +454,16 @@ def scrape_monster_weapons():
 
 if __name__ == '__main__':
     # `python3 scrape_lists.py traits abilities items weapons keys monster-weapons`
-    steps = sys.argv[1:] or ['traits', 'abilities', 'items', 'weapons', 'keys', 'monster-weapons']
+    steps = sys.argv[1:] or ['traits', 'abilities', 'items', 'weapons', 'keys', 'key-names',
+                             'rebirth', 'monster-weapons']
     run = {
         'traits': scrape_traits,
         'abilities': scrape_abilities,
         'items': scrape_items,
         'weapons': scrape_weapons,
         'keys': scrape_key_rewards,
+        'key-names': scrape_key_names,
+        'rebirth': scrape_rebirth,
         'monster-weapons': scrape_monster_weapons,
     }
     for step in steps:

@@ -3,6 +3,7 @@ import {
   ABILITY_LIST,
   ABILITY_SETS,
   ITEMS,
+  KEY_NAMES,
   KEY_REWARDS,
   MONSTERS_BY_WEAPON,
   MONSTER_BY_ID,
@@ -14,8 +15,20 @@ import {
   hashFor,
   miniMon,
 } from '../lib';
-import type { AbilityEntry, ItemEntry, TraitEntry, WeaponEntry } from '../lib';
-import { ITEM_CATEGORY_EN, TAG_EN, abilityEn, elementEn, itemEn, traitEn, weaponEn } from '../i18n';
+import type { AbilityEntry, ItemEntry, KeyName, TraitEntry, WeaponEntry } from '../lib';
+import {
+  ITEM_CATEGORY_EN,
+  QUEST_EN,
+  REWARD_EN,
+  TAG_EN,
+  abilityEn,
+  elementEn,
+  familyEn,
+  itemEn,
+  keyNameEn,
+  traitEn,
+  weaponEn,
+} from '../i18n';
 
 const TRAIT_CATEGORIES: { key: string; label: string }[] = [
   { key: 'Combat', label: 'Combat' },
@@ -358,6 +371,93 @@ function dropLink(value: string): string {
 
 /* -------------------------------------------------------------------- keys */
 
+function keyRow(k: KeyName): string {
+  const search = [keyNameEn(k.jp), k.jp, k.title, k.condition, k.quest ?? '', k.reward ?? ''].join(' ');
+  return `<tr data-key-row data-search="${esc(search.toLowerCase())}">
+    <td><strong>${esc(keyNameEn(k.jp))}</strong><div class="jp">${esc(k.jp)}</div>${
+      k.sp ? ' <span class="badge tag-gold" title="Added in the SP version">SP</span>' : ''
+    }</td>
+    <td lang="ja">${esc(k.title)}</td>
+    <td class="small" lang="ja">${esc(k.condition)}${
+      k.families?.length ? `<div class="muted">系統：${k.families.map((f) => esc(familyEn(f))).join(' · ')}</div>` : ''
+    }</td>
+    <td class="small muted" lang="ja">${
+      k.quest ? `${esc(QUEST_EN[k.quest] ?? k.quest)}<div class="jp">${esc(k.quest)}</div>` : '—'
+    }${k.reward ? `<div class="small">→ ${esc(REWARD_EN[k.reward] ?? k.reward)}</div>` : ''}</td>
+    <td class="num">${k.price === undefined ? '—' : fmt(k.price)}</td>
+  </tr>`;
+}
+
+function keySection(half: 'prefix' | 'suffix'): string {
+  const list = KEY_NAMES.filter((k) => k.half === half);
+  const label = half === 'prefix' ? 'First halves' : 'Second halves';
+  const jp = half === 'prefix' ? '前半' : '後半';
+  return `<section class="card">
+    <div class="card-head"><h2>${label}</h2><span class="muted small">${jp} · ${list.length} names</span></div>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Name</th><th>Title (称号)</th><th>Unlocked by</th><th>Key quest</th><th class="num">Price</th></tr></thead>
+        <tbody>${list.map(keyRow).join('')}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+export function renderAlchemyKeys(): Page {
+  const prefixes = KEY_NAMES.filter((k) => k.half === 'prefix');
+  const suffixes = KEY_NAMES.filter((k) => k.half === 'suffix');
+  const priced = KEY_NAMES.filter((k) => k.price !== undefined);
+
+  return {
+    title: 'Alchemy keys',
+    html: `
+      <nav class="breadcrumb"><a href="#/">Home</a><span class="sep">/</span><span>Alchemy keys</span></nav>
+      <div class="page-head">
+        <h1>Alchemy keys</h1>
+        <p class="lede">
+          A key’s name is built from a first half and a second half. ${prefixes.length} first halves and
+          ${suffixes.length} second halves exist; each one is unlocked by a title (称号), and the second half also
+          decides the key’s quest and the bucket its reward comes from.
+        </p>
+        <div class="meta">
+          <span class="badge tag">${prefixes.length} first halves</span>
+          <span class="badge tag">${suffixes.length} second halves</span>
+          <span class="badge tag-gold">${KEY_NAMES.filter((k) => k.sp).length} added in SP</span>
+          <a class="badge tag" href="#/key-rewards">${KEY_REWARDS.length} reward monsters</a>
+        </div>
+      </div>
+      <section class="filters">
+        <div class="filter-row">
+          <span class="label">Search</span>
+          <input id="kSearch" class="field" type="search" placeholder="Name, title or condition…" style="flex:1;min-width:240px" />
+          <a class="btn ghost" href="#/keys">Reset</a>
+        </div>
+      </section>
+      ${keySection('prefix')}
+      ${keySection('suffix')}
+      <div class="notice">
+        <p>
+          Key names, titles and conditions are the reference’s Japanese text; the name halves are shown with an
+          English rendering. A price is printed only for the ${priced.length} second halves a rebirth monster adds to
+          the list.
+        </p>
+      </div>
+    `,
+    mount: () => {
+      const input = document.getElementById('kSearch') as HTMLInputElement | null;
+      if (!input) return;
+      const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('[data-key-row]'));
+      input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        for (const row of rows) {
+          const hit = !q || (row.dataset.search ?? '').includes(q);
+          row.hidden = !hit;
+        }
+      });
+    },
+  };
+}
+
 export function renderKeyRewards(): Page {
   const ranks = ['SS', 'S', 'A', 'B'];
 
@@ -398,7 +498,7 @@ export function renderKeyRewards(): Page {
         <p>
           A key quest only rolls the reward after a clear, and even an S evaluation is a lottery, so the monster is
           never guaranteed. Rewards come from the second half of the key name; the first half decides which monsters
-          appear inside the quest.
+          appear inside the quest. See <a href="#/keys">alchemy keys</a> for every first and second half.
         </p>
       </div>
     `,

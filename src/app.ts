@@ -59,6 +59,7 @@ function buildSidebar(): void {
         <li><a href="#/traits">Traits</a></li>
         <li><a href="#/weapons">Weapons &amp; forging</a></li>
         <li><a href="#/items">Items &amp; materials</a></li>
+        <li><a href="#/keys">Alchemy keys</a></li>
         <li><a href="#/key-rewards">Alchemy-key rewards</a></li>
       </ul>`,
     ),
@@ -132,6 +133,8 @@ function resolve({ segs, params }: Route): Page {
       return reference.renderWeapons();
     case 'abilities':
       return reference.renderAbilities(params);
+    case 'keys':
+      return reference.renderAlchemyKeys();
     case 'key-rewards':
       return reference.renderKeyRewards();
     case 'chart':

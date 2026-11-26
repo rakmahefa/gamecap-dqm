@@ -10,6 +10,7 @@ import rawTraitExtra from './data/trait-extra.json';
 import rawItems from './data/items.json';
 import rawWeapons from './data/weapons.json';
 import rawKeyRewards from './data/key-rewards.json';
+import rawKeyNames from './data/key-names.json';
 import rawMonsterWeapons from './data/monster-weapons.json';
 
 export type Rank = 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
@@ -98,6 +99,13 @@ export interface SkillSet {
   count: number;
   sp: SkillEntry[];
   monsters: { id: string; name: string; rank: Rank }[];
+  /** Japanese name of the set this one evolves from / into. */
+  evolvesFrom?: string;
+  evolvesTo?: string;
+  /** What the set is used for in key fusion (組み合わせ用途). */
+  combinesFor?: string;
+  /** Other way the set is learnt (他入手) — crests and the like. */
+  other?: string;
 }
 
 export interface AbilityEntry {
@@ -144,6 +152,22 @@ export interface KeyReward {
   sp: boolean;
 }
 
+/** One half of an alchemy-key name (錬金カギの名前). */
+export interface KeyName {
+  jp: string;
+  half: 'prefix' | 'suffix';
+  sp: boolean;
+  /** Title (称号) that unlocks this half. */
+  title: string;
+  condition: string;
+  families?: string[];
+  /** Key-quest content tied to the name. */
+  quest?: string;
+  reward?: string;
+  /** Price of the key once this second half is used, where the source prices it. */
+  price?: number;
+}
+
 export const MONSTERS = rawMonsters as unknown as Monster[];
 export const SKILLS = rawSkills as unknown as SkillSet[];
 export const TRAIT_DESC = rawTraitDesc as unknown as Record<string, string[]>;
@@ -152,6 +176,7 @@ export const TRAIT_LIST = rawTraitExtra as unknown as TraitEntry[];
 export const ITEMS = rawItems as unknown as ItemEntry[];
 export const WEAPONS = rawWeapons as unknown as WeaponEntry[];
 export const KEY_REWARDS = rawKeyRewards as unknown as KeyReward[];
+export const KEY_NAMES = rawKeyNames as unknown as KeyName[];
 
 /* The monster pages carry the equippable weapon types as CSS state, which the
  * first scrape dropped. `monster-weapons.json` holds them for all 908 records. */
@@ -258,6 +283,7 @@ export const STAT_LABELS: [StatKey, string][] = [
 export const MONSTER_BY_ID = new Map(MONSTERS.map((m) => [m.id, m]));
 export const MONSTER_BY_JP = new Map(MONSTERS.map((m) => [m.jp, m]));
 export const SKILL_BY_NAME = new Map(SKILLS.map((s) => [s.name, s]));
+export const SKILL_BY_JP = new Map(SKILLS.map((s) => [s.jp, s]));
 
 /** Which skill sets teach a given ability, and at how many skill points. */
 export interface AbilityUse {

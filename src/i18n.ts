@@ -9,11 +9,55 @@ import traitMap from './data/i18n-traits.json';
 import abilityMap from './data/i18n-abilities.json';
 import itemMap from './data/i18n-items.json';
 import weaponMap from './data/i18n-weapons.json';
+import keyMap from './data/i18n-keys.json';
 
 export const TRAIT_EN = traitMap as Record<string, string>;
 export const ABILITY_EN = abilityMap as Record<string, string>;
 export const ITEM_EN = itemMap as Record<string, string>;
 export const WEAPON_EN = weaponMap as Record<string, string>;
+export const KEY_EN = keyMap as Record<string, string>;
+
+/** Japanese family (系統) as written on the key pages. */
+export const FAMILY_EN: Record<string, string> = {
+  スライム: 'Slime',
+  ドラゴン: 'Dragon',
+  自然: 'Nature',
+  魔獣: 'Beast',
+  物質: 'Material',
+  悪魔: 'Demon',
+  ゾンビ: 'Zombie',
+  '？？？': '???',
+  複数の系統: 'Several families',
+};
+
+/** Key-quest content (クエスト) and its reward bucket. */
+export const QUEST_EN: Record<string, string> = {
+  'ゴールド獲得': 'Earn gold',
+  '経験値獲得': 'Earn experience',
+  スカウト: 'Scout a monster',
+  ボス討伐: 'Defeat a boss',
+  かけら探し: 'Find fragments',
+  モンスター討伐: 'Defeat monsters',
+  目的地潜入: 'Infiltrate a destination',
+  他国マスター戦: 'Battle another world’s master',
+  モンスター躍らせ: 'Make monsters dance',
+};
+
+export const REWARD_EN: Record<string, string> = {
+  ゴールド: 'Gold',
+  素材: 'Materials',
+  武器: 'Weapons',
+  'Aランクのモンスター': 'A-rank monster',
+  'Sランクのモンスター': 'S-rank monster',
+};
+
+export function keyNameEn(jp: string): string {
+  return KEY_EN[jp] ?? jp;
+}
+
+export function familyEn(jp: string): string {
+  return FAMILY_EN[jp] ?? jp;
+}
 
 /** Japanese item section → English heading. */
 export const ITEM_CATEGORY_EN: Record<string, string> = {

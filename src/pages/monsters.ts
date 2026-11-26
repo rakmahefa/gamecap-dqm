@@ -428,6 +428,9 @@ function obtainBlock(m: Monster): string {
     );
   }
   if (o.where) rows.push(`<dt>Habitat</dt><dd>${esc(o.where)}</dd>`);
+  if (o.rebirth?.where && o.rebirth.where !== o.where) {
+    rows.push(`<dt>Rebirth location</dt><dd>${esc(o.rebirth.where)}</dd>`);
+  }
   if (o.masterWorld) rows.push(`<dt>Other-world master</dt><dd>${esc(o.masterWorld)}</dd>`);
   if (o.eggs?.length) {
     const names = o.eggs.map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(', ');

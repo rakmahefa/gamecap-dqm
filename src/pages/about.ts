@@ -1,6 +1,16 @@
 import type { Page } from '../app';
 import { SITE_NOTES } from '../data/extras';
-import { ABILITY_LIST, ITEMS, KEY_REWARDS, MONSTERS, SKILLS, TRAIT_LIST, WEAPONS, countBy } from '../lib';
+import {
+  ABILITY_LIST,
+  ITEMS,
+  KEY_NAMES,
+  KEY_REWARDS,
+  MONSTERS,
+  SKILLS,
+  TRAIT_LIST,
+  WEAPONS,
+  countBy,
+} from '../lib';
 
 const ICON_COUNT = new Set(MONSTERS.map((m) => m.icon)).size;
 
@@ -8,6 +18,8 @@ export function render(): Page {
   const eggMonsters = countBy((m) => m.obtain.eggs !== undefined);
   const withHabitat = countBy((m) => Boolean(m.obtain.where));
   const ss = countBy((m) => m.rank === 'SS');
+  const evolutions = SKILLS.filter((s) => s.evolvesTo).length;
+  const rebirth = countBy((m) => Boolean(m.obtain.rebirth));
 
   return {
     title: 'About',
@@ -35,12 +47,13 @@ export function render(): Page {
         </div>
         <ul style="margin-top:14px">
           <li><strong>Monster dex</strong> — all ${MONSTERS.length} records with rank, family, body size, base HP/MP/Attack/Defence/Agility/Wisdom, stat total, signature skill set, habitat, other-world master’s world, egg pool, rebirth form and special acquisition routes.</li>
-          <li><strong>Skill sets</strong> — ${SKILLS.length} sets, each listing every monster that learns it, grouped by rank.</li>
+          <li><strong>Skill sets</strong> — all ${SKILLS.length} sets, each with its skill-point table, every monster that learns it grouped by rank, and the ${evolutions} evolution pairs (進化元 → 進化先).</li>
           <li><strong>Reference data</strong> — the full ${TRAIT_LIST.length}-trait index with its classification, ${ABILITY_LIST.length} spells and abilities with type, element and cap, ${ITEMS.length} items, key items and forging materials, and all ${WEAPONS.length} weapons of the seven types with prices and drop sources.</li>
-          <li><strong>Alchemy keys</strong> — the ${KEY_REWARDS.length} reward monsters an alchemy-key quest can hand out, by reward rank.</li>
+          <li><strong>Alchemy keys</strong> — all ${KEY_NAMES.length} halves of a key name (${KEY_NAMES.filter((k) => k.half === 'prefix').length} first, ${KEY_NAMES.filter((k) => k.half === 'suffix').length} second) with the title and condition that unlock each, plus the ${KEY_REWARDS.length} reward monsters a key quest can hand out.</li>
           <li><strong>Walkthrough</strong> — seven chapters with key items, towns, dungeons and objectives.</li>
           <li><strong>Synthesis</strong> — a two-monster rank-value calculator, the ${countBy((m) => (m.breed?.recipes.length ?? 0) > 0)} monsters with a printed special or four-monster recipe, and the rebirth-monster list.</li>
           <li><strong>Egg dex, arena and planning tools</strong> — egg pools by colour, arena cups, a team builder and a stat comparison.</li>
+          <li><strong>Rebirth monsters</strong> — the ${rebirth} records the source tags as a rebirth monster, with the monster each is the rebirth of and its location.</li>
         </ul>
         <p class="small muted" style="margin-bottom:0">${withHabitat} records carry a translated habitat line; the rest are dungeon, boss, egg or synthesis exclusives.</p>
       </section>

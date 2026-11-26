@@ -1,5 +1,5 @@
 import type { Page } from '../app';
-import { MONSTERS, RANKS, SKILLS, esc, hashFor, iconSrc, rankBadge } from '../lib';
+import { MONSTERS, RANKS, SKILLS, SKILL_BY_JP, esc, hashFor, iconSrc, rankBadge } from '../lib';
 import { abilityEn } from '../i18n';
 import type { SkillSet } from '../lib';
 
@@ -7,11 +7,40 @@ function findSkill(name: string): SkillSet | undefined {
   return SKILLS.find((s) => s.name === name);
 }
 
+function skillRow(s: SkillSet): string {
+  return `<tr>
+    <td><a href="${hashFor(`skill/${encodeURIComponent(s.name)}`)}"><strong>${esc(s.name)}</strong></a>
+      <div class="jp">${esc(s.jp)}</div></td>
+    <td class="num">${s.count}</td>
+    <td class="num">${s.sp.length}</td>
+    <td class="small muted">${
+      s.count
+        ? `${s.monsters
+            .slice(0, 4)
+            .map((m) => esc(m.name))
+            .join(', ')}${s.count > 4 ? '…' : ''}`
+        : '<span class="muted">No dex monster holds it</span>'
+    }</td>
+  </tr>`;
+}
+
+/** A link to another skill set, given its Japanese name. */
+function setLink(name: string | undefined): string {
+  if (!name) return '';
+  const set = SKILL_BY_JP.get(name);
+  return set
+    ? `<a href="${hashFor(`skill/${encodeURIComponent(set.name)}`)}">${esc(set.name)} <span class="jp">${esc(set.jp)}</span></a>`
+    : `<span lang="ja">${esc(name)}</span>`;
+}
+
 export function renderList(params: URLSearchParams): Page {
   const q = (params.get('q') ?? '').trim().toLowerCase();
-  const list = SKILLS.filter(
-    (s) => !q || s.name.toLowerCase().includes(q) || s.jp.includes(params.get('q') ?? ''),
-  ).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  const matches = (term: string): SkillSet[] =>
+    SKILLS.filter((s) => !term || s.name.toLowerCase().includes(term) || s.jp.includes(term.trim())).sort(
+      (a, b) => b.count - a.count || a.name.localeCompare(b.name),
+    );
+  const list = matches(q);
+  const evolutions = SKILLS.filter((s) => s.evolvesTo).sort((a, b) => a.name.localeCompare(b.name));
 
   return {
     title: 'Skill sets',
@@ -20,9 +49,14 @@ export function renderList(params: URLSearchParams): Page {
       <div class="page-head">
         <h1>Skill sets</h1>
         <p class="lede">
-          A monster’s skill set is the tree of spells, abilities and traits it learns as it levels. There are
-          ${SKILLS.length} sets in this compendium; open one to see every monster that learns it.
+          A monster’s skill set is the tree of spells, abilities and traits it learns as it levels. All
+          ${SKILLS.length} sets of the reference index are here; open one to see its skill-point table, every monster
+          that learns it and the set it evolves from or into.
         </p>
+        <div class="meta">
+          <span class="badge tag">${SKILLS.length} sets</span>
+          <span class="badge tag-gold">${evolutions.length} evolutions</span>
+        </div>
       </div>
       <section class="filters">
         <div class="filter-row">
@@ -31,24 +65,27 @@ export function renderList(params: URLSearchParams): Page {
           <a class="btn ghost" href="#/skills">Reset</a>
         </div>
       </section>
+      ${evolutions.length
+        ? `<section class="card">
+            <div class="card-head"><h2>Skill evolution</h2><span class="muted small">スキル進化 · ${evolutions.length} upgrades</span></div>
+            <div class="grid auto">
+              ${evolutions
+                .map(
+                  (s) => `<div class="small">${setLink(s.evolvesFrom)} <span class="muted">→</span> ${setLink(s.evolvesTo)}</div>`,
+                )
+                .join('')}
+            </div>
+            <p class="small muted" style="margin:10px 0 0">
+              Pairs are the reference’s own 進化元 / 進化先 links: the left set is the one a monster starts with and the
+              right set the one it can become. Both halves of a pair keep their own skill-point table.
+            </p>
+          </section>`
+        : ''}
       <div class="result-count"><span id="sCount">${list.length} skill set${list.length === 1 ? '' : 's'}</span><span>Sorted by number of monsters</span></div>
       <div class="table-wrap">
         <table class="data">
           <thead><tr><th>Skill set</th><th class="num">Monsters</th><th class="num">Entries</th><th>Typical holders</th></tr></thead>
-          <tbody id="sBody">${list
-            .map(
-              (s) => `<tr>
-                <td><a href="${hashFor(`skill/${encodeURIComponent(s.name)}`)}"><strong>${esc(s.name)}</strong></a>
-                  <div class="jp">${esc(s.jp)}</div></td>
-                <td class="num">${s.count}</td>
-                <td class="num">${s.sp.length}</td>
-                <td class="small muted">${s.monsters
-                  .slice(0, 4)
-                  .map((m) => esc(m.name))
-                  .join(', ')}${s.count > 4 ? '…' : ''}</td>
-              </tr>`,
-            )
-            .join('')}</tbody>
+          <tbody id="sBody">${list.map(skillRow).join('')}</tbody>
         </table>
       </div>
     `,
@@ -57,26 +94,8 @@ export function renderList(params: URLSearchParams): Page {
       const body = document.getElementById('sBody');
       const count = document.getElementById('sCount');
       input?.addEventListener('input', () => {
-        const term = input.value.trim().toLowerCase();
-        const next = SKILLS.filter(
-          (s) => !term || s.name.toLowerCase().includes(term) || s.jp.includes(input.value.trim()),
-        ).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-        if (body) {
-          body.innerHTML = next
-            .map(
-              (s) => `<tr>
-                <td><a href="${hashFor(`skill/${encodeURIComponent(s.name)}`)}"><strong>${esc(s.name)}</strong></a>
-                  <div class="jp">${esc(s.jp)}</div></td>
-                <td class="num">${s.count}</td>
-                <td class="num">${s.sp.length}</td>
-                <td class="small muted">${s.monsters
-                  .slice(0, 4)
-                  .map((m) => esc(m.name))
-                  .join(', ')}${s.count > 4 ? '…' : ''}</td>
-              </tr>`,
-            )
-            .join('');
-        }
+        const next = matches(input.value.trim().toLowerCase());
+        if (body) body.innerHTML = next.map(skillRow).join('');
         if (count) count.textContent = `${next.length} skill set${next.length === 1 ? '' : 's'}`;
       });
     },
@@ -97,6 +116,8 @@ export function renderDetail(name: string): Page {
     monsters: skill.monsters.filter((m) => m.rank === rank),
   })).filter((g) => g.monsters.length > 0);
 
+  const evolution = skill.evolvesFrom || skill.evolvesTo;
+
   return {
     title: skill.name,
     html: `
@@ -107,6 +128,7 @@ export function renderDetail(name: string): Page {
         <div class="meta">
           <span class="badge tag">${skill.count} monster${skill.count === 1 ? '' : 's'}</span>
           <span class="badge tag-gold">Skill set</span>
+          ${skill.evolvesTo ? '<span class="badge tag-gold">Evolves</span>' : ''}
         </div>
       </div>
       <div class="notice info">
@@ -139,6 +161,37 @@ export function renderDetail(name: string): Page {
             : `<p class="muted small" style="margin:0">No skill-point table recorded for this set.</p>`
         }
       </section>
+
+      ${evolution
+        ? `<section class="card">
+            <div class="card-head"><h2>Evolution</h2><span class="muted small">スキル進化</span></div>
+            <div class="grid cols-2">
+              <div>
+                <h3 class="small muted" style="margin:0 0 8px">Evolves from</h3>
+                ${skill.evolvesFrom ? `<p>${setLink(skill.evolvesFrom)}</p>` : '<p class="small muted">— this is a base set.</p>'}
+              </div>
+              <div>
+                <h3 class="small muted" style="margin:0 0 8px">Evolves into</h3>
+                ${skill.evolvesTo ? `<p>${setLink(skill.evolvesTo)}</p>` : '<p class="small muted">— this set has no evolved form.</p>'}
+              </div>
+            </div>
+            <p class="small muted" style="margin:10px 0 0">
+              The two columns are the reference’s 進化元スキル and 進化先スキル fields for this set.
+            </p>
+          </section>`
+        : ''}
+
+      ${skill.combinesFor || skill.other
+        ? `<section class="card">
+            <div class="card-head"><h2>Other details</h2></div>
+            <dl class="dl">
+              ${skill.combinesFor ? `<dt>Key fusion use</dt><dd lang="ja">${esc(skill.combinesFor)}</dd>` : ''}
+              ${skill.other ? `<dt>Other acquisition</dt><dd lang="ja">${esc(skill.other)}</dd>` : ''}
+            </dl>
+            <p class="small muted" style="margin:10px 0 0">Source text kept in Japanese.</p>
+          </section>`
+        : ''}
+
       ${byRank
         .map(
           (g) => `<section class="card">
@@ -157,15 +210,22 @@ export function renderDetail(name: string): Page {
         .join('')}
       <section class="card">
         <div class="card-head"><h2>All holders</h2></div>
-        <div class="grid auto">
-          ${skill.monsters
-            .map(
-              (m) => `<a class="mini-mon" href="#/monster/${encodeURIComponent(m.id)}">
-                ${iconFor(m.id)}<span>${esc(m.name)}</span>${rankBadge(m.rank)}
-              </a>`,
-            )
-            .join('')}
-        </div>
+        ${
+          skill.monsters.length
+            ? `<div class="grid auto">
+                ${skill.monsters
+                  .map(
+                    (m) => `<a class="mini-mon" href="#/monster/${encodeURIComponent(m.id)}">
+                      ${iconFor(m.id)}<span>${esc(m.name)}</span>${rankBadge(m.rank)}
+                    </a>`,
+                  )
+                  .join('')}
+              </div>`
+            : `<p class="small muted" style="margin:0">
+                No dex monster holds this set as its own: in the reference it comes from a skill crest, a key or an
+                evolved set, not from a monster’s starting skill set.
+              </p>`
+        }
       </section>
     `,
   };
