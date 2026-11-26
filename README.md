@@ -27,7 +27,9 @@ working with the network switched off.
 | **Alchemy-key rewards** | The 115 monsters an alchemy-key quest can hand out, by reward rank (SS/S/A/B) |
 | **Walkthrough** | Seven chapters: key item, towns, dungeons, objectives and the monsters recorded in that realm |
 | **Egg dex** | White / silver / gold / rainbow eggs plus the dream eggs, with their hatching pools |
-| **Arena** | Class C/B/A/S cups, kids’ cup and daily events |
+| **Arena** | The four class cups with entry fee, prize, every opponent and its HP and the reference’s notes for each round, plus the endurance battle’s streak rewards and where a loss sends you back |
+| **Guides** | Translated system articles: new-life synthesis, scouting, mini medals, the 15 scout quests and the SP online matchmaking |
+| **Kameha exchange** | All 353 monsters the Kameha prince hands out, with the route of each one (scout, other-world master, synthesis, egg, key, other) |
 | **Tools** | Three-slot team builder with summed stat caps, and a two-monster stat comparison |
 | **Rebirth monsters** | Every record the source tags as a rebirth monster (転生モンスター) — the 19 rows of the rebirth chart plus the one only a monster page records — with the monster each is the rebirth of and its location |
 
@@ -80,6 +82,8 @@ src/
     monsters.json          908 records incl. traits, resistances and weapon flags (generated)
     skills.json            425 skill sets with SP progression, holders and evolution links (generated)
     key-names.json         76 + 110 alchemy-key name halves with titles and conditions (generated)
+    arena.json             class cups with opponents and HP, endurance rewards, restart rules (generated)
+    kameha.json            353 Kameha reward monsters with their other routes (generated)
     traits.json            192 trait names with their description text (generated)
     abilities.json         303 abilities: type, element, damage cap, SP flag (generated)
     trait-extra.json       240 traits with classification and source text (generated)
@@ -88,7 +92,8 @@ src/
     key-rewards.json       115 alchemy-key reward monsters by rank (generated)
     monster-weapons.json   equippable weapon types for all 908 monsters (generated)
     i18n-*.json            English renderings for every term in the tables above
-    extras.ts              ranks, families, chapters, eggs, arena and the long-form notes
+    extras.ts              ranks, families, chapters, eggs and the long-form notes
+    guides.ts              translated system guides (new-life synthesis, scouting, medals…)
   pages/
     home.ts monsters.ts skills.ts breeding.ts reference.ts chart.ts tools.ts about.ts
 public/
@@ -102,6 +107,7 @@ data-source/               extraction + translation pipeline (not shipped in the
   scrape_lists.py                      ability/trait/item/weapon/key indices, key names,
                                        rebirth chart + weapon flags
   scrape_skills.py                     the 425-set skill index with holders and evolutions
+  scrape_guides.py                     arena cups + endurance rewards, Kameha reward list
   name-map-a.json name-map-b.json      unofficial English name maps
   roster.json detail_0_908.json        raw records scraped from game-cap.com/dqm2
 .github/workflows/ci.yml   typecheck · build · verify offline bundle · upload dist artifact
@@ -120,6 +126,7 @@ python3 scrape_lists.py    # list pages → abilities, trait-extra, items, weapo
                            # (subset: python3 scrape_lists.py weapons keys key-names rebirth)
 python3 scrape_skills.py   # skilllist + skill_*.html → all 425 sets, their holders, SP tables
                            #              and evolution links, merged into skills.json
+python3 scrape_guides.py   # chart/c,b,a,s + kachinuki + Kameha → arena.json, kameha.json
 ```
 
 - `scrape.py` collects the roster (rank, family, size, stat total, skill set, icon number).
@@ -165,6 +172,10 @@ Ranks: F → E → D → C → B → A → S → SS.
   the 19 entries of `chart/009.html`; every one of them carries the location the chart prints, and the longer
   location text a monster page states is kept instead of the chart’s shorter line.
 - Habitat text is present for 257 records (the rest are boss, egg, event or synthesis exclusives).
+- The arena page is complete for the four class cups (8 rounds, 42 opponents with their HP) and the endurance battle
+  (11 reward steps, 7 restart brackets). Round notes and opponent HP stay in the reference’s Japanese.
+- The system guides are translated from the reference articles; item, monster and skill names inside them stay in
+  Japanese so they can be looked up in the other tables.
 
 ---
 

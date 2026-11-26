@@ -1,6 +1,6 @@
 import type { Page } from '../app';
-import { ARENA, CHAPTERS, DREAM_EGGS, EGG_INFO } from '../data/extras';
-import { MONSTERS, esc, famBadge, fmt, hashFor, iconSrc, rankBadge } from '../lib';
+import { CHAPTERS, DREAM_EGGS, EGG_INFO } from '../data/extras';
+import { ARENA_DATA, MONSTERS, MONSTER_BY_JP, esc, famBadge, fmt, hashFor, iconSrc, miniMon, rankBadge } from '../lib';
 import type { Monster } from '../lib';
 
 /* ------------------------------------------------------------------ chart */
@@ -212,6 +212,12 @@ export function renderEggs(): Page {
 /* ------------------------------------------------------------------ arena */
 
 export function renderArena(): Page {
+  const { cups, streak } = ARENA_DATA;
+  const opponent = (name: string): string => {
+    const m = MONSTER_BY_JP.get(name);
+    return m ? miniMon(m) : `<span lang="ja">${esc(name)}</span>`;
+  };
+
   return {
     title: 'Monster arena',
     html: `
@@ -219,24 +225,60 @@ export function renderArena(): Page {
       <div class="page-head">
         <h1>Monster arena</h1>
         <p class="lede">
-          Greatlog’s arena runs a bracket for every class. You enter with a team of up to three monsters and the
-          arena decides the rules; rewards scale with the class and with the day’s event.
+          Greatlog’s arena runs four class cups and, once the S cup is won, the endurance battle. Below are each
+          cup’s entry fee, prize, opponents and the reference’s own notes for every round.
         </p>
+        <div class="meta">
+          <span class="badge tag">${cups.length} cups</span>
+          <span class="badge tag">${cups.reduce((n, c) => n + c.rounds.reduce((k, r) => k + r.monsters.length, 0), 0)} opponents</span>
+          <a class="badge tag-gold" href="#/kameha">Kameha exchange</a>
+        </div>
       </div>
-      <div class="grid cols-2">
-        ${ARENA.map(
-          (a) => `<div class="card">
-            <div class="card-head"><h2>${esc(a.title)}</h2><span class="badge rank rank-${esc(a.cls === 'Kids' || a.cls === 'Event' ? 'A' : a.cls)}">${esc(a.cls)}</span></div>
-            <p class="small muted">${esc(a.blurb)}</p>
-          </div>`,
-        ).join('')}
-      </div>
-      <div class="notice info">
-        <p>
-          <strong>Team sizing.</strong> A battle team holds three body slots: an S monster takes one, M takes two,
-          G takes three. Mixed teams are fine — the arena only checks the total.
-        </p>
-      </div>
+      ${cups
+        .map(
+          (cup) => `<section class="card">
+            <div class="card-head">
+              <h2>Class ${esc(cup.class)}</h2>
+              <span class="muted small">
+                ${cup.fee === null ? '' : `Entry ${fmt(cup.fee)} G`}${cup.prize ? ` · Prize ${esc(cup.prize)}` : ''}
+              </span>
+            </div>
+            ${cup.advice ? `<p class="small" lang="ja">${esc(cup.advice)}</p>` : ''}
+            ${cup.rounds
+              .map(
+                (round) => `<div class="card" style="margin-bottom:10px">
+                  <div class="card-head"><h3>${esc(round.name)}</h3><span class="muted small">${round.monsters.length} monsters</span></div>
+                  <div class="table-wrap"><table class="data" style="font-size:13px">
+                    <thead><tr><th>Opponent</th><th class="num">HP</th></tr></thead>
+                    <tbody>${round.monsters
+                      .map((o) => `<tr><td>${opponent(o.name)}</td><td class="num">${esc(o.hp)}</td></tr>`)
+                      .join('')}</tbody>
+                  </table></div>
+                  ${round.note ? `<p class="small muted" style="margin:8px 0 0" lang="ja">${esc(round.note)}</p>` : ''}
+                </div>`,
+              )
+              .join('')}
+          </section>`,
+        )
+        .join('')}
+      <section class="card">
+        <div class="card-head"><h2>Endurance battle</h2><span class="muted small" lang="ja">勝ちぬきバトル</span></div>
+        <p class="small muted">Winning the S cup earns the 勝ちぬきバトルのカギ that opens this run of consecutive battles.</p>
+        <div class="table-wrap"><table class="data" style="font-size:13px">
+          <thead><tr><th>Streak</th><th>Prize money</th><th>Item</th></tr></thead>
+          <tbody>${streak.rewards
+            .map((r) => `<tr><td>${esc(r.streak)}</td><td>${esc(r.gold)}</td><td>${esc(r.prize)}</td></tr>`)
+            .join('')}</tbody>
+        </table></div>
+        ${streak.note ? `<p class="small muted" style="margin:10px 0 0" lang="ja">${esc(streak.note)}</p>` : ''}
+        <h3 class="small muted" style="margin:14px 0 8px">Where a loss sends you back</h3>
+        <div class="table-wrap"><table class="data" style="font-size:13px">
+          <thead><tr><th>Last streak</th><th>Next attempt starts at</th></tr></thead>
+          <tbody>${streak.restart
+            .map((r) => `<tr><td>${esc(r.from)}</td><td>${esc(r.start)}</td></tr>`)
+            .join('')}</tbody>
+        </table></div>
+      </section>
       <section class="card">
         <div class="card-head"><h2>Useful arena monsters</h2><a class="small" href="#/monsters?sort=total">Highest stat totals</a></div>
         <div class="grid auto">
@@ -252,6 +294,12 @@ export function renderArena(): Page {
             .join('')}
         </div>
       </section>
+      <div class="notice">
+        <p>
+          Opponent HP and the round notes are the reference’s own text, kept in Japanese; opponent names link to the
+          English monster records.
+        </p>
+      </div>
     `,
   };
 }

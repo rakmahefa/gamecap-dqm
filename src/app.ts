@@ -7,6 +7,7 @@ import * as breeding from './pages/breeding';
 import * as reference from './pages/reference';
 import * as chart from './pages/chart';
 import * as tools from './pages/tools';
+import * as guides from './pages/guides';
 import * as about from './pages/about';
 
 export interface Page {
@@ -61,6 +62,19 @@ function buildSidebar(): void {
         <li><a href="#/items">Items &amp; materials</a></li>
         <li><a href="#/keys">Alchemy keys</a></li>
         <li><a href="#/key-rewards">Alchemy-key rewards</a></li>
+        <li><a href="#/kameha">Kameha exchange</a></li>
+      </ul>`,
+    ),
+    sideCard(
+      'Guides',
+      `<ul>
+        <li><a href="#/guides">All guides</a></li>
+        <li><a href="#/guide/new-life">New-life synthesis</a></li>
+        <li><a href="#/guide/scouting">Scouting</a></li>
+        <li><a href="#/guide/medals">Mini medals</a></li>
+        <li><a href="#/guide/scout-q">Scout quests</a></li>
+        <li><a href="#/guide/matchmaking">Online matchmaking</a></li>
+        <li><a href="#/arena">Monster arena</a></li>
       </ul>`,
     ),
     sideCard(
@@ -137,6 +151,12 @@ function resolve({ segs, params }: Route): Page {
       return reference.renderAlchemyKeys();
     case 'key-rewards':
       return reference.renderKeyRewards();
+    case 'guides':
+      return guides.renderGuides();
+    case 'guide':
+      return guides.renderGuide(second ?? '');
+    case 'kameha':
+      return guides.renderKameha(params);
     case 'chart':
       return chart.renderChart(second);
     case 'eggs':

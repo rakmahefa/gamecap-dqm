@@ -11,6 +11,8 @@ import rawItems from './data/items.json';
 import rawWeapons from './data/weapons.json';
 import rawKeyRewards from './data/key-rewards.json';
 import rawKeyNames from './data/key-names.json';
+import rawArena from './data/arena.json';
+import rawKameha from './data/kameha.json';
 import rawMonsterWeapons from './data/monster-weapons.json';
 
 export type Rank = 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
@@ -152,6 +154,46 @@ export interface KeyReward {
   sp: boolean;
 }
 
+/** Monster arena: the four class cups and the endurance battle. */
+export interface ArenaRound {
+  name: string;
+  monsters: { name: string; hp: string }[];
+  note: string;
+}
+
+export interface ArenaCup {
+  class: string;
+  fee: number | null;
+  prize: string | null;
+  advice: string;
+  rounds: ArenaRound[];
+}
+
+export interface ArenaData {
+  cups: ArenaCup[];
+  streak: {
+    rewards: { streak: string; gold: string; prize: string }[];
+    restart: { from: string; start: string }[];
+    note: string;
+  };
+}
+
+/** A monster the Kameha prince hands out, with every other route flagged. */
+export interface KamehaReward {
+  rank: Rank;
+  jp: string;
+  id?: string;
+  name?: string;
+  scout: boolean;
+  master: boolean;
+  rankBreed: boolean;
+  specialBreed: boolean;
+  egg: boolean;
+  key: boolean;
+  kameha: boolean;
+  other: boolean;
+}
+
 /** One half of an alchemy-key name (錬金カギの名前). */
 export interface KeyName {
   jp: string;
@@ -177,6 +219,8 @@ export const ITEMS = rawItems as unknown as ItemEntry[];
 export const WEAPONS = rawWeapons as unknown as WeaponEntry[];
 export const KEY_REWARDS = rawKeyRewards as unknown as KeyReward[];
 export const KEY_NAMES = rawKeyNames as unknown as KeyName[];
+export const ARENA_DATA = rawArena as unknown as ArenaData;
+export const KAMEHA = rawKameha as unknown as KamehaReward[];
 
 /* The monster pages carry the equippable weapon types as CSS state, which the
  * first scrape dropped. `monster-weapons.json` holds them for all 908 records. */
